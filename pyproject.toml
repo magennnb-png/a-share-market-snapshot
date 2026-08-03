@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a-share-market-snapshot"
+version = "0.1.0"
+description = "A resilient A-share real-time quote and intraday data bridge"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "requests>=2.32,<3",
+  "PyYAML>=6.0,<7",
+  "chinese-calendar>=1.10,<2",
+  "tzdata>=2025.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9"]
+
+[project.scripts]
+a-share-snapshot = "a_share_bridge.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

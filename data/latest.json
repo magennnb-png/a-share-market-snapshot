@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.0",
+  "market_time": "2026-08-03T16:14:49+08:00",
+  "generated_at": "2026-08-03T17:18:15+08:00",
+  "sources": [
+    "sina",
+    "tencent"
+  ],
+  "is_stale": false,
+  "errors": [
+    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
+    "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
+  ],
+  "warnings": [
+    "上证指数: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "深证成指: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "创业板指: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "科创50: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "沪深300: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "中证1000: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "北证50: 新浪分时首条为09:31，接口未提供09:30分钟点",
+    "北证50: 新浪分时仅返回239个连续竞价分钟点，未对缺失分钟进行插值",
+    "北证50: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）"
+  ],
+  "source_status": [
+    {
+      "source": "eastmoney",
+      "operation": "quotes",
+      "ok": false,
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+    },
+    {
+      "source": "tencent",
+      "operation": "quotes",
+      "ok": true,
+      "records": 11
+    },
+    {
+      "source": "sina",
+      "operation": "breadth",
+      "ok": true,
+      "records": 5534
+    },
+    {
+      "source": "sina",
+      "operation": "industries",
+      "ok": true,
+      "records": 49
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000852",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000688",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399006",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:bj899050",
+      "ok": false,
+      "error": "接口返回空分时"
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz159915",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh600519",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh510300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "sina",
+      "operation": "intraday:bj899050",
+      "ok": true,
+      "records": 239
+    }
+  ],
+  "indices": [
+    {
+      "name": "上证指数",
+      "symbol": "000001",
+      "kind": "index",
+      "last": 3809.66,
+      "previous_close": 3832.26,
+      "open": 3812.61,
+      "volume": 524516960,
+      "market_time": "2026-08-03T16:14:03+08:00",
+      "change": -22.6,
+      "change_percent": -0.59,
+      "high": 3827.64,
+      "low": 3797.64,
+      "amount": 952256890000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "深证成指",
+      "symbol": "399001",
+      "kind": "index",
+      "last": 13448.29,
+      "previous_close": 13578.93,
+      "open": 13497.1,
+      "volume": 618828696,
+      "market_time": "2026-08-03T16:14:45+08:00",
+      "change": -130.64,
+      "change_percent": -0.96,
+      "high": 13570.51,
+      "low": 13407.99,
+      "amount": 1045128970000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "创业板指",
+      "symbol": "399006",
+      "kind": "index",
+      "last": 3302.55,
+      "previous_close": 3343.96,
+      "open": 3320.09,
+      "volume": 187720972,
+      "market_time": "2026-08-03T16:14:00+08:00",
+      "change": -41.41,
+      "change_percent": -1.24,
+      "high": 3342.17,
+      "low": 3280.84,
+      "amount": 486504340000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "科创50",
+      "symbol": "000688",
+      "kind": "index",
+      "last": 1552.89,
+      "previous_close": 1635.96,
+      "open": 1619.29,
+      "volume": 12334986,
+      "market_time": "2026-08-03T16:14:15+08:00",
+      "change": -83.07,
+      "change_percent": -5.08,
+      "high": 1621.99,
+      "low": 1549.74,
+      "amount": 124510600000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "沪深300",
+      "symbol": "000300",
+      "kind": "index",
+      "last": 4543.18,
+      "previous_close": 4588.2,
+      "open": 4561.82,
+      "volume": 232042584,
+      "market_time": "2026-08-03T16:14:15+08:00",
+      "change": -45.02,
+      "change_percent": -0.98,
+      "high": 4572.59,
+      "low": 4529.19,
+      "amount": 615750950000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "中证1000",
+      "symbol": "000852",
+      "kind": "index",
+      "last": 7079.78,
+      "previous_close": 7075.51,
+      "open": 7055.27,
+      "volume": 233392381,
+      "market_time": "2026-08-03T16:14:03+08:00",
+      "change": 4.27,
+      "change_percent": 0.06,
+      "high": 7118.1,
+      "low": 7042.89,
+      "amount": 391183030000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "北证50",
+      "symbol": "899050",
+      "kind": "index",
+      "last": 1076.07,
+      "previous_close": 1083.27,
+      "open": 1073.33,
+      "volume": 7340011,
+      "market_time": "2026-08-03T15:34:32+08:00",
+      "change": -7.2,
+      "change_percent": -0.66,
+      "high": 1087.68,
+      "low": 1072.02,
+      "amount": 13894870500.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "market_breadth": {
+    "listed_with_quotes": 5530,
+    "up": 4005,
+    "down": 1465,
+    "flat": 60,
+    "limit_up": 113,
+    "limit_down": 9,
+    "turnover_cny": 2010600590025.0,
+    "limit_count_method": "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）",
+    "source": "sina",
+    "market_time": "2026-08-03T16:30:00+08:00",
+    "is_stale": false,
+    "errors": [],
+    "warnings": [
+      "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）"
+    ]
+  },
+  "industries": {
+    "top10": [
+      {
+        "code": "new_zzhy",
+        "name": "造纸行业",
+        "constituent_count": 24,
+        "change_percent": 3.9352776667998,
+        "volume": 855434396.0,
+        "amount": 5473086045.0,
+        "leader_symbol": "sz000815",
+        "leader_name": "美利云",
+        "source": "sina"
+      },
+      {
+        "code": "new_fjzz",
+        "name": "飞机制造",
+        "constituent_count": 14,
+        "change_percent": 3.0780980209855,
+        "volume": 327489384.0,
+        "amount": 7699776923.0,
+        "leader_symbol": "sh600391",
+        "leader_name": "航发科技",
+        "source": "sina"
+      },
+      {
+        "code": "new_fdsb",
+        "name": "发电设备",
+        "constituent_count": 65,
+        "change_percent": 2.8384024649285,
+        "volume": 2849148900.0,
+        "amount": 37279886991.0,
+        "leader_symbol": "sz000967",
+        "leader_name": "盈峰环境",
+        "source": "sina"
+      },
+      {
+        "code": "new_gsgq",
+        "name": "供水供气",
+        "constituent_count": 25,
+        "change_percent": 2.4296888001331,
+        "volume": 432649435.0,
+        "amount": 2344283847.0,
+        "leader_symbol": "sz000593",
+        "leader_name": "德龙汇能",
+        "source": "sina"
+      },
+      {
+        "code": "new_mtc",
+        "name": "摩托车",
+        "constituent_count": 6,
+        "change_percent": 2.4106758501937,
+        "volume": 148055966.0,
+        "amount": 1935735104.0,
+        "leader_symbol": "sz001696",
+        "leader_name": "宗申动力",
+        "source": "sina"
+      },
+      {
+        "code": "new_zhhy",
+        "name": "综合行业",
+        "constituent_count": 33,
+        "change_percent": 2.3664063104168,
+        "volume": 553980579.0,
+        "amount": 2779161786.0,
+        "leader_symbol": "sh600805",
+        "leader_name": "悦达投资",
+        "source": "sina"
+      },
+      {
+        "code": "new_dlhy",
+        "name": "电力行业",
+        "constituent_count": 62,
+        "change_percent": 2.2311042176221,
+        "volume": 3702109683.0,
+        "amount": 29286051498.0,
+        "leader_symbol": "sh600644",
+        "leader_name": "乐山电力",
+        "source": "sina"
+      },
+      {
+        "code": "new_slzp",
+        "name": "塑料制品",
+        "constituent_count": 33,
+        "change_percent": 2.1845166131655,
+        "volume": 919342395.0,
+        "amount": 7559115758.0,
+        "leader_symbol": "sz300305",
+        "leader_name": "裕兴股份",
+        "source": "sina"
+      },
+      {
+        "code": "new_hbhy",
+        "name": "环保行业",
+        "constituent_count": 27,
+        "change_percent": 2.0428939866974,
+        "volume": 630847122.0,
+        "amount": 3190504652.0,
+        "leader_symbol": "sz000826",
+        "leader_name": "*ST启环",
+        "source": "sina"
+      },
+      {
+        "code": "new_fzjx",
+        "name": "纺织机械",
+        "constituent_count": 8,
+        "change_percent": 1.9546791212593,
+        "volume": 94995988.0,
+        "amount": 680375151.0,
+        "leader_symbol": "sz002196",
+        "leader_name": "方正电机",
+        "source": "sina"
+      }
+    ],
+    "bottom10": [
+      {
+        "code": "new_dzqj",
+        "name": "电子器件",
+        "constituent_count": 152,
+        "change_percent": -2.2984186453464,
+        "volume": 7846274221.0,
+        "amount": 156254510868.0,
+        "leader_symbol": "sz300118",
+        "leader_name": "东方日升",
+        "source": "sina"
+      },
+      {
+        "code": "new_mthy",
+        "name": "煤炭行业",
+        "constituent_count": 41,
+        "change_percent": -1.5025711777248,
+        "volume": 1618968720.0,
+        "amount": 14117930775.0,
+        "leader_symbol": "sz000571",
+        "leader_name": "新大洲A",
+        "source": "sina"
+      },
+      {
+        "code": "new_tchy",
+        "name": "陶瓷行业",
+        "constituent_count": 8,
+        "change_percent": -1.3490907128595,
+        "volume": 70509113.0,
+        "amount": 1506516023.0,
+        "leader_symbol": "sz300234",
+        "leader_name": "开尔新材",
+        "source": "sina"
+      },
+      {
+        "code": "new_blhy",
+        "name": "玻璃行业",
+        "constituent_count": 19,
+        "change_percent": -1.3342599027102,
+        "volume": 737018649.0,
+        "amount": 15875038955.0,
+        "leader_symbol": "sz002623",
+        "leader_name": "亚玛顿",
+        "source": "sina"
+      },
+      {
+        "code": "new_stock",
+        "name": "次新股",
+        "constituent_count": 142,
+        "change_percent": -1.0911153579967,
+        "volume": 1078525290.0,
+        "amount": 56451970285.0,
+        "leader_symbol": "bj920222",
+        "leader_name": "N益坤",
+        "source": "sina"
+      },
+      {
+        "code": "new_hghy",
+        "name": "化工行业",
+        "constituent_count": 150,
+        "change_percent": -0.91626394147403,
+        "volume": 4104230218.0,
+        "amount": 59938726841.0,
+        "leader_symbol": "sz300214",
+        "leader_name": "日科化学",
+        "source": "sina"
+      },
+      {
+        "code": "new_jdhy",
+        "name": "家电行业",
+        "constituent_count": 37,
+        "change_percent": -0.58822298046932,
+        "volume": 1156164659.0,
+        "amount": 14457532655.0,
+        "leader_symbol": "sz000533",
+        "leader_name": "顺钠股份",
+        "source": "sina"
+      },
+      {
+        "code": "new_ylqx",
+        "name": "医疗器械",
+        "constituent_count": 31,
+        "change_percent": -0.57225357658485,
+        "volume": 337485967.0,
+        "amount": 6217005800.0,
+        "leader_symbol": "sh600055",
+        "leader_name": "万东医疗",
+        "source": "sina"
+      },
+      {
+        "code": "new_hqhy",
+        "name": "化纤行业",
+        "constituent_count": 26,
+        "change_percent": -0.24495948746938,
+        "volume": 845391817.0,
+        "amount": 9028718572.0,
+        "leader_symbol": "sz000677",
+        "leader_name": "ST海龙",
+        "source": "sina"
+      },
+      {
+        "code": "new_snhy",
+        "name": "水泥行业",
+        "constituent_count": 26,
+        "change_percent": -0.096960294759296,
+        "volume": 423148131.0,
+        "amount": 3357071659.0,
+        "leader_symbol": "sh600217",
+        "leader_name": "中再资环",
+        "source": "sina"
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "name": "沪深300ETF华泰柏瑞",
+      "symbol": "510300",
+      "kind": "etf",
+      "last": 4.599,
+      "previous_close": 4.653,
+      "open": 4.624,
+      "volume": 9263921,
+      "market_time": "2026-08-03T16:14:34+08:00",
+      "change": -0.054,
+      "change_percent": -1.16,
+      "high": 4.638,
+      "low": 4.591,
+      "amount": 4269960000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "创业板ETF易方达",
+      "symbol": "159915",
+      "kind": "etf",
+      "last": 3.325,
+      "previous_close": 3.368,
+      "open": 3.323,
+      "volume": 19144861,
+      "market_time": "2026-08-03T16:14:12+08:00",
+      "change": -0.043,
+      "change_percent": -1.28,
+      "high": 3.365,
+      "low": 3.3,
+      "amount": 6381410000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "贵州茅台",
+      "symbol": "600519",
+      "kind": "stock",
+      "last": 1358.98,
+      "previous_close": 1350.6,
+      "open": 1350.6,
+      "volume": 36147,
+      "market_time": "2026-08-03T16:14:49+08:00",
+      "change": 8.38,
+      "change_percent": 0.62,
+      "high": 1363.35,
+      "low": 1346.0,
+      "amount": 4898670000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "平安银行",
+      "symbol": "000001",
+      "kind": "stock",
+      "last": 11.62,
+      "previous_close": 11.63,
+      "open": 11.54,
+      "volume": 1060851,
+      "market_time": "2026-08-03T16:14:45+08:00",
+      "change": -0.01,
+      "change_percent": -0.09,
+      "high": 11.66,
+      "low": 11.52,
+      "amount": 1229340000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

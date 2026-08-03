@@ -1,0 +1,19 @@
+indices:
+  - {name: 上证指数, symbol: "000001", kind: index, eastmoney: "1.000001", tencent: sh000001}
+  - {name: 深证成指, symbol: "399001", kind: index, eastmoney: "0.399001", tencent: sz399001}
+  - {name: 创业板指, symbol: "399006", kind: index, eastmoney: "0.399006", tencent: sz399006}
+  - {name: 科创50, symbol: "000688", kind: index, eastmoney: "1.000688", tencent: sh000688}
+  - {name: 沪深300, symbol: "000300", kind: index, eastmoney: "1.000300", tencent: sh000300}
+  - {name: 中证1000, symbol: "000852", kind: index, eastmoney: "1.000852", tencent: sh000852}
+  - {name: 北证50, symbol: "899050", kind: index, eastmoney: "0.899050", tencent: bj899050}
+
+watchlist:
+  - {name: 沪深300ETF, symbol: "510300", kind: etf, eastmoney: "1.510300", tencent: sh510300}
+  - {name: 创业板ETF, symbol: "159915", kind: etf, eastmoney: "0.159915", tencent: sz159915}
+  - {name: 贵州茅台, symbol: "600519", kind: stock, eastmoney: "1.600519", tencent: sh600519}
+  - {name: 平安银行, symbol: "000001", kind: stock, eastmoney: "0.000001", tencent: sz000001}
+
+settings:
+  request_timeout_seconds: 12
+  max_sina_pages: 65
+  publish_on_scheduled_run: true
