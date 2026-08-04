@@ -19,7 +19,7 @@
 要求 Windows 和 Python 3.11 以上。
 
 ```powershell
-cd "C:\Users\李森淼\Documents\金融数据拉取"
+cd "C:\Users\你的用户名\Documents\金融数据拉取"
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 ```
 
