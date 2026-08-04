@@ -4,17 +4,28 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
-$Runner = Join-Path $PSScriptRoot "run_snapshot.ps1"
-$Times = @("08:58", "10:58", "13:58")
+$Runner = Join-Path $PSScriptRoot "run_report.ps1"
+$Schedules = @(
+    @{ Time = "09:05"; Slot = "0905" },
+    @{ Time = "11:05"; Slot = "1105" },
+    @{ Time = "14:05"; Slot = "1405" }
+)
 
 if (-not (Test-Path -LiteralPath $Runner)) {
     throw "Runner not found: $Runner"
 }
 
-foreach ($Time in $Times) {
-    $Suffix = $Time.Replace(":", "")
-    $TaskName = "A-Share-Market-Snapshot-$Suffix"
-    $TaskCommand = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$Runner`""
+# Remove legacy snapshot-only tasks so each scheduled run produces one atomic
+# market-data + report commit instead of an intermediate snapshot commit.
+foreach ($LegacySuffix in @("0858", "1058", "1358")) {
+    schtasks.exe /Delete /TN "A-Share-Market-Snapshot-$LegacySuffix" /F 2>$null
+}
+
+foreach ($Schedule in $Schedules) {
+    $Time = $Schedule.Time
+    $Slot = $Schedule.Slot
+    $TaskName = "A-Share-Market-Report-$Slot"
+    $TaskCommand = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$Runner`" -Slot $Slot"
     $Arguments = @(
         "/Create", "/TN", $TaskName,
         "/TR", $TaskCommand,
@@ -29,5 +40,5 @@ foreach ($Time in $Times) {
     }
 }
 
-Write-Host "Created tasks at 08:58, 10:58 and 13:58."
-Write-Host "The Python runner performs the mainland China holiday check before fetching data."
+Write-Host "Created report tasks at 09:05, 11:05 and 14:05."
+Write-Host "Each task checks the trading calendar, fetches quotes, builds one report, then commits and pushes all outputs together."

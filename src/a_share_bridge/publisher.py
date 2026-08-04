@@ -10,7 +10,12 @@ def _run(args: list[str], root: Path, check: bool = True) -> subprocess.Complete
     return subprocess.run(args, cwd=root, text=True, encoding="utf-8", errors="replace", capture_output=True, check=check)
 
 
-def publish_outputs(root: Path, output_paths: list[Path], generated_at: datetime) -> dict[str, Any]:
+def publish_outputs(
+    root: Path,
+    output_paths: list[Path],
+    generated_at: datetime,
+    commit_message: str | None = None,
+) -> dict[str, Any]:
     relative = [str(path.relative_to(root)).replace("\\", "/") for path in output_paths]
     result: dict[str, Any] = {"staged": False, "committed": False, "pushed": False, "errors": []}
     try:
@@ -20,7 +25,7 @@ def publish_outputs(root: Path, output_paths: list[Path], generated_at: datetime
         if diff.returncode == 0:
             result["message"] = "生成文件无变化，无需提交"
         else:
-            message = f"data: update A-share snapshot {generated_at:%Y-%m-%d %H:%M}"
+            message = commit_message or f"data: update A-share snapshot {generated_at:%Y-%m-%d %H:%M}"
             commit = _run(["git", "commit", "-m", message, "--", *relative], root)
             result["committed"] = True
             result["commit_output"] = commit.stdout.strip()
