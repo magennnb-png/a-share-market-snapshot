@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-03T15:00:00+08:00",
-  "generated_at": "2026-08-03T17:18:15+08:00",
+  "generated_at": "2026-08-04T08:08:12+08:00",
   "sources": [
     "sina",
     "tencent"
   ],
-  "is_stale": false,
+  "is_stale": true,
   "errors": [
-    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
+    "eastmoney实时行情失败: ConnectionError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by ProtocolError('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))",
     "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
   ],
   "warnings": [
@@ -28,7 +28,7 @@
       "source": "eastmoney",
       "operation": "quotes",
       "ok": false,
-      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by ProtocolError('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))"
     },
     {
       "source": "tencent",
@@ -50,7 +50,25 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh000688",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399006",
       "ok": true,
       "records": 242
     },
@@ -68,19 +86,7 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh000688",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399006",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh000300",
+      "operation": "intraday:sh510300",
       "ok": true,
       "records": 242
     },
@@ -92,6 +98,12 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sz159915",
       "ok": true,
       "records": 242
@@ -99,18 +111,6 @@
     {
       "source": "tencent",
       "operation": "intraday:sh600519",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz000001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh510300",
       "ok": true,
       "records": 242
     },
@@ -2071,7 +2071,7 @@
       "name": "上证指数",
       "symbol": "000001",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3812.61,
         "last": 3809.66,
@@ -4038,7 +4038,7 @@
       "name": "深证成指",
       "symbol": "399001",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 13497.1,
         "last": 13448.29,
@@ -4072,16 +4072,16 @@
         {
           "time": "2026-08-03 09:31",
           "price": 3302.96,
-          "volume": 7474476.0,
-          "amount": 18835708271.71,
-          "volume_cumulative": 9235057.0,
-          "amount_cumulative": 23888423002.07
+          "volume": 7238613.0,
+          "amount": 18231601750.91,
+          "volume_cumulative": 8999194.0,
+          "amount_cumulative": 23284316481.27
         },
         {
           "time": "2026-08-03 09:32",
           "price": 3315.96,
-          "volume": 5018254.0,
-          "amount": 12124564307.519997,
+          "volume": 5254117.0,
+          "amount": 12728670828.319996,
           "volume_cumulative": 14253311.0,
           "amount_cumulative": 36012987309.59
         },
@@ -4128,16 +4128,16 @@
         {
           "time": "2026-08-03 09:38",
           "price": 3323.91,
-          "volume": 2624883.0,
-          "amount": 6720010881.199997,
-          "volume_cumulative": 32288458.0,
-          "amount_cumulative": 83228821990.62
+          "volume": 2491323.0,
+          "amount": 6359686755.300003,
+          "volume_cumulative": 32154898.0,
+          "amount_cumulative": 82868497864.72
         },
         {
           "time": "2026-08-03 09:39",
           "price": 3323.32,
-          "volume": 2493534.0,
-          "amount": 6421648568.950012,
+          "volume": 2627094.0,
+          "amount": 6781972694.850006,
           "volume_cumulative": 34781992.0,
           "amount_cumulative": 89650470559.57
         },
@@ -4176,16 +4176,16 @@
         {
           "time": "2026-08-03 09:44",
           "price": 3300.66,
-          "volume": 2112177.0,
-          "amount": 5171287606.529999,
-          "volume_cumulative": 46634059.0,
-          "amount_cumulative": 120860339896.48
+          "volume": 1993110.0,
+          "amount": 4889479581.059998,
+          "volume_cumulative": 46514992.0,
+          "amount_cumulative": 120578531871.01
         },
         {
           "time": "2026-08-03 09:45",
           "price": 3288.41,
-          "volume": 1833090.0,
-          "amount": 5003808674.860001,
+          "volume": 1952157.0,
+          "amount": 5285616700.330002,
           "volume_cumulative": 48467149.0,
           "amount_cumulative": 125864148571.34
         },
@@ -4208,32 +4208,32 @@
         {
           "time": "2026-08-03 09:48",
           "price": 3292.03,
-          "volume": 1822734.0,
-          "amount": 4830731850.309998,
-          "volume_cumulative": 54709239.0,
-          "amount_cumulative": 142477238833.01
+          "volume": 1744983.0,
+          "amount": 4632359807.569977,
+          "volume_cumulative": 54631488.0,
+          "amount_cumulative": 142278866790.27
         },
         {
           "time": "2026-08-03 09:49",
           "price": 3299.31,
-          "volume": 1489230.0,
-          "amount": 4012962891.880005,
+          "volume": 1566981.0,
+          "amount": 4211334934.6200256,
           "volume_cumulative": 56198469.0,
           "amount_cumulative": 146490201724.89
         },
         {
           "time": "2026-08-03 09:50",
           "price": 3312.12,
-          "volume": 1550349.0,
-          "amount": 4181824063.7199707,
-          "volume_cumulative": 57748818.0,
-          "amount_cumulative": 150672025788.61
+          "volume": 1483208.0,
+          "amount": 3972234034.549988,
+          "volume_cumulative": 57681677.0,
+          "amount_cumulative": 150462435759.44
         },
         {
           "time": "2026-08-03 09:51",
           "price": 3304.93,
-          "volume": 1373013.0,
-          "amount": 3366794616.76001,
+          "volume": 1440154.0,
+          "amount": 3576384645.9299927,
           "volume_cumulative": 59121831.0,
           "amount_cumulative": 154038820405.37
         },
@@ -4264,32 +4264,32 @@
         {
           "time": "2026-08-03 09:55",
           "price": 3311.26,
-          "volume": 1414019.0,
-          "amount": 3364993193.5400085,
-          "volume_cumulative": 64817128.0,
-          "amount_cumulative": 168487393683.92
+          "volume": 1345273.0,
+          "amount": 3193140258.1099854,
+          "volume_cumulative": 64748382.0,
+          "amount_cumulative": 168315540748.49
         },
         {
           "time": "2026-08-03 09:56",
           "price": 3317.21,
-          "volume": 1243648.0,
-          "amount": 3182454206.909973,
-          "volume_cumulative": 66060776.0,
-          "amount_cumulative": 171669847890.83
+          "volume": 1251762.0,
+          "amount": 3184632224.580017,
+          "volume_cumulative": 66000144.0,
+          "amount_cumulative": 171500172973.07
         },
         {
           "time": "2026-08-03 09:57",
           "price": 3313.1,
-          "volume": 1139837.0,
-          "amount": 2909846631.3000183,
-          "volume_cumulative": 67200613.0,
-          "amount_cumulative": 174579694522.13
+          "volume": 1156907.0,
+          "amount": 2960135274.9299927,
+          "volume_cumulative": 67157051.0,
+          "amount_cumulative": 174460308248.0
         },
         {
           "time": "2026-08-03 09:58",
           "price": 3307.25,
-          "volume": 1098726.0,
-          "amount": 2862797176.380005,
+          "volume": 1142288.0,
+          "amount": 2982183450.51001,
           "volume_cumulative": 68299339.0,
           "amount_cumulative": 177442491698.51
         },
@@ -4312,24 +4312,24 @@
         {
           "time": "2026-08-03 10:01",
           "price": 3322.14,
-          "volume": 1348756.0,
-          "amount": 3526044907.3299866,
-          "volume_cumulative": 71780404.0,
-          "amount_cumulative": 186502193716.4
+          "volume": 1273164.0,
+          "amount": 3350031429.850006,
+          "volume_cumulative": 71704812.0,
+          "amount_cumulative": 186326180238.92
         },
         {
           "time": "2026-08-03 10:02",
           "price": 3311.07,
-          "volume": 1247615.0,
-          "amount": 3252359617.1900024,
-          "volume_cumulative": 73028019.0,
-          "amount_cumulative": 189754553333.59
+          "volume": 1271725.0,
+          "amount": 3267564106.939972,
+          "volume_cumulative": 72976537.0,
+          "amount_cumulative": 189593744345.86
         },
         {
           "time": "2026-08-03 10:03",
           "price": 3317.37,
-          "volume": 945096.0,
-          "amount": 2452026741.580017,
+          "volume": 996578.0,
+          "amount": 2612835729.310028,
           "volume_cumulative": 73973115.0,
           "amount_cumulative": 192206580075.17
         },
@@ -4344,16 +4344,16 @@
         {
           "time": "2026-08-03 10:05",
           "price": 3316.16,
-          "volume": 1030172.0,
-          "amount": 2760509717.6999817,
-          "volume_cumulative": 76094832.0,
-          "amount_cumulative": 197700206799.33
+          "volume": 989469.0,
+          "amount": 2640017256.0400085,
+          "volume_cumulative": 76054129.0,
+          "amount_cumulative": 197579714337.67
         },
         {
           "time": "2026-08-03 10:06",
           "price": 3323.42,
-          "volume": 892269.0,
-          "amount": 2257357434.860016,
+          "volume": 932972.0,
+          "amount": 2377849896.519989,
           "volume_cumulative": 76987101.0,
           "amount_cumulative": 199957564234.19
         },
@@ -4368,16 +4368,16 @@
         {
           "time": "2026-08-03 10:08",
           "price": 3312.91,
-          "volume": 1159649.0,
-          "amount": 2698818024.080017,
-          "volume_cumulative": 79053689.0,
-          "amount_cumulative": 205156479313.44
+          "volume": 1112551.0,
+          "amount": 2584017600.1600037,
+          "volume_cumulative": 79006591.0,
+          "amount_cumulative": 205041678889.52
         },
         {
           "time": "2026-08-03 10:09",
           "price": 3313.61,
-          "volume": 1087811.0,
-          "amount": 2713581132.8299866,
+          "volume": 1134909.0,
+          "amount": 2828381556.75,
           "volume_cumulative": 80141500.0,
           "amount_cumulative": 207870060446.27
         },
@@ -4392,16 +4392,16 @@
         {
           "time": "2026-08-03 10:11",
           "price": 3318.06,
-          "volume": 1251754.0,
-          "amount": 3045895973.1900024,
-          "volume_cumulative": 82741943.0,
-          "amount_cumulative": 214128185861.41
+          "volume": 1200926.0,
+          "amount": 2931254365.26001,
+          "volume_cumulative": 82691115.0,
+          "amount_cumulative": 214013544253.48
         },
         {
           "time": "2026-08-03 10:12",
           "price": 3315.81,
-          "volume": 1046862.0,
-          "amount": 2507926408.3399963,
+          "volume": 1097690.0,
+          "amount": 2622568016.269989,
           "volume_cumulative": 83788805.0,
           "amount_cumulative": 216636112269.75
         },
@@ -4416,16 +4416,16 @@
         {
           "time": "2026-08-03 10:14",
           "price": 3319.76,
-          "volume": 1281207.0,
-          "amount": 3156912027.5,
-          "volume_cumulative": 86190200.0,
-          "amount_cumulative": 222526673978.25
+          "volume": 1223843.0,
+          "amount": 3040676059.0599976,
+          "volume_cumulative": 86132836.0,
+          "amount_cumulative": 222410438009.81
         },
         {
           "time": "2026-08-03 10:15",
           "price": 3320.64,
-          "volume": 920720.0,
-          "amount": 2196317199.4599915,
+          "volume": 978084.0,
+          "amount": 2312553167.899994,
           "volume_cumulative": 87110920.0,
           "amount_cumulative": 224722991177.71
         },
@@ -4448,16 +4448,16 @@
         {
           "time": "2026-08-03 10:18",
           "price": 3307.62,
-          "volume": 959787.0,
-          "amount": 2330769857.519989,
-          "volume_cumulative": 89998395.0,
-          "amount_cumulative": 231652344803.34
+          "volume": 913481.0,
+          "amount": 2224660835.3599854,
+          "volume_cumulative": 89952089.0,
+          "amount_cumulative": 231546235781.18
         },
         {
           "time": "2026-08-03 10:19",
           "price": 3309.32,
-          "volume": 756465.0,
-          "amount": 1920745713.6100159,
+          "volume": 802771.0,
+          "amount": 2026854735.7700195,
           "volume_cumulative": 90754860.0,
           "amount_cumulative": 233573090516.95
         },
@@ -4480,56 +4480,56 @@
         {
           "time": "2026-08-03 10:22",
           "price": 3315.68,
-          "volume": 792639.0,
-          "amount": 2014021240.6700134,
-          "volume_cumulative": 93345626.0,
-          "amount_cumulative": 240013544222.14
+          "volume": 766733.0,
+          "amount": 1947356064.850006,
+          "volume_cumulative": 93319720.0,
+          "amount_cumulative": 239946879046.32
         },
         {
           "time": "2026-08-03 10:23",
           "price": 3310.82,
-          "volume": 639594.0,
-          "amount": 1760812800.8099976,
+          "volume": 665500.0,
+          "amount": 1827477976.630005,
           "volume_cumulative": 93985220.0,
           "amount_cumulative": 241774357022.95
         },
         {
           "time": "2026-08-03 10:24",
           "price": 3308.92,
-          "volume": 734881.0,
-          "amount": 2247014216.23999,
-          "volume_cumulative": 94720101.0,
-          "amount_cumulative": 244021371239.19
+          "volume": 698005.0,
+          "amount": 2136680051.5899963,
+          "volume_cumulative": 94683225.0,
+          "amount_cumulative": 243911037074.54
         },
         {
           "time": "2026-08-03 10:25",
           "price": 3305.94,
-          "volume": 682015.0,
-          "amount": 1818709485.899994,
+          "volume": 718891.0,
+          "amount": 1929043650.5499878,
           "volume_cumulative": 95402116.0,
           "amount_cumulative": 245840080725.09
         },
         {
           "time": "2026-08-03 10:26",
           "price": 3302.6,
-          "volume": 694898.0,
-          "amount": 1850245951.350006,
-          "volume_cumulative": 96097014.0,
-          "amount_cumulative": 247690326676.44
+          "volume": 664554.0,
+          "amount": 1756429759.2600098,
+          "volume_cumulative": 96066670.0,
+          "amount_cumulative": 247596510484.35
         },
         {
           "time": "2026-08-03 10:27",
           "price": 3302.44,
-          "volume": 625374.0,
-          "amount": 1622118098.350006,
-          "volume_cumulative": 96722388.0,
-          "amount_cumulative": 249312444774.79
+          "volume": 633709.0,
+          "amount": 1662506767.149994,
+          "volume_cumulative": 96700379.0,
+          "amount_cumulative": 249259017251.5
         },
         {
           "time": "2026-08-03 10:28",
           "price": 3303.77,
-          "volume": 518871.0,
-          "amount": 1355233498.9599915,
+          "volume": 540880.0,
+          "amount": 1408661022.25,
           "volume_cumulative": 97241259.0,
           "amount_cumulative": 250667678273.75
         },
@@ -4576,48 +4576,48 @@
         {
           "time": "2026-08-03 10:34",
           "price": 3302.94,
-          "volume": 587415.0,
-          "amount": 1528367208.600006,
-          "volume_cumulative": 101241188.0,
-          "amount_cumulative": 261457351248.32
+          "volume": 541855.0,
+          "amount": 1413747332.7200012,
+          "volume_cumulative": 101195628.0,
+          "amount_cumulative": 261342731372.44
         },
         {
           "time": "2026-08-03 10:35",
           "price": 3306.02,
-          "volume": 600362.0,
-          "amount": 1404948730.100006,
+          "volume": 645922.0,
+          "amount": 1519568605.980011,
           "volume_cumulative": 101841550.0,
           "amount_cumulative": 262862299978.42
         },
         {
           "time": "2026-08-03 10:36",
           "price": 3306.77,
-          "volume": 653431.0,
-          "amount": 1596083386.899994,
-          "volume_cumulative": 102494981.0,
-          "amount_cumulative": 264458383365.32
+          "volume": 627611.0,
+          "amount": 1532394724.8099976,
+          "volume_cumulative": 102469161.0,
+          "amount_cumulative": 264394694703.23
         },
         {
           "time": "2026-08-03 10:37",
           "price": 3316.74,
-          "volume": 695586.0,
-          "amount": 1873173633.5700073,
+          "volume": 721406.0,
+          "amount": 1936862295.6600037,
           "volume_cumulative": 103190567.0,
           "amount_cumulative": 266331556998.89
         },
         {
           "time": "2026-08-03 10:38",
           "price": 3318.02,
-          "volume": 835029.0,
-          "amount": 2398713161.3399963,
-          "volume_cumulative": 104025596.0,
-          "amount_cumulative": 268730270160.23
+          "volume": 803558.0,
+          "amount": 2304698851.7099915,
+          "volume_cumulative": 103994125.0,
+          "amount_cumulative": 268636255850.6
         },
         {
           "time": "2026-08-03 10:39",
           "price": 3311.48,
-          "volume": 602544.0,
-          "amount": 1713447310.899994,
+          "volume": 634015.0,
+          "amount": 1807461620.5299988,
           "volume_cumulative": 104628140.0,
           "amount_cumulative": 270443717471.13
         },
@@ -4648,16 +4648,16 @@
         {
           "time": "2026-08-03 10:43",
           "price": 3322.9,
-          "volume": 584364.0,
-          "amount": 1440963843.2799683,
-          "volume_cumulative": 106889162.0,
-          "amount_cumulative": 276022098859.66
+          "volume": 558604.0,
+          "amount": 1361193175.9099731,
+          "volume_cumulative": 106863402.0,
+          "amount_cumulative": 275942328192.29
         },
         {
           "time": "2026-08-03 10:44",
           "price": 3319.99,
-          "volume": 496224.0,
-          "amount": 1418587746.710022,
+          "volume": 521984.0,
+          "amount": 1498358414.080017,
           "volume_cumulative": 107385386.0,
           "amount_cumulative": 277440686606.37
         },
@@ -4680,16 +4680,16 @@
         {
           "time": "2026-08-03 10:47",
           "price": 3314.02,
-          "volume": 665997.0,
-          "amount": 1667536514.1200562,
-          "volume_cumulative": 109003812.0,
-          "amount_cumulative": 281429587936.09
+          "volume": 644116.0,
+          "amount": 1620039289.9100342,
+          "volume_cumulative": 108981931.0,
+          "amount_cumulative": 281382090711.88
         },
         {
           "time": "2026-08-03 10:48",
           "price": 3308.43,
-          "volume": 512136.0,
-          "amount": 1295061790.0099487,
+          "volume": 534017.0,
+          "amount": 1342559014.2199707,
           "volume_cumulative": 109515948.0,
           "amount_cumulative": 282724649726.1
         },
@@ -4704,40 +4704,40 @@
         {
           "time": "2026-08-03 10:50",
           "price": 3305.38,
-          "volume": 540711.0,
-          "amount": 1340519395.5499878,
-          "volume_cumulative": 110687619.0,
-          "amount_cumulative": 285616000475.08
+          "volume": 518023.0,
+          "amount": 1275839476.119995,
+          "volume_cumulative": 110664931.0,
+          "amount_cumulative": 285551320555.65
         },
         {
           "time": "2026-08-03 10:51",
           "price": 3303.77,
-          "volume": 586944.0,
-          "amount": 1367935689.5199585,
+          "volume": 609632.0,
+          "amount": 1432615608.9499512,
           "volume_cumulative": 111274563.0,
           "amount_cumulative": 286983936164.6
         },
         {
           "time": "2026-08-03 10:52",
           "price": 3302.68,
-          "volume": 493992.0,
-          "amount": 1209731414.460022,
-          "volume_cumulative": 111768555.0,
-          "amount_cumulative": 288193667579.06
+          "volume": 469566.0,
+          "amount": 1162769865.5200195,
+          "volume_cumulative": 111744129.0,
+          "amount_cumulative": 288146706030.12
         },
         {
           "time": "2026-08-03 10:53",
           "price": 3310.48,
-          "volume": 531095.0,
-          "amount": 1448327622.580017,
-          "volume_cumulative": 112299650.0,
-          "amount_cumulative": 289641995201.64
+          "volume": 536488.0,
+          "amount": 1444511217.460022,
+          "volume_cumulative": 112280617.0,
+          "amount_cumulative": 289591217247.58
         },
         {
           "time": "2026-08-03 10:54",
           "price": 3311.35,
-          "volume": 380705.0,
-          "amount": 1103782030.2399902,
+          "volume": 399738.0,
+          "amount": 1154559984.2999878,
           "volume_cumulative": 112680355.0,
           "amount_cumulative": 290745777231.88
         },
@@ -4760,40 +4760,40 @@
         {
           "time": "2026-08-03 10:57",
           "price": 3312.45,
-          "volume": 547982.0,
-          "amount": 1430386947.630005,
-          "volume_cumulative": 114102287.0,
-          "amount_cumulative": 294463819196.18
+          "volume": 515936.0,
+          "amount": 1360942837.580017,
+          "volume_cumulative": 114070241.0,
+          "amount_cumulative": 294394375086.13
         },
         {
           "time": "2026-08-03 10:58",
           "price": 3325.07,
-          "volume": 451978.0,
-          "amount": 1639786578.6600342,
-          "volume_cumulative": 114554265.0,
-          "amount_cumulative": 296103605774.84
+          "volume": 466665.0,
+          "amount": 1649592879.7299805,
+          "volume_cumulative": 114536906.0,
+          "amount_cumulative": 296043967965.86
         },
         {
           "time": "2026-08-03 10:59",
           "price": 3329.9,
-          "volume": 483187.0,
-          "amount": 1768395367.1499634,
+          "volume": 500546.0,
+          "amount": 1828033176.130005,
           "volume_cumulative": 115037452.0,
           "amount_cumulative": 297872001141.99
         },
         {
           "time": "2026-08-03 11:00",
           "price": 3329.41,
-          "volume": 507600.0,
-          "amount": 1782379398.1799927,
-          "volume_cumulative": 115545052.0,
-          "amount_cumulative": 299654380540.17
+          "volume": 492328.0,
+          "amount": 1721066051.0900269,
+          "volume_cumulative": 115529780.0,
+          "amount_cumulative": 299593067193.08
         },
         {
           "time": "2026-08-03 11:01",
           "price": 3338.03,
-          "volume": 509071.0,
-          "amount": 1810144420.7300415,
+          "volume": 524343.0,
+          "amount": 1871457767.8200073,
           "volume_cumulative": 116054123.0,
           "amount_cumulative": 301464524960.9
         },
@@ -4808,32 +4808,32 @@
         {
           "time": "2026-08-03 11:03",
           "price": 3332.58,
-          "volume": 631226.0,
-          "amount": 2050299725.119995,
-          "volume_cumulative": 117348834.0,
-          "amount_cumulative": 305850072996.44
+          "volume": 609418.0,
+          "amount": 1953716453.6799927,
+          "volume_cumulative": 117327026.0,
+          "amount_cumulative": 305753489725.0
         },
         {
           "time": "2026-08-03 11:04",
           "price": 3328.33,
-          "volume": 505502.0,
-          "amount": 1606104245.1400146,
+          "volume": 527310.0,
+          "amount": 1702687516.580017,
           "volume_cumulative": 117854336.0,
           "amount_cumulative": 307456177241.58
         },
         {
           "time": "2026-08-03 11:05",
           "price": 3326.81,
-          "volume": 434465.0,
-          "amount": 1329465479.1599731,
-          "volume_cumulative": 118288801.0,
-          "amount_cumulative": 308785642720.74
+          "volume": 406570.0,
+          "amount": 1245552139.8200073,
+          "volume_cumulative": 118260906.0,
+          "amount_cumulative": 308701729381.4
         },
         {
           "time": "2026-08-03 11:06",
           "price": 3322.51,
-          "volume": 461032.0,
-          "amount": 1393044371.0200195,
+          "volume": 488927.0,
+          "amount": 1476957710.3599854,
           "volume_cumulative": 118749833.0,
           "amount_cumulative": 310178687091.76
         },
@@ -4880,16 +4880,16 @@
         {
           "time": "2026-08-03 11:12",
           "price": 3308.63,
-          "volume": 436900.0,
-          "amount": 1169943211.3099976,
-          "volume_cumulative": 121305313.0,
-          "amount_cumulative": 317625991797.58
+          "volume": 455418.0,
+          "amount": 1225284808.209961,
+          "volume_cumulative": 121323831.0,
+          "amount_cumulative": 317681333394.48
         },
         {
           "time": "2026-08-03 11:13",
           "price": 3309.71,
-          "volume": 346231.0,
-          "amount": 908118967.6799927,
+          "volume": 327713.0,
+          "amount": 852777370.7800293,
           "volume_cumulative": 121651544.0,
           "amount_cumulative": 318534110765.26
         },
@@ -4904,24 +4904,24 @@
         {
           "time": "2026-08-03 11:15",
           "price": 3311.89,
-          "volume": 337489.0,
-          "amount": 957776225.4099731,
-          "volume_cumulative": 122318888.0,
-          "amount_cumulative": 320407121016.36
+          "volume": 355418.0,
+          "amount": 999143322.0199585,
+          "volume_cumulative": 122336817.0,
+          "amount_cumulative": 320448488112.97
         },
         {
           "time": "2026-08-03 11:16",
           "price": 3310.61,
-          "volume": 395905.0,
-          "amount": 1055970224.4400024,
-          "volume_cumulative": 122714793.0,
-          "amount_cumulative": 321463091240.8
+          "volume": 362943.0,
+          "amount": 968910509.1100464,
+          "volume_cumulative": 122699760.0,
+          "amount_cumulative": 321417398622.08
         },
         {
           "time": "2026-08-03 11:17",
           "price": 3314.26,
-          "volume": 344050.0,
-          "amount": 988850479.5200195,
+          "volume": 359083.0,
+          "amount": 1034543098.2399902,
           "volume_cumulative": 123058843.0,
           "amount_cumulative": 322451941720.32
         },
@@ -4936,16 +4936,16 @@
         {
           "time": "2026-08-03 11:19",
           "price": 3319.04,
-          "volume": 377029.0,
-          "amount": 1000810794.7000122,
-          "volume_cumulative": 123829505.0,
-          "amount_cumulative": 324456435962.92
+          "volume": 335316.0,
+          "amount": 862720389.3500366,
+          "volume_cumulative": 123787792.0,
+          "amount_cumulative": 324318345557.57
         },
         {
           "time": "2026-08-03 11:20",
           "price": 3323.44,
-          "volume": 372043.0,
-          "amount": 1257978455.6100464,
+          "volume": 413756.0,
+          "amount": 1396068860.960022,
           "volume_cumulative": 124201548.0,
           "amount_cumulative": 325714414418.53
         },
@@ -4960,40 +4960,40 @@
         {
           "time": "2026-08-03 11:22",
           "price": 3318.06,
-          "volume": 440413.0,
-          "amount": 1078383316.920044,
-          "volume_cumulative": 124942490.0,
-          "amount_cumulative": 327694545878.4
+          "volume": 423234.0,
+          "amount": 1047262815.0800171,
+          "volume_cumulative": 124925311.0,
+          "amount_cumulative": 327663425376.56
         },
         {
           "time": "2026-08-03 11:23",
           "price": 3319.27,
-          "volume": 346438.0,
-          "amount": 878779565.9799805,
+          "volume": 363617.0,
+          "amount": 909900067.8200073,
           "volume_cumulative": 125288928.0,
           "amount_cumulative": 328573325444.38
         },
         {
           "time": "2026-08-03 11:24",
           "price": 3323.27,
-          "volume": 375552.0,
-          "amount": 1076325290.4400024,
-          "volume_cumulative": 125664480.0,
-          "amount_cumulative": 329649650734.82
+          "volume": 364995.0,
+          "amount": 1045499224.539978,
+          "volume_cumulative": 125653923.0,
+          "amount_cumulative": 329618824668.92
         },
         {
           "time": "2026-08-03 11:25",
           "price": 3330.47,
-          "volume": 365728.0,
-          "amount": 1436144473.4799805,
-          "volume_cumulative": 126030208.0,
-          "amount_cumulative": 331085795208.3
+          "volume": 359111.0,
+          "amount": 1391596809.3200073,
+          "volume_cumulative": 126013034.0,
+          "amount_cumulative": 331010421478.24
         },
         {
           "time": "2026-08-03 11:26",
           "price": 3333.06,
-          "volume": 364110.0,
-          "amount": 1409096094.0100098,
+          "volume": 381284.0,
+          "amount": 1484469824.0700073,
           "volume_cumulative": 126394318.0,
           "amount_cumulative": 332494891302.31
         },
@@ -5048,16 +5048,16 @@
         {
           "time": "2026-08-03 13:02",
           "price": 3336.96,
-          "volume": 508056.0,
-          "amount": 1710427998.7700195,
-          "volume_cumulative": 129199072.0,
-          "amount_cumulative": 341134469989.96
+          "volume": 493960.0,
+          "amount": 1657246049.8099976,
+          "volume_cumulative": 129184976.0,
+          "amount_cumulative": 341081288041.0
         },
         {
           "time": "2026-08-03 13:03",
           "price": 3341.15,
-          "volume": 437453.0,
-          "amount": 1396323844.6499634,
+          "volume": 451549.0,
+          "amount": 1449505793.6099854,
           "volume_cumulative": 129636525.0,
           "amount_cumulative": 342530793834.61
         },
@@ -5072,24 +5072,24 @@
         {
           "time": "2026-08-03 13:05",
           "price": 3334.38,
-          "volume": 554412.0,
-          "amount": 1691314780.6900024,
-          "volume_cumulative": 130641086.0,
-          "amount_cumulative": 345603058697.73
+          "volume": 524299.0,
+          "amount": 1594284062.4500122,
+          "volume_cumulative": 130610973.0,
+          "amount_cumulative": 345506027979.49
         },
         {
           "time": "2026-08-03 13:06",
           "price": 3332.34,
-          "volume": 463919.0,
-          "amount": 1389345449.8900146,
-          "volume_cumulative": 131105005.0,
-          "amount_cumulative": 346992404147.62
+          "volume": 477181.0,
+          "amount": 1433455214.9000244,
+          "volume_cumulative": 131088154.0,
+          "amount_cumulative": 346939483194.39
         },
         {
           "time": "2026-08-03 13:07",
           "price": 3332.93,
-          "volume": 357066.0,
-          "amount": 1180489196.7000122,
+          "volume": 373917.0,
+          "amount": 1233410149.9299927,
           "volume_cumulative": 131462071.0,
           "amount_cumulative": 348172893344.32
         },
@@ -5136,16 +5136,16 @@
         {
           "time": "2026-08-03 13:13",
           "price": 3330.42,
-          "volume": 352061.0,
-          "amount": 979412270.170044,
-          "volume_cumulative": 134046747.0,
-          "amount_cumulative": 355623905171.09
+          "volume": 336820.0,
+          "amount": 936115935.210022,
+          "volume_cumulative": 134031506.0,
+          "amount_cumulative": 355580608836.13
         },
         {
           "time": "2026-08-03 13:14",
           "price": 3327.42,
-          "volume": 271812.0,
-          "amount": 778397963.579956,
+          "volume": 287053.0,
+          "amount": 821694298.539978,
           "volume_cumulative": 134318559.0,
           "amount_cumulative": 356402303134.67
         },
@@ -5184,16 +5184,16 @@
         {
           "time": "2026-08-03 13:19",
           "price": 3318.68,
-          "volume": 338557.0,
-          "amount": 846117635.5400391,
-          "volume_cumulative": 136062435.0,
-          "amount_cumulative": 360950221787.4
+          "volume": 319341.0,
+          "amount": 807675979.4700317,
+          "volume_cumulative": 136043219.0,
+          "amount_cumulative": 360911780131.33
         },
         {
           "time": "2026-08-03 13:20",
           "price": 3318.58,
-          "volume": 363203.0,
-          "amount": 969286163.3899536,
+          "volume": 382419.0,
+          "amount": 1007727819.4599609,
           "volume_cumulative": 136425638.0,
           "amount_cumulative": 361919507950.79
         },
@@ -5224,40 +5224,40 @@
         {
           "time": "2026-08-03 13:24",
           "price": 3320.8,
-          "volume": 280096.0,
-          "amount": 772114244.9699707,
-          "volume_cumulative": 137766601.0,
-          "amount_cumulative": 365647532571.5
+          "volume": 262488.0,
+          "amount": 737452727.1099854,
+          "volume_cumulative": 137748993.0,
+          "amount_cumulative": 365612871053.64
         },
         {
           "time": "2026-08-03 13:25",
           "price": 3318.03,
-          "volume": 281322.0,
-          "amount": 862724409.1199951,
+          "volume": 298930.0,
+          "amount": 897385926.9799805,
           "volume_cumulative": 138047923.0,
           "amount_cumulative": 366510256980.62
         },
         {
           "time": "2026-08-03 13:26",
           "price": 3318.16,
-          "volume": 349343.0,
-          "amount": 1028390002.9100342,
-          "volume_cumulative": 138397266.0,
-          "amount_cumulative": 367538646983.53
+          "volume": 335773.0,
+          "amount": 988204278.5999756,
+          "volume_cumulative": 138383696.0,
+          "amount_cumulative": 367498461259.22
         },
         {
           "time": "2026-08-03 13:27",
           "price": 3315.73,
-          "volume": 342196.0,
-          "amount": 992305593.9299927,
-          "volume_cumulative": 138739462.0,
-          "amount_cumulative": 368530952577.46
+          "volume": 342804.0,
+          "amount": 992583722.5600586,
+          "volume_cumulative": 138726500.0,
+          "amount_cumulative": 368491044981.78
         },
         {
           "time": "2026-08-03 13:28",
           "price": 3314.25,
-          "volume": 287488.0,
-          "amount": 865018620.5499878,
+          "volume": 300450.0,
+          "amount": 904926216.2299805,
           "volume_cumulative": 139026950.0,
           "amount_cumulative": 369395971198.01
         },
@@ -5288,16 +5288,16 @@
         {
           "time": "2026-08-03 13:32",
           "price": 3313.22,
-          "volume": 435448.0,
-          "amount": 1109727693.2700195,
-          "volume_cumulative": 140418471.0,
-          "amount_cumulative": 373011701291.38
+          "volume": 419034.0,
+          "amount": 1069949095.3200073,
+          "volume_cumulative": 140402057.0,
+          "amount_cumulative": 372971922693.43
         },
         {
           "time": "2026-08-03 13:33",
           "price": 3310.55,
-          "volume": 357756.0,
-          "amount": 1109342460.8900146,
+          "volume": 374170.0,
+          "amount": 1149121058.8400269,
           "volume_cumulative": 140776227.0,
           "amount_cumulative": 374121043752.27
         },
@@ -5360,16 +5360,16 @@
         {
           "time": "2026-08-03 13:41",
           "price": 3310.24,
-          "volume": 434466.0,
-          "amount": 1077295744.2299805,
-          "volume_cumulative": 143754297.0,
-          "amount_cumulative": 381775048435.06
+          "volume": 419264.0,
+          "amount": 1034916339.9899902,
+          "volume_cumulative": 143739095.0,
+          "amount_cumulative": 381732669030.82
         },
         {
           "time": "2026-08-03 13:42",
           "price": 3311.64,
-          "volume": 316655.0,
-          "amount": 775533727.289978,
+          "volume": 331857.0,
+          "amount": 817913131.5299683,
           "volume_cumulative": 144070952.0,
           "amount_cumulative": 382550582162.35
         },
@@ -5464,16 +5464,16 @@
         {
           "time": "2026-08-03 13:54",
           "price": 3306.6,
-          "volume": 411027.0,
-          "amount": 991963913.5300293,
-          "volume_cumulative": 148546636.0,
-          "amount_cumulative": 393216154430.65
+          "volume": 392957.0,
+          "amount": 951400265.7299805,
+          "volume_cumulative": 148528566.0,
+          "amount_cumulative": 393175590782.85
         },
         {
           "time": "2026-08-03 13:55",
           "price": 3305.58,
-          "volume": 360374.0,
-          "amount": 861744667.8999634,
+          "volume": 378444.0,
+          "amount": 902308315.7000122,
           "volume_cumulative": 148907010.0,
           "amount_cumulative": 394077899098.55
         },
@@ -5496,32 +5496,32 @@
         {
           "time": "2026-08-03 13:58",
           "price": 3300.72,
-          "volume": 475801.0,
-          "amount": 1346148803.330017,
-          "volume_cumulative": 150068256.0,
-          "amount_cumulative": 397211882648.45
+          "volume": 457502.0,
+          "amount": 1283795996.960022,
+          "volume_cumulative": 150049957.0,
+          "amount_cumulative": 397149529842.08
         },
         {
           "time": "2026-08-03 13:59",
           "price": 3299.75,
-          "volume": 402719.0,
-          "amount": 1286943327.3999634,
+          "volume": 421018.0,
+          "amount": 1349296133.7699585,
           "volume_cumulative": 150470975.0,
           "amount_cumulative": 398498825975.85
         },
         {
           "time": "2026-08-03 14:00",
           "price": 3298.06,
-          "volume": 377738.0,
-          "amount": 1025521741.0300293,
-          "volume_cumulative": 150848713.0,
-          "amount_cumulative": 399524347716.88
+          "volume": 353865.0,
+          "amount": 961252540.3099976,
+          "volume_cumulative": 150824840.0,
+          "amount_cumulative": 399460078516.16
         },
         {
           "time": "2026-08-03 14:01",
           "price": 3297.7,
-          "volume": 447151.0,
-          "amount": 1134875074.369995,
+          "volume": 471024.0,
+          "amount": 1199144275.0900269,
           "volume_cumulative": 151295864.0,
           "amount_cumulative": 400659222791.25
         },
@@ -5544,16 +5544,16 @@
         {
           "time": "2026-08-03 14:04",
           "price": 3295.99,
-          "volume": 462644.0,
-          "amount": 1198706869.0100098,
-          "volume_cumulative": 152641439.0,
-          "amount_cumulative": 404300657851.53
+          "volume": 448015.0,
+          "amount": 1159750413.3499756,
+          "volume_cumulative": 152626810.0,
+          "amount_cumulative": 404261701395.87
         },
         {
           "time": "2026-08-03 14:05",
           "price": 3294.13,
-          "volume": 366689.0,
-          "amount": 953612059.8899536,
+          "volume": 381318.0,
+          "amount": 992568515.5499878,
           "volume_cumulative": 153008128.0,
           "amount_cumulative": 405254269911.42
         },
@@ -5568,16 +5568,16 @@
         {
           "time": "2026-08-03 14:07",
           "price": 3294.1,
-          "volume": 439735.0,
-          "amount": 1282733244.1099854,
-          "volume_cumulative": 153833659.0,
-          "amount_cumulative": 407565835676.66
+          "volume": 422089.0,
+          "amount": 1218424323.8099976,
+          "volume_cumulative": 153816013.0,
+          "amount_cumulative": 407501526756.36
         },
         {
           "time": "2026-08-03 14:08",
           "price": 3291.74,
-          "volume": 525868.0,
-          "amount": 1479073817.830017,
+          "volume": 543514.0,
+          "amount": 1543382738.130005,
           "volume_cumulative": 154359527.0,
           "amount_cumulative": 409044909494.49
         },
@@ -5592,16 +5592,16 @@
         {
           "time": "2026-08-03 14:10",
           "price": 3289.35,
-          "volume": 462640.0,
-          "amount": 1452740319.5300293,
-          "volume_cumulative": 155350728.0,
-          "amount_cumulative": 411993612096.58
+          "volume": 431848.0,
+          "amount": 1326120391.210022,
+          "volume_cumulative": 155319936.0,
+          "amount_cumulative": 411866992168.26
         },
         {
           "time": "2026-08-03 14:11",
           "price": 3296.15,
-          "volume": 543968.0,
-          "amount": 1510189542.119995,
+          "volume": 574760.0,
+          "amount": 1636809470.4400024,
           "volume_cumulative": 155894696.0,
           "amount_cumulative": 413503801638.7
         },
@@ -5616,40 +5616,40 @@
         {
           "time": "2026-08-03 14:13",
           "price": 3299.38,
-          "volume": 389303.0,
-          "amount": 1043881921.3500366,
-          "volume_cumulative": 156732487.0,
-          "amount_cumulative": 415744560885.59
+          "volume": 375034.0,
+          "amount": 1005223789.3900146,
+          "volume_cumulative": 156718218.0,
+          "amount_cumulative": 415705902753.63
         },
         {
           "time": "2026-08-03 14:14",
           "price": 3304.03,
-          "volume": 449492.0,
-          "amount": 1148960081.9400024,
+          "volume": 463761.0,
+          "amount": 1187618213.9000244,
           "volume_cumulative": 157181979.0,
           "amount_cumulative": 416893520967.53
         },
         {
           "time": "2026-08-03 14:15",
           "price": 3306.3,
-          "volume": 422722.0,
-          "amount": 1071785573.0899658,
-          "volume_cumulative": 157604701.0,
-          "amount_cumulative": 417965306540.62
+          "volume": 480511.0,
+          "amount": 1184917470.1599731,
+          "volume_cumulative": 157662490.0,
+          "amount_cumulative": 418078438437.69
         },
         {
           "time": "2026-08-03 14:16",
           "price": 3300.44,
-          "volume": 539209.0,
-          "amount": 1325801090.75,
-          "volume_cumulative": 158143910.0,
-          "amount_cumulative": 419291107631.37
+          "volume": 464887.0,
+          "amount": 1168410206.1799927,
+          "volume_cumulative": 158127377.0,
+          "amount_cumulative": 419246848643.87
         },
         {
           "time": "2026-08-03 14:17",
           "price": 3296.76,
-          "volume": 307731.0,
-          "amount": 815399528.9700317,
+          "volume": 324264.0,
+          "amount": 859658516.4700317,
           "volume_cumulative": 158451641.0,
           "amount_cumulative": 420106507160.34
         },
@@ -5672,16 +5672,16 @@
         {
           "time": "2026-08-03 14:20",
           "price": 3297.73,
-          "volume": 320440.0,
-          "amount": 813986641.1999512,
-          "volume_cumulative": 159538679.0,
-          "amount_cumulative": 422848139181.23
+          "volume": 300011.0,
+          "amount": 762391705.789978,
+          "volume_cumulative": 159518250.0,
+          "amount_cumulative": 422796544245.82
         },
         {
           "time": "2026-08-03 14:21",
           "price": 3297.41,
-          "volume": 353287.0,
-          "amount": 794370421.3400269,
+          "volume": 373716.0,
+          "amount": 845965356.75,
           "volume_cumulative": 159891966.0,
           "amount_cumulative": 423642509602.57
         },
@@ -5696,32 +5696,32 @@
         {
           "time": "2026-08-03 14:23",
           "price": 3309.02,
-          "volume": 712482.0,
-          "amount": 1415919767.5,
-          "volume_cumulative": 160970122.0,
-          "amount_cumulative": 426005668231.86
+          "volume": 682269.0,
+          "amount": 1342005431.8900146,
+          "volume_cumulative": 160939909.0,
+          "amount_cumulative": 425931753896.25
         },
         {
           "time": "2026-08-03 14:24",
           "price": 3307.75,
-          "volume": 486104.0,
-          "amount": 1166051165.5900269,
+          "volume": 516317.0,
+          "amount": 1239965501.2000122,
           "volume_cumulative": 161456226.0,
           "amount_cumulative": 427171719397.45
         },
         {
           "time": "2026-08-03 14:25",
           "price": 3312.65,
-          "volume": 535322.0,
-          "amount": 1360731992.0700073,
-          "volume_cumulative": 161991548.0,
-          "amount_cumulative": 428532451389.52
+          "volume": 513898.0,
+          "amount": 1308528307.369995,
+          "volume_cumulative": 161970124.0,
+          "amount_cumulative": 428480247704.82
         },
         {
           "time": "2026-08-03 14:26",
           "price": 3313.93,
-          "volume": 451414.0,
-          "amount": 1231140206.419983,
+          "volume": 472838.0,
+          "amount": 1283343891.119995,
           "volume_cumulative": 162442962.0,
           "amount_cumulative": 429763591595.94
         },
@@ -5744,24 +5744,24 @@
         {
           "time": "2026-08-03 14:29",
           "price": 3309.75,
-          "volume": 415316.0,
-          "amount": 998898760.0900269,
-          "volume_cumulative": 163740714.0,
-          "amount_cumulative": 433041395329.15
+          "volume": 394406.0,
+          "amount": 934395325.3499756,
+          "volume_cumulative": 163719804.0,
+          "amount_cumulative": 432976891894.41
         },
         {
           "time": "2026-08-03 14:30",
           "price": 3305.96,
-          "volume": 504498.0,
-          "amount": 1054188042.6199951,
-          "volume_cumulative": 164245212.0,
-          "amount_cumulative": 434095583371.77
+          "volume": 504791.0,
+          "amount": 1068588548.0599976,
+          "volume_cumulative": 164224595.0,
+          "amount_cumulative": 434045480442.47
         },
         {
           "time": "2026-08-03 14:31",
           "price": 3308.17,
-          "volume": 552652.0,
-          "amount": 1211499321.6999512,
+          "volume": 573269.0,
+          "amount": 1261602251.0,
           "volume_cumulative": 164797864.0,
           "amount_cumulative": 435307082693.47
         },
@@ -5776,16 +5776,16 @@
         {
           "time": "2026-08-03 14:33",
           "price": 3299.79,
-          "volume": 526121.0,
-          "amount": 1173673980.0599976,
-          "volume_cumulative": 165869441.0,
-          "amount_cumulative": 437705291318.37
+          "volume": 555536.0,
+          "amount": 1248091978.5300293,
+          "volume_cumulative": 165898856.0,
+          "amount_cumulative": 437779709316.84
         },
         {
           "time": "2026-08-03 14:34",
           "price": 3300.43,
-          "volume": 621410.0,
-          "amount": 1377446580.6900024,
+          "volume": 591995.0,
+          "amount": 1303028582.2199707,
           "volume_cumulative": 166490851.0,
           "amount_cumulative": 439082737899.06
         },
@@ -5832,16 +5832,16 @@
         {
           "time": "2026-08-03 14:40",
           "price": 3297.19,
-          "volume": 535608.0,
-          "amount": 1260286749.1999512,
-          "volume_cumulative": 169491474.0,
-          "amount_cumulative": 446168414987.35
+          "volume": 512907.0,
+          "amount": 1194720737.380005,
+          "volume_cumulative": 169468773.0,
+          "amount_cumulative": 446102848975.53
         },
         {
           "time": "2026-08-03 14:41",
           "price": 3297.45,
-          "volume": 603378.0,
-          "amount": 1373301906.6600342,
+          "volume": 626079.0,
+          "amount": 1438867918.4799805,
           "volume_cumulative": 170094852.0,
           "amount_cumulative": 447541716894.01
         },
@@ -5920,16 +5920,16 @@
         {
           "time": "2026-08-03 14:51",
           "price": 3301.72,
-          "volume": 1157629.0,
-          "amount": 2434479481.790039,
-          "volume_cumulative": 177779789.0,
-          "amount_cumulative": 465042610301.39
+          "volume": 1100653.0,
+          "amount": 2315397497.920044,
+          "volume_cumulative": 177722813.0,
+          "amount_cumulative": 464923528317.52
         },
         {
           "time": "2026-08-03 14:52",
           "price": 3303.62,
-          "volume": 976080.0,
-          "amount": 2188485322.6799927,
+          "volume": 1033056.0,
+          "amount": 2307567306.549988,
           "volume_cumulative": 178755869.0,
           "amount_cumulative": 467231095624.07
         },
@@ -5976,24 +5976,24 @@
         {
           "time": "2026-08-03 14:58",
           "price": 3299.58,
-          "volume": 92632.0,
-          "amount": 208643524.89001465,
-          "volume_cumulative": 185568032.0,
-          "amount_cumulative": 481786114391.44
+          "volume": 96445.0,
+          "amount": 220473273.82000732,
+          "volume_cumulative": 185571845.0,
+          "amount_cumulative": 481797944140.37
         },
         {
           "time": "2026-08-03 14:59",
           "price": 3299.58,
           "volume": 0.0,
           "amount": 0.0,
-          "volume_cumulative": 185568032.0,
-          "amount_cumulative": 481786114391.44
+          "volume_cumulative": 185571845.0,
+          "amount_cumulative": 481797944140.37
         },
         {
           "time": "2026-08-03 15:00",
           "price": 3302.55,
-          "volume": 2152940.0,
-          "amount": 4718224989.450012,
+          "volume": 2149127.0,
+          "amount": 4706395240.52002,
           "volume_cumulative": 187720972.0,
           "amount_cumulative": 486504339380.89
         }
@@ -6005,13 +6005,13 @@
       "name": "创业板指",
       "symbol": "399006",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3320.09,
         "last": 3302.55,
         "high": 3341.15,
         "low": 3284.73,
-        "vwap": 3311.0314,
+        "vwap": 3311.0442,
         "max_drawdown_percent": 1.5504,
         "intraday_position": 0.3158,
         "pullback_from_high_percent": 1.1553,
@@ -7974,7 +7974,7 @@
       "name": "科创50",
       "symbol": "000688",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1619.29,
         "last": 1552.89,
@@ -9941,7 +9941,7 @@
       "name": "沪深300",
       "symbol": "000300",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 4561.82,
         "last": 4543.18,
@@ -11908,7 +11908,7 @@
       "name": "中证1000",
       "symbol": "000852",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 7055.27,
         "last": 7079.78,
@@ -14570,7 +14570,7 @@
       "name": "北证50",
       "symbol": "899050",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1072.465,
         "last": 1076.069,
@@ -16538,7 +16538,7 @@
       "name": "沪深300ETF",
       "symbol": "510300",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 4.624,
         "last": 4.599,
@@ -18503,7 +18503,7 @@
       "name": "创业板ETF",
       "symbol": "159915",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3.323,
         "last": 3.325,
@@ -20470,7 +20470,7 @@
       "name": "贵州茅台",
       "symbol": "600519",
       "kind": "stock",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1350.6,
         "last": 1358.98,
@@ -22435,7 +22435,7 @@
       "name": "平安银行",
       "symbol": "000001",
       "kind": "stock",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 11.54,
         "last": 11.62,

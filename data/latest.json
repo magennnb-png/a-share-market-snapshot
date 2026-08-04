@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-03T16:14:49+08:00",
-  "generated_at": "2026-08-03T17:18:15+08:00",
+  "generated_at": "2026-08-04T08:08:12+08:00",
   "sources": [
     "sina",
     "tencent"
   ],
-  "is_stale": false,
+  "is_stale": true,
   "errors": [
-    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
+    "eastmoney实时行情失败: ConnectionError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by ProtocolError('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))",
     "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
   ],
   "warnings": [
@@ -28,7 +28,7 @@
       "source": "eastmoney",
       "operation": "quotes",
       "ok": false,
-      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by ProtocolError('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))"
     },
     {
       "source": "tencent",
@@ -50,7 +50,25 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh000688",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399006",
       "ok": true,
       "records": 242
     },
@@ -68,19 +86,7 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh000688",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399006",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh000300",
+      "operation": "intraday:sh510300",
       "ok": true,
       "records": 242
     },
@@ -92,6 +98,12 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sz159915",
       "ok": true,
       "records": 242
@@ -99,18 +111,6 @@
     {
       "source": "tencent",
       "operation": "intraday:sh600519",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz000001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh510300",
       "ok": true,
       "records": 242
     },
@@ -137,7 +137,7 @@
       "low": 3797.64,
       "amount": 952256890000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -156,7 +156,7 @@
       "low": 13407.99,
       "amount": 1045128970000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -175,7 +175,7 @@
       "low": 3280.84,
       "amount": 486504340000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -194,7 +194,7 @@
       "low": 1549.74,
       "amount": 124510600000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -213,7 +213,7 @@
       "low": 4529.19,
       "amount": 615750950000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -232,7 +232,7 @@
       "low": 7042.89,
       "amount": 391183030000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -244,14 +244,14 @@
       "previous_close": 1083.27,
       "open": 1073.33,
       "volume": 7340011,
-      "market_time": "2026-08-03T15:34:32+08:00",
+      "market_time": "2026-08-03T15:34:41+08:00",
       "change": -7.2,
       "change_percent": -0.66,
       "high": 1087.68,
       "low": 1072.02,
       "amount": 13894870500.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     }
@@ -266,7 +266,7 @@
     "turnover_cny": 2010600590025.0,
     "limit_count_method": "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）",
     "source": "sina",
-    "market_time": "2026-08-03T16:30:00+08:00",
+    "market_time": "2026-08-04T16:30:00+08:00",
     "is_stale": false,
     "errors": [],
     "warnings": [
@@ -515,7 +515,7 @@
       "low": 4.591,
       "amount": 4269960000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -534,7 +534,7 @@
       "low": 3.3,
       "amount": 6381410000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -553,7 +553,7 @@
       "low": 1346.0,
       "amount": 4898670000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     },
@@ -572,7 +572,7 @@
       "low": 11.52,
       "amount": 1229340000.0,
       "source": "tencent",
-      "is_stale": false,
+      "is_stale": true,
       "errors": [],
       "warnings": []
     }
