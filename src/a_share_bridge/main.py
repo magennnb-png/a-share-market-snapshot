@@ -37,7 +37,7 @@ def load_config(path: Path) -> tuple[list[Instrument], list[Instrument], dict[st
     return indices, watchlist, payload.get("settings") or {}
 
 
-def collect(config_path: Path, output_dir: Path) -> tuple[dict[str, Any], dict[str, Any], list[Path]]:
+def collect(config_path: Path, output_dir: Path | None = None) -> tuple[dict[str, Any], dict[str, Any], list[Path]]:
     generated = datetime.now(SHANGHAI)
     indices, watchlist, settings = load_config(config_path)
     instruments = indices + watchlist
@@ -98,6 +98,23 @@ def collect(config_path: Path, output_dir: Path) -> tuple[dict[str, Any], dict[s
             errors.append(f"sina行业行情失败: {type(exc).__name__}: {exc}")
             source_reports.append({"source": sina.name, "operation": "industries", "ok": False, "error": str(exc)})
     industries.sort(key=lambda row: float(row.get("change_percent") or 0), reverse=True)
+    industry_count = len(industries)
+    for rank, row in enumerate(industries, start=1):
+        row["rank"] = rank
+        # Prefer the upstream turnover rate.  Sina does not expose it, so use a
+        # transparent cross-sectional activity percentile instead of inventing
+        # a turnover value.
+        row["activity"] = row.get("turnover_rate")
+        row["activity_method"] = "turnover_rate" if row.get("turnover_rate") is not None else "amount_percentile"
+    if industry_count:
+        by_amount = sorted(industries, key=lambda row: float(row.get("amount") or 0))
+        amount_percentile = {
+            str(row.get("code") or row.get("name")): round((position + 1) / industry_count * 100, 4)
+            for position, row in enumerate(by_amount)
+        }
+        for row in industries:
+            if row.get("activity") is None:
+                row["activity"] = amount_percentile.get(str(row.get("code") or row.get("name")))
 
     intraday_items: list[dict[str, Any]] = []
     chain.providers.append(sina)
@@ -161,7 +178,12 @@ def collect(config_path: Path, output_dir: Path) -> tuple[dict[str, Any], dict[s
         "source_status": source_reports,
         "indices": index_quotes,
         "market_breadth": breadth,
-        "industries": {"top10": industries[:10], "bottom10": list(reversed(industries[-10:]))},
+        "industries": {
+            "count": industry_count,
+            "all": industries,
+            "top10": industries[:10],
+            "bottom10": list(reversed(industries[-10:])),
+        },
         "watchlist": watch_quotes,
     }
     intraday = {
@@ -175,7 +197,7 @@ def collect(config_path: Path, output_dir: Path) -> tuple[dict[str, Any], dict[s
         "source_status": source_reports,
         "instruments": intraday_items,
     }
-    paths = write_outputs(snapshot, intraday, output_dir)
+    paths = write_outputs(snapshot, intraday, output_dir) if output_dir is not None else []
     return snapshot, intraday, paths
 
 

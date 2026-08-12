@@ -281,7 +281,7 @@ class EastMoneySource:
                 "invt": 2,
                 "fid": "f3",
                 "fs": "m:90+t:2+f:!50",
-                "fields": "f12,f14,f3,f6",
+                "fields": "f12,f14,f3,f6,f8,f62",
             },
             timeout=self.timeout,
         )
@@ -295,6 +295,8 @@ class EastMoneySource:
                 "name": row.get("f14"),
                 "change_percent": _float(row.get("f3")),
                 "amount": _float(row.get("f6")),
+                "turnover_rate": _float(row.get("f8")),
+                "net_inflow": _float(row.get("f62")),
                 "source": self.name,
             }
             for row in rows
@@ -487,6 +489,8 @@ class SinaSource:
                     "change_percent": _float(parts[5]),
                     "volume": _float(parts[6]),
                     "amount": _float(parts[7]),
+                    "turnover_rate": None,
+                    "net_inflow": None,
                     "leader_symbol": parts[8] if len(parts) > 8 else None,
                     "leader_name": parts[12] if len(parts) > 12 else None,
                     "source": self.name,

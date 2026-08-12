@@ -4,6 +4,7 @@ __pycache__/
 .env
 .pytest_cache/
 .pytest_tmp/
+.test_run_*/
 .coverage
 htmlcov/
 *.egg-info/

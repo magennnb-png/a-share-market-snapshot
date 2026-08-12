@@ -24,12 +24,16 @@ def publish_outputs(
         diff = _run(["git", "diff", "--cached", "--quiet", "--", *relative], root, check=False)
         if diff.returncode == 0:
             result["message"] = "生成文件无变化，无需提交"
+            return result
         else:
             message = commit_message or f"data: update A-share snapshot {generated_at:%Y-%m-%d %H:%M}"
             commit = _run(["git", "commit", "-m", message, "--", *relative], root)
             result["committed"] = True
             result["commit_output"] = commit.stdout.strip()
-        push = _run(["git", "push", "origin", "main"], root)
+        branch = _run(["git", "branch", "--show-current"], root).stdout.strip()
+        if not branch:
+            raise subprocess.CalledProcessError(1, ["git", "branch", "--show-current"], stderr="detached HEAD，不能自动 push")
+        push = _run(["git", "push", "origin", branch], root)
         result["pushed"] = True
         result["push_output"] = (push.stdout + push.stderr).strip()
     except subprocess.CalledProcessError as exc:

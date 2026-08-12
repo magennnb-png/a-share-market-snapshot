@@ -17,3 +17,17 @@ settings:
   request_timeout_seconds: 12
   max_sina_pages: 65
   publish_on_scheduled_run: true
+  # 每次运行主动重取滚动窗口，而不是依赖逐日积累。
+  history_index_days: 500
+  history_breadth_days: 120
+  history_industry_days: 200
+  intraday_retention_days: 10
+  history_workers: 16
+
+# 历史行情观察指数集中配置。新增标的时只需在这里增加一行。
+# eastmoney 使用 “市场.代码”；tencent 仅用于东方财富历史接口失败时回退。
+history_watchlist:
+  - {name: 芯片产业, symbol: H30007, eastmoney: "1.H30007", tencent: shh30007}
+  - {name: 中证传媒, symbol: "399971", eastmoney: "0.399971", tencent: sz399971}
+  # 中证创新药产业指数；优先从中证指数官网回补。
+  - {name: 中证创新药产业, symbol: "931152", eastmoney: "2.931152", tencent: sh931152}
