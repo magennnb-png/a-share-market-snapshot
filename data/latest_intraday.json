@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "market_time": "2026-08-12T14:00:00+08:00",
-  "generated_at": "2026-08-12T13:59:29+08:00",
+  "market_time": "2026-08-12T14:05:00+08:00",
+  "generated_at": "2026-08-12T14:04:33+08:00",
   "sources": [
     "sina",
     "tencent"
@@ -19,7 +19,7 @@
     "沪深300: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
     "中证1000: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
     "北证50: 新浪分时首条为09:31，接口未提供09:30分钟点",
-    "北证50: 新浪分时仅返回179个连续竞价分钟点，未对缺失分钟进行插值",
+    "北证50: 新浪分时仅返回185个连续竞价分钟点，未对缺失分钟进行插值",
     "北证50: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
     "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）"
   ],
@@ -50,39 +50,39 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh000688",
-      "ok": true,
-      "records": 182
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399006",
-      "ok": true,
-      "records": 182
-    },
-    {
-      "source": "tencent",
       "operation": "intraday:sz399001",
       "ok": true,
-      "records": 182
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh000300",
-      "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "tencent",
       "operation": "intraday:sh000001",
       "ok": true,
-      "records": 182
+      "records": 187
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000300",
+      "ok": true,
+      "records": 187
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399006",
+      "ok": true,
+      "records": 187
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000688",
+      "ok": true,
+      "records": 187
     },
     {
       "source": "tencent",
       "operation": "intraday:sh000852",
       "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "tencent",
@@ -92,40 +92,40 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh510300",
+      "operation": "intraday:sh600519",
       "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "tencent",
       "operation": "intraday:sz159915",
       "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh600519",
+      "operation": "intraday:sh510300",
       "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "tencent",
       "operation": "intraday:sz000001",
       "ok": true,
-      "records": 182
+      "records": 187
     },
     {
       "source": "sina",
       "operation": "intraday:bj899050",
       "ok": true,
-      "records": 179
+      "records": 185
     }
   ],
   "instruments": [
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -1577,11 +1577,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 3946.28,
-          "volume": 1036402.0,
-          "amount": 1696860614.0999756,
-          "volume_cumulative": 400503814.0,
-          "amount_cumulative": 799173809053.0
+          "price": 3945.77,
+          "volume": 1847072.0,
+          "amount": 3011738328.7999268,
+          "volume_cumulative": 401314484.0,
+          "amount_cumulative": 800488686767.7
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 3944.15,
+          "volume": 2139475.0,
+          "amount": 3386521438.800049,
+          "volume_cumulative": 403453959.0,
+          "amount_cumulative": 803875208206.5
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 3943.52,
+          "volume": 1948901.0,
+          "amount": 3094081322.199951,
+          "volume_cumulative": 405402860.0,
+          "amount_cumulative": 806969289528.7
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 3943.39,
+          "volume": 1838199.0,
+          "amount": 2710356612.0,
+          "volume_cumulative": 407241059.0,
+          "amount_cumulative": 809679646140.7
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 3941.6,
+          "volume": 1541696.0,
+          "amount": 3185749627.800049,
+          "volume_cumulative": 408782755.0,
+          "amount_cumulative": 812865395768.5
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 3943.07,
+          "volume": 1066124.0,
+          "amount": 1838009630.5,
+          "volume_cumulative": 409848879.0,
+          "amount_cumulative": 814703405399.0
         }
       ],
       "errors": [],
@@ -1594,15 +1634,15 @@
       "is_stale": false,
       "metrics": {
         "open": 3933.55,
-        "last": 3946.28,
+        "last": 3943.07,
         "high": 3947.0,
         "low": 3929.12,
-        "vwap": 3938.9469,
+        "vwap": 3939.0487,
         "max_drawdown_percent": 0.2564,
-        "intraday_position": 0.9597,
-        "pullback_from_high_percent": 0.0182,
-        "recovery_from_low_percent": 0.4367,
-        "open_to_last_percent": 0.3236,
+        "intraday_position": 0.7802,
+        "pullback_from_high_percent": 0.0996,
+        "recovery_from_low_percent": 0.355,
+        "open_to_last_percent": 0.242,
         "gap_at_open_percent": -0.0137,
         "high_time": "2026-08-12 13:57",
         "low_time": "2026-08-12 09:33",
@@ -1612,7 +1652,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -3064,11 +3104,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 14393.6,
-          "volume": 902277.0,
-          "amount": 1599463429.9000244,
-          "volume_cumulative": 499519634.0,
-          "amount_cumulative": 947435964520.0
+          "price": 14390.18,
+          "volume": 1846390.0,
+          "amount": 3082472011.4000244,
+          "volume_cumulative": 500463747.0,
+          "amount_cumulative": 948918973101.5
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 14381.86,
+          "volume": 2271442.0,
+          "amount": 3586823799.839966,
+          "volume_cumulative": 502735189.0,
+          "amount_cumulative": 952505796901.34
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 14373.63,
+          "volume": 1829773.0,
+          "amount": 3148209990.4500732,
+          "volume_cumulative": 504564962.0,
+          "amount_cumulative": 955654006891.79
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 14374.31,
+          "volume": 1779460.0,
+          "amount": 3066250142.0200195,
+          "volume_cumulative": 506344422.0,
+          "amount_cumulative": 958720257033.81
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 14365.93,
+          "volume": 1884568.0,
+          "amount": 3587933029.579956,
+          "volume_cumulative": 508228990.0,
+          "amount_cumulative": 962308190063.39
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 14376.49,
+          "volume": 1166878.0,
+          "amount": 2133908880.6099854,
+          "volume_cumulative": 509395868.0,
+          "amount_cumulative": 964442098944.0
         }
       ],
       "errors": [],
@@ -3081,15 +3161,15 @@
       "is_stale": false,
       "metrics": {
         "open": 14253.12,
-        "last": 14393.6,
+        "last": 14376.49,
         "high": 14466.51,
         "low": 14242.5,
-        "vwap": 14361.1665,
+        "vwap": 14361.4499,
         "max_drawdown_percent": 0.7633,
-        "intraday_position": 0.6745,
-        "pullback_from_high_percent": 0.504,
-        "recovery_from_low_percent": 1.0609,
-        "open_to_last_percent": 0.9856,
+        "intraday_position": 0.5981,
+        "pullback_from_high_percent": 0.6223,
+        "recovery_from_low_percent": 0.9408,
+        "open_to_last_percent": 0.8656,
         "gap_at_open_percent": -0.0443,
         "high_time": "2026-08-12 13:03",
         "low_time": "2026-08-12 09:33",
@@ -3101,7 +3181,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -4553,11 +4633,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 3592.13,
-          "volume": 256328.0,
-          "amount": 721996083.2000122,
-          "volume_cumulative": 145938110.0,
-          "amount_cumulative": 460883674170.0
+          "price": 3591.12,
+          "volume": 517518.0,
+          "amount": 1322036682.7999878,
+          "volume_cumulative": 146199300.0,
+          "amount_cumulative": 461483714769.6
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 3589.1,
+          "volume": 571793.0,
+          "amount": 1499796615.080017,
+          "volume_cumulative": 146771093.0,
+          "amount_cumulative": 462983511384.68
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 3585.82,
+          "volume": 525411.0,
+          "amount": 1457057599.7600098,
+          "volume_cumulative": 147296504.0,
+          "amount_cumulative": 464440568984.44
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 3586.01,
+          "volume": 449733.0,
+          "amount": 1349153577.210022,
+          "volume_cumulative": 147746237.0,
+          "amount_cumulative": 465789722561.65
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 3584.12,
+          "volume": 559145.0,
+          "amount": 1653697111.9699707,
+          "volume_cumulative": 148305382.0,
+          "amount_cumulative": 467443419673.62
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 3587.21,
+          "volume": 337983.0,
+          "amount": 933763983.3800049,
+          "volume_cumulative": 148643365.0,
+          "amount_cumulative": 468377183657.0
         }
       ],
       "errors": [],
@@ -4570,15 +4690,15 @@
       "is_stale": false,
       "metrics": {
         "open": 3542.13,
-        "last": 3592.13,
+        "last": 3587.21,
         "high": 3625.19,
         "low": 3542.13,
-        "vwap": 3583.2398,
+        "vwap": 3583.3043,
         "max_drawdown_percent": 1.1555,
-        "intraday_position": 0.602,
-        "pullback_from_high_percent": 0.912,
-        "recovery_from_low_percent": 1.4116,
-        "open_to_last_percent": 1.4116,
+        "intraday_position": 0.5427,
+        "pullback_from_high_percent": 1.0477,
+        "recovery_from_low_percent": 1.2727,
+        "open_to_last_percent": 1.2727,
         "gap_at_open_percent": -0.1981,
         "high_time": "2026-08-12 13:03",
         "low_time": "2026-08-12 09:30",
@@ -4590,7 +4710,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -6042,11 +6162,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 1727.83,
-          "volume": 11351.0,
-          "amount": 133346014.0,
-          "volume_cumulative": 7688285.0,
-          "amount_cumulative": 83519964237.0
+          "price": 1727.31,
+          "volume": 19351.0,
+          "amount": 252866475.0,
+          "volume_cumulative": 7696285.0,
+          "amount_cumulative": 83639484698.0
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 1726.23,
+          "volume": 30904.0,
+          "amount": 290278584.0,
+          "volume_cumulative": 7727189.0,
+          "amount_cumulative": 83929763282.0
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 1724.44,
+          "volume": 20853.0,
+          "amount": 291257522.0,
+          "volume_cumulative": 7748042.0,
+          "amount_cumulative": 84221020804.0
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 1724.14,
+          "volume": 34079.0,
+          "amount": 313916081.0,
+          "volume_cumulative": 7782121.0,
+          "amount_cumulative": 84534936885.0
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 1723.36,
+          "volume": 37908.0,
+          "amount": 355267593.0,
+          "volume_cumulative": 7820029.0,
+          "amount_cumulative": 84890204478.0
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 1725.44,
+          "volume": 21010.0,
+          "amount": 200043817.0,
+          "volume_cumulative": 7841039.0,
+          "amount_cumulative": 85090248295.0
         }
       ],
       "errors": [],
@@ -6059,15 +6219,15 @@
       "is_stale": false,
       "metrics": {
         "open": 1720.36,
-        "last": 1727.83,
+        "last": 1725.44,
         "high": 1747.87,
         "low": 1712.7,
-        "vwap": 1731.5167,
-        "max_drawdown_percent": 1.2764,
-        "intraday_position": 0.4302,
-        "pullback_from_high_percent": 1.1465,
-        "recovery_from_low_percent": 0.8834,
-        "open_to_last_percent": 0.4342,
+        "vwap": 1731.3842,
+        "max_drawdown_percent": 1.4023,
+        "intraday_position": 0.3622,
+        "pullback_from_high_percent": 1.2833,
+        "recovery_from_low_percent": 0.7439,
+        "open_to_last_percent": 0.2953,
         "gap_at_open_percent": 0.6353,
         "high_time": "2026-08-12 11:08",
         "low_time": "2026-08-12 09:33",
@@ -6079,7 +6239,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -7531,11 +7691,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 4689.22,
-          "volume": 395384.0,
-          "amount": 1035323480.5999756,
-          "volume_cumulative": 145956884.0,
-          "amount_cumulative": 464351617264.0
+          "price": 4688.48,
+          "volume": 736733.0,
+          "amount": 1862437548.8999634,
+          "volume_cumulative": 146298233.0,
+          "amount_cumulative": 465178731332.3
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 4687.06,
+          "volume": 993833.0,
+          "amount": 2181426751.799988,
+          "volume_cumulative": 147292066.0,
+          "amount_cumulative": 467360158084.1
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 4685.99,
+          "volume": 747920.0,
+          "amount": 1699587676.9000244,
+          "volume_cumulative": 148039986.0,
+          "amount_cumulative": 469059745761.0
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 4686.17,
+          "volume": 877686.0,
+          "amount": 1722665300.2000122,
+          "volume_cumulative": 148917672.0,
+          "amount_cumulative": 470782411061.2
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 4684.02,
+          "volume": 643642.0,
+          "amount": 1932015037.0,
+          "volume_cumulative": 149561314.0,
+          "amount_cumulative": 472714426098.2
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 4686.17,
+          "volume": 509097.0,
+          "amount": 1339203391.7999878,
+          "volume_cumulative": 150070411.0,
+          "amount_cumulative": 474053629490.0
         }
       ],
       "errors": [],
@@ -7548,15 +7748,15 @@
       "is_stale": false,
       "metrics": {
         "open": 4660.47,
-        "last": 4689.22,
+        "last": 4686.17,
         "high": 4700.17,
         "low": 4658.8,
-        "vwap": 4680.7163,
+        "vwap": 4680.8649,
         "max_drawdown_percent": 0.4662,
-        "intraday_position": 0.7353,
-        "pullback_from_high_percent": 0.233,
-        "recovery_from_low_percent": 0.653,
-        "open_to_last_percent": 0.6169,
+        "intraday_position": 0.6616,
+        "pullback_from_high_percent": 0.2979,
+        "recovery_from_low_percent": 0.5875,
+        "open_to_last_percent": 0.5514,
         "gap_at_open_percent": -0.0712,
         "high_time": "2026-08-12 13:03",
         "low_time": "2026-08-12 09:31",
@@ -7566,7 +7766,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -9018,11 +9218,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 7782.84,
-          "volume": 404752.0,
-          "amount": 686308504.2999878,
-          "volume_cumulative": 191972680.0,
-          "amount_cumulative": 389564369578.0
+          "price": 7780.48,
+          "volume": 743988.0,
+          "amount": 1217978849.0,
+          "volume_cumulative": 192311916.0,
+          "amount_cumulative": 390096039922.7
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 7776.1,
+          "volume": 872684.0,
+          "amount": 1389962423.0,
+          "volume_cumulative": 193184600.0,
+          "amount_cumulative": 391486002345.7
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 7770.58,
+          "volume": 822036.0,
+          "amount": 1348459673.2999878,
+          "volume_cumulative": 194006636.0,
+          "amount_cumulative": 392834462019.0
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 7770.03,
+          "volume": 680044.0,
+          "amount": 1144892882.4000244,
+          "volume_cumulative": 194686680.0,
+          "amount_cumulative": 393979354901.4
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 7765.05,
+          "volume": 759288.0,
+          "amount": 1497287763.8999634,
+          "volume_cumulative": 195445968.0,
+          "amount_cumulative": 395476642665.3
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 7772.59,
+          "volume": 505125.0,
+          "amount": 845452844.7000122,
+          "volume_cumulative": 195951093.0,
+          "amount_cumulative": 396322095510.0
         }
       ],
       "errors": [],
@@ -9035,15 +9275,15 @@
       "is_stale": false,
       "metrics": {
         "open": 7704.96,
-        "last": 7782.84,
+        "last": 7772.59,
         "high": 7804.18,
         "low": 7696.35,
-        "vwap": 7760.8625,
+        "vwap": 7761.0785,
         "max_drawdown_percent": 0.5679,
-        "intraday_position": 0.8021,
-        "pullback_from_high_percent": 0.2734,
-        "recovery_from_low_percent": 1.1238,
-        "open_to_last_percent": 1.0108,
+        "intraday_position": 0.707,
+        "pullback_from_high_percent": 0.4048,
+        "recovery_from_low_percent": 0.9906,
+        "open_to_last_percent": 0.8777,
         "gap_at_open_percent": 0.0898,
         "high_time": "2026-08-12 11:29",
         "low_time": "2026-08-12 09:33",
@@ -9053,7 +9293,7 @@
     {
       "source": "sina",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T13:59:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:31",
@@ -11023,12 +11263,78 @@
           "amount": 36086784.0,
           "volume_cumulative": 503496441.0,
           "amount_cumulative": 11578606592.0
+        },
+        {
+          "time": "2026-08-12 14:00",
+          "price": 1112.333,
+          "open": 1112.513,
+          "high": 1112.513,
+          "low": 1112.33,
+          "volume": 1361543.0,
+          "amount": 27160576.0,
+          "volume_cumulative": 504857984.0,
+          "amount_cumulative": 11605767168.0
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 1111.887,
+          "open": 1112.343,
+          "high": 1112.343,
+          "low": 1111.887,
+          "volume": 1786549.0,
+          "amount": 35841024.0,
+          "volume_cumulative": 506644533.0,
+          "amount_cumulative": 11641608192.0
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 1111.112,
+          "open": 1111.889,
+          "high": 1111.889,
+          "low": 1111.112,
+          "volume": 1846869.0,
+          "amount": 37985280.0,
+          "volume_cumulative": 508491402.0,
+          "amount_cumulative": 11679593472.0
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 1111.128,
+          "open": 1111.216,
+          "high": 1111.246,
+          "low": 1111.045,
+          "volume": 1337342.0,
+          "amount": 29091840.0,
+          "volume_cumulative": 509828744.0,
+          "amount_cumulative": 11708685312.0
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 1110.855,
+          "open": 1111.203,
+          "high": 1111.203,
+          "low": 1110.855,
+          "volume": 1800069.0,
+          "amount": 39735296.0,
+          "volume_cumulative": 511628813.0,
+          "amount_cumulative": 11748420608.0
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 1110.776,
+          "open": 1110.824,
+          "high": 1110.826,
+          "low": 1110.776,
+          "volume": 591685.0,
+          "amount": 13666304.0,
+          "volume_cumulative": 512220498.0,
+          "amount_cumulative": 11762086912.0
         }
       ],
       "errors": [],
       "warnings": [
         "新浪分时首条为09:31，接口未提供09:30分钟点",
-        "新浪分时仅返回179个连续竞价分钟点，未对缺失分钟进行插值",
+        "新浪分时仅返回185个连续竞价分钟点，未对缺失分钟进行插值",
         "指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值"
       ],
       "name": "北证50",
@@ -11037,15 +11343,15 @@
       "is_stale": false,
       "metrics": {
         "open": 1110.113,
-        "last": 1112.569,
+        "last": 1110.776,
         "high": 1118.582,
         "low": 1109.23,
-        "vwap": 1114.6222,
-        "max_drawdown_percent": 0.6867,
-        "intraday_position": 0.357,
-        "pullback_from_high_percent": 0.5376,
-        "recovery_from_low_percent": 0.301,
-        "open_to_last_percent": 0.2212,
+        "vwap": 1114.5671,
+        "max_drawdown_percent": 0.6978,
+        "intraday_position": 0.1653,
+        "pullback_from_high_percent": 0.6978,
+        "recovery_from_low_percent": 0.1394,
+        "open_to_last_percent": 0.0597,
         "gap_at_open_percent": -0.2791,
         "high_time": "2026-08-12 09:57",
         "low_time": "2026-08-12 09:32",
@@ -11055,7 +11361,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -12508,10 +12814,50 @@
         {
           "time": "2026-08-12 14:00",
           "price": 4.748,
-          "volume": 5565.0,
-          "amount": 2642374.160000086,
-          "volume_cumulative": 4299860.0,
-          "amount_cumulative": 2038998689.0
+          "volume": 8553.0,
+          "amount": 4060663.0,
+          "volume_cumulative": 4302848.0,
+          "amount_cumulative": 2040416977.84
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 4.745,
+          "volume": 26826.0,
+          "amount": 12732869.99000001,
+          "volume_cumulative": 4329674.0,
+          "amount_cumulative": 2053149847.83
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 4.745,
+          "volume": 21649.0,
+          "amount": 10272463.0,
+          "volume_cumulative": 4351323.0,
+          "amount_cumulative": 2063422310.83
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 4.744,
+          "volume": 12591.0,
+          "amount": 5974389.0,
+          "volume_cumulative": 4363914.0,
+          "amount_cumulative": 2069396699.83
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 4.742,
+          "volume": 17635.0,
+          "amount": 8363925.0,
+          "volume_cumulative": 4381549.0,
+          "amount_cumulative": 2077760624.83
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 4.745,
+          "volume": 25595.0,
+          "amount": 12141989.170000076,
+          "volume_cumulative": 4407144.0,
+          "amount_cumulative": 2089902614.0
         }
       ],
       "errors": [],
@@ -12522,15 +12868,15 @@
       "is_stale": false,
       "metrics": {
         "open": 4.727,
-        "last": 4.748,
+        "last": 4.745,
         "high": 4.758,
         "low": 4.722,
         "vwap": 4.7422,
         "max_drawdown_percent": 0.4414,
-        "intraday_position": 0.7222,
-        "pullback_from_high_percent": 0.2102,
-        "recovery_from_low_percent": 0.5506,
-        "open_to_last_percent": 0.4443,
+        "intraday_position": 0.6389,
+        "pullback_from_high_percent": 0.2732,
+        "recovery_from_low_percent": 0.4871,
+        "open_to_last_percent": 0.3808,
         "gap_at_open_percent": -0.0212,
         "high_time": "2026-08-12 13:03",
         "low_time": "2026-08-12 09:31",
@@ -12540,7 +12886,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -13992,11 +14338,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 3.609,
-          "volume": 16664.0,
-          "amount": 6015620.78000021,
-          "volume_cumulative": 11048150.0,
-          "amount_cumulative": 3984253500.0
+          "price": 3.61,
+          "volume": 22007.0,
+          "amount": 7944905.6000003815,
+          "volume_cumulative": 11053493.0,
+          "amount_cumulative": 3986182784.82
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 3.608,
+          "volume": 29518.0,
+          "amount": 10651728.399999619,
+          "volume_cumulative": 11083011.0,
+          "amount_cumulative": 3996834513.22
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 3.605,
+          "volume": 16434.0,
+          "amount": 5925402.300000191,
+          "volume_cumulative": 11099445.0,
+          "amount_cumulative": 4002759915.52
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 3.605,
+          "volume": 14351.0,
+          "amount": 5174218.199999809,
+          "volume_cumulative": 11113796.0,
+          "amount_cumulative": 4007934133.72
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 3.604,
+          "volume": 26056.0,
+          "amount": 9389423.900000095,
+          "volume_cumulative": 11139852.0,
+          "amount_cumulative": 4017323557.62
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 3.607,
+          "volume": 47557.0,
+          "amount": 17147609.380000114,
+          "volume_cumulative": 11187409.0,
+          "amount_cumulative": 4034471167.0
         }
       ],
       "errors": [],
@@ -14007,15 +14393,15 @@
       "is_stale": false,
       "metrics": {
         "open": 3.556,
-        "last": 3.609,
+        "last": 3.607,
         "high": 3.643,
         "low": 3.556,
         "vwap": 3.6066,
         "max_drawdown_percent": 1.1254,
-        "intraday_position": 0.6092,
-        "pullback_from_high_percent": 0.9333,
-        "recovery_from_low_percent": 1.4904,
-        "open_to_last_percent": 1.4904,
+        "intraday_position": 0.5862,
+        "pullback_from_high_percent": 0.9882,
+        "recovery_from_low_percent": 1.4342,
+        "open_to_last_percent": 1.4342,
         "gap_at_open_percent": -0.2525,
         "high_time": "2026-08-12 13:03",
         "low_time": "2026-08-12 09:30",
@@ -14027,7 +14413,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -15479,11 +15865,51 @@
         },
         {
           "time": "2026-08-12 14:00",
-          "price": 1354.82,
-          "volume": 50.0,
-          "amount": 6789797.46999979,
-          "volume_cumulative": 27667.0,
-          "amount_cumulative": 3721368481.0
+          "price": 1356.2,
+          "volume": 413.0,
+          "amount": 55988930.80999994,
+          "volume_cumulative": 28030.0,
+          "amount_cumulative": 3770567614.34
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 1355.8,
+          "volume": 160.0,
+          "amount": 21690369.170000076,
+          "volume_cumulative": 28190.0,
+          "amount_cumulative": 3792257983.51
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 1355.99,
+          "volume": 173.0,
+          "amount": 23445456.14999962,
+          "volume_cumulative": 28363.0,
+          "amount_cumulative": 3815703439.66
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 1353.51,
+          "volume": 156.0,
+          "amount": 21145020.220000267,
+          "volume_cumulative": 28519.0,
+          "amount_cumulative": 3836848459.88
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 1354.01,
+          "volume": 131.0,
+          "amount": 17726920.5,
+          "volume_cumulative": 28650.0,
+          "amount_cumulative": 3854575380.38
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 1353.95,
+          "volume": 63.0,
+          "amount": 8543999.619999886,
+          "volume_cumulative": 28713.0,
+          "amount_cumulative": 3863119380.0
         }
       ],
       "errors": [],
@@ -15494,17 +15920,17 @@
       "is_stale": false,
       "metrics": {
         "open": 1346.5,
-        "last": 1354.82,
-        "high": 1354.89,
+        "last": 1353.95,
+        "high": 1356.2,
         "low": 1334.48,
-        "vwap": 1344.9412,
+        "vwap": 1345.3207,
         "max_drawdown_percent": 1.1286,
-        "intraday_position": 0.9966,
-        "pullback_from_high_percent": 0.0052,
-        "recovery_from_low_percent": 1.5242,
-        "open_to_last_percent": 0.6179,
+        "intraday_position": 0.8964,
+        "pullback_from_high_percent": 0.1659,
+        "recovery_from_low_percent": 1.459,
+        "open_to_last_percent": 0.5533,
         "gap_at_open_percent": 0.0,
-        "high_time": "2026-08-12 13:57",
+        "high_time": "2026-08-12 14:00",
         "low_time": "2026-08-12 09:31",
         "patterns": [
           "探底回升",
@@ -15515,7 +15941,7 @@
     {
       "source": "tencent",
       "market_date": "2026-08-12",
-      "market_time": "2026-08-12T14:00:00+08:00",
+      "market_time": "2026-08-12T14:05:00+08:00",
       "points": [
         {
           "time": "2026-08-12 09:30",
@@ -16968,10 +17394,50 @@
         {
           "time": "2026-08-12 14:00",
           "price": 11.26,
-          "volume": 319.0,
-          "amount": 359565.8100000024,
-          "volume_cumulative": 463865.0,
-          "amount_cumulative": 521262071.0
+          "volume": 904.0,
+          "amount": 1017529.0,
+          "volume_cumulative": 464450.0,
+          "amount_cumulative": 521920034.19
+        },
+        {
+          "time": "2026-08-12 14:01",
+          "price": 11.27,
+          "volume": 4627.0,
+          "amount": 5210999.99000001,
+          "volume_cumulative": 469077.0,
+          "amount_cumulative": 527131034.18
+        },
+        {
+          "time": "2026-08-12 14:02",
+          "price": 11.28,
+          "volume": 6841.0,
+          "amount": 7709688.629999995,
+          "volume_cumulative": 475918.0,
+          "amount_cumulative": 534840722.81
+        },
+        {
+          "time": "2026-08-12 14:03",
+          "price": 11.28,
+          "volume": 3465.0,
+          "amount": 3907820.98999995,
+          "volume_cumulative": 479383.0,
+          "amount_cumulative": 538748543.8
+        },
+        {
+          "time": "2026-08-12 14:04",
+          "price": 11.27,
+          "volume": 4813.0,
+          "amount": 5424887.330000043,
+          "volume_cumulative": 484196.0,
+          "amount_cumulative": 544173431.13
+        },
+        {
+          "time": "2026-08-12 14:05",
+          "price": 11.26,
+          "volume": 1570.0,
+          "amount": 1769370.8700000048,
+          "volume_cumulative": 485766.0,
+          "amount_cumulative": 545942802.0
         }
       ],
       "errors": [],
@@ -16985,7 +17451,7 @@
         "last": 11.26,
         "high": 11.28,
         "low": 11.21,
-        "vwap": 11.2386,
+        "vwap": 11.2402,
         "max_drawdown_percent": 0.6206,
         "intraday_position": 0.7143,
         "pullback_from_high_percent": 0.1773,

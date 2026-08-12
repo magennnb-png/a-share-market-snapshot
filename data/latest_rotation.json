@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-12",
-  "generated_at": "2026-08-12T13:59:29+08:00",
+  "generated_at": "2026-08-12T14:04:33+08:00",
   "rotation": {
     "date": "2026-08-12",
     "leader_1": "家具行业",
-    "leader_2": "玻璃行业",
-    "leader_3": "印刷包装",
+    "leader_2": "印刷包装",
+    "leader_3": "玻璃行业",
     "laggard_1": "石油行业",
     "laggard_2": "陶瓷行业",
-    "laggard_3": "船舶制造",
+    "laggard_3": "生物制药",
     "industry_count": 49,
     "source": "sina"
   },
