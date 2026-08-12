@@ -5,6 +5,7 @@ __pycache__/
 .pytest_cache/
 .pytest_tmp/
 .test_run_*/
+.test_*/
 .coverage
 htmlcov/
 *.egg-info/

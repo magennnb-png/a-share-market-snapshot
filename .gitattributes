@@ -1,0 +1,29 @@
+* text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# CSV files are written with a UTF-8 BOM and CRLF for Windows/Excel. Git text
+# normalization preserves the BOM while keeping checkouts consistently CRLF.
+*.csv text eol=crlf
+
+# Native Windows launchers use CRLF. Both files intentionally contain ASCII
+# control text so Windows PowerShell 5.1 does not depend on ANSI/UTF-8 locale.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# The updater writes data files with Windows newlines. Keep checkout and
+# generated forms identical so daily `git add data/` stays warning-free.
+data/**/*.json text eol=crlf
+data/**/*.md text eol=crlf
+data/**/*.csv text eol=crlf
+data/*.json text eol=crlf
+data/*.md text eol=crlf
+
+# Static documentation is authored in LF and is not rewritten by the updater.
+data/history/README.md text eol=lf

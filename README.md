@@ -27,6 +27,8 @@ git push --dry-run
 
 双击仓库根目录的 `update_market.bat`，等待窗口显示 `Git Push: SUCCESS`。脚本失败时不会提交坏数据，窗口会停留并显示网络、数据源、过期行情、JSON、Git pull/commit/push 等具体步骤。
 
+GitHub 网络暂时不可用时，行情抓取、校验和本地 commit 仍会继续。窗口会显示 `Market update: SUCCESS` 和 `Git push: FAILED - NETWORK`，本地提交会保留；下次运行会自动先尝试上传旧提交。只有明确检测到 non-fast-forward、分叉历史或 merge conflict 才停止并要求人工处理，脚本不会自动 merge、reset 或 force push。
+
 PowerShell 等价入口：
 
 ```powershell
