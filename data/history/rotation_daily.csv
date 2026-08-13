@@ -1,5 +1,4 @@
 ﻿date,leader_1,leader_2,leader_3,laggard_1,laggard_2,laggard_3,industry_count,source
-2025-08-15,玻璃行业,电器行业,有色金属,家具行业,陶瓷行业,飞机制造,48,sina_membership+tencent_equal_weight
 2025-08-18,陶瓷行业,船舶制造,传媒娱乐,钢铁行业,农药化肥,煤炭行业,48,sina_membership+tencent_equal_weight
 2025-08-19,陶瓷行业,酿酒行业,开发区,飞机制造,船舶制造,金融行业,48,sina_membership+tencent_equal_weight
 2025-08-20,酿酒行业,化纤行业,纺织机械,船舶制造,医疗器械,公路桥梁,48,sina_membership+tencent_equal_weight
@@ -239,3 +238,4 @@
 2026-08-10,农林牧渔,酒店旅游,食品行业,次新股,金融行业,玻璃行业,49,sina_membership+tencent_equal_weight
 2026-08-11,石油行业,服装鞋类,塑料制品,有色金属,飞机制造,陶瓷行业,49,sina_membership+tencent_equal_weight
 2026-08-12,家具行业,玻璃行业,印刷包装,石油行业,陶瓷行业,生物制药,49,sina
+2026-08-13,陶瓷行业,医疗器械,生物制药,石油行业,农药化肥,有色金属,49,sina
