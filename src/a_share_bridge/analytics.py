@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, time
+from statistics import median
 from typing import Any, Iterable
 
 
@@ -129,6 +130,7 @@ def limit_percent_for(code: str, name: str) -> float:
 
 def calculate_market_breadth(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
     valid = [row for row in rows if row.get("last") not in (None, 0)]
+    changes = [float(row.get("change_percent") or 0) for row in valid]
     up = sum(1 for row in valid if float(row.get("change_percent") or 0) > 0)
     down = sum(1 for row in valid if float(row.get("change_percent") or 0) < 0)
     flat = len(valid) - up - down
@@ -149,5 +151,6 @@ def calculate_market_breadth(rows: Iterable[dict[str, Any]]) -> dict[str, Any]:
         "limit_up": limit_up,
         "limit_down": limit_down,
         "turnover_cny": round(sum(float(row.get("amount") or 0) for row in valid), 2),
+        "median_change_percent": round(median(changes), 4) if changes else None,
         "limit_count_method": "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）",
     }

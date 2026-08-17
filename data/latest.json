@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "market_time": "2026-08-17T15:57:25+08:00",
-  "generated_at": "2026-08-17T15:57:28+08:00",
+  "market_time": "2026-08-17T16:14:55+08:00",
+  "generated_at": "2026-08-17T17:55:03+08:00",
   "sources": [
     "sina",
     "tencent"
   ],
   "is_stale": false,
   "errors": [
-    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
+    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))",
     "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
   ],
   "warnings": [
@@ -21,6 +21,7 @@
     "北证50: 新浪分时首条为09:31，接口未提供09:30分钟点",
     "北证50: 新浪分时仅返回239个连续竞价分钟点，未对缺失分钟进行插值",
     "北证50: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
+    "中证传媒: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值",
     "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）"
   ],
   "source_status": [
@@ -28,13 +29,13 @@
       "source": "eastmoney",
       "operation": "quotes",
       "ok": false,
-      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))"
     },
     {
       "source": "tencent",
       "operation": "quotes",
       "ok": true,
-      "records": 11
+      "records": 14
     },
     {
       "source": "sina",
@@ -50,25 +51,25 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sz399001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399006",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
       "operation": "intraday:sh000688",
       "ok": true,
       "records": 242
     },
     {
       "source": "tencent",
+      "operation": "intraday:sz399001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399006",
       "ok": true,
       "records": 242
     },
@@ -86,13 +87,19 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh510300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:bj899050",
       "ok": false,
       "error": "接口返回空分时"
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh510300",
+      "operation": "intraday:sz000001",
       "ok": true,
       "records": 242
     },
@@ -104,13 +111,25 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh512760",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh600519",
       "ok": true,
       "records": 242
     },
     {
       "source": "tencent",
-      "operation": "intraday:sz000001",
+      "operation": "intraday:sz399971",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh589120",
       "ok": true,
       "records": 242
     },
@@ -130,7 +149,7 @@
       "previous_close": 3927.18,
       "open": 3930.1,
       "volume": 489834027,
-      "market_time": "2026-08-17T15:57:02+08:00",
+      "market_time": "2026-08-17T16:14:02+08:00",
       "change": 55.47,
       "change_percent": 1.41,
       "high": 3983.51,
@@ -149,7 +168,7 @@
       "previous_close": 14354.31,
       "open": 14399.2,
       "volume": 641864873,
-      "market_time": "2026-08-17T15:57:03+08:00",
+      "market_time": "2026-08-17T16:14:03+08:00",
       "change": 349.96,
       "change_percent": 2.44,
       "high": 14704.55,
@@ -168,7 +187,7 @@
       "previous_close": 3626.3,
       "open": 3632.78,
       "volume": 194278692,
-      "market_time": "2026-08-17T15:57:18+08:00",
+      "market_time": "2026-08-17T16:14:18+08:00",
       "change": 113.86,
       "change_percent": 3.14,
       "high": 3740.16,
@@ -187,7 +206,7 @@
       "previous_close": 1717.68,
       "open": 1721.55,
       "volume": 10847565,
-      "market_time": "2026-08-17T15:57:14+08:00",
+      "market_time": "2026-08-17T16:14:14+08:00",
       "change": 71.17,
       "change_percent": 4.14,
       "high": 1788.85,
@@ -206,7 +225,7 @@
       "previous_close": 4665.88,
       "open": 4672.28,
       "volume": 190569286,
-      "market_time": "2026-08-17T15:57:14+08:00",
+      "market_time": "2026-08-17T16:14:14+08:00",
       "change": 75.22,
       "change_percent": 1.61,
       "high": 4742.4,
@@ -225,7 +244,7 @@
       "previous_close": 7769.82,
       "open": 7797.18,
       "volume": 248445471,
-      "market_time": "2026-08-17T15:57:02+08:00",
+      "market_time": "2026-08-17T16:14:02+08:00",
       "change": 198.56,
       "change_percent": 2.56,
       "high": 7968.38,
@@ -264,6 +283,7 @@
     "limit_up": 116,
     "limit_down": 4,
     "turnover_cny": 2402131663148.0,
+    "median_change_percent": 1.3465,
     "limit_count_method": "按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）",
     "source": "sina",
     "market_time": "2026-08-17T15:36:00+08:00",
@@ -1395,7 +1415,7 @@
       "previous_close": 4.726,
       "open": 4.73,
       "volume": 8356561,
-      "market_time": "2026-08-17T15:57:25+08:00",
+      "market_time": "2026-08-17T16:14:55+08:00",
       "change": 0.075,
       "change_percent": 1.59,
       "high": 4.802,
@@ -1414,7 +1434,7 @@
       "previous_close": 3.645,
       "open": 3.65,
       "volume": 14130469,
-      "market_time": "2026-08-17T15:56:54+08:00",
+      "market_time": "2026-08-17T16:14:54+08:00",
       "change": 0.111,
       "change_percent": 3.05,
       "high": 3.758,
@@ -1433,7 +1453,7 @@
       "previous_close": 1341.99,
       "open": 1295.0,
       "volume": 78430,
-      "market_time": "2026-08-17T15:57:10+08:00",
+      "market_time": "2026-08-17T16:14:40+08:00",
       "change": -48.9,
       "change_percent": -3.64,
       "high": 1301.0,
@@ -1452,12 +1472,69 @@
       "previous_close": 11.11,
       "open": 11.2,
       "volume": 929043,
-      "market_time": "2026-08-17T15:57:03+08:00",
+      "market_time": "2026-08-17T16:14:03+08:00",
       "change": -0.01,
       "change_percent": -0.09,
       "high": 11.22,
       "low": 11.07,
       "amount": 1031950000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "芯片ETF国泰",
+      "symbol": "512760",
+      "kind": "etf",
+      "last": 1.205,
+      "previous_close": 1.146,
+      "open": 1.146,
+      "volume": 5707703,
+      "market_time": "2026-08-17T16:14:45+08:00",
+      "change": 0.059,
+      "change_percent": 5.15,
+      "high": 1.205,
+      "low": 1.14,
+      "amount": 674120000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "科创创新药ETF汇添富",
+      "symbol": "589120",
+      "kind": "etf",
+      "last": 0.905,
+      "previous_close": 0.903,
+      "open": 0.898,
+      "volume": 2495712,
+      "market_time": "2026-08-17T16:14:39+08:00",
+      "change": 0.002,
+      "change_percent": 0.22,
+      "high": 0.913,
+      "low": 0.881,
+      "amount": 223980000.0,
+      "source": "tencent",
+      "is_stale": false,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "中证传媒",
+      "symbol": "399971",
+      "kind": "index",
+      "last": 1255.8,
+      "previous_close": 1268.16,
+      "open": 1266.84,
+      "volume": 35248596,
+      "market_time": "2026-08-17T16:14:45+08:00",
+      "change": -12.36,
+      "change_percent": -0.97,
+      "high": 1266.84,
+      "low": 1235.67,
+      "amount": 40353980000.0,
       "source": "tencent",
       "is_stale": false,
       "errors": [],

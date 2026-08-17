@@ -13,8 +13,8 @@ import yaml
 from .sources import EastMoneySource, Instrument, SinaSource, _float, build_session
 from .trading_calendar import is_a_share_trading_day
 
-INDEX_FIELDS = ["date", "symbol", "name", "open", "high", "low", "close", "change_percent", "volume", "amount", "source"]
-BREADTH_FIELDS = ["date", "up", "down", "flat", "limit_up", "limit_down", "turnover_cny", "listed_with_quotes", "source", "method"]
+INDEX_FIELDS = ["date", "symbol", "name", "open", "high", "low", "close", "change_percent", "volume", "amount", "amount_source", "amount_unit", "source"]
+BREADTH_FIELDS = ["date", "up", "down", "flat", "limit_up", "limit_down", "turnover_cny", "median_change_percent", "listed_with_quotes", "source", "method"]
 INDUSTRY_FIELDS = ["date", "code", "name", "change_percent", "amount", "activity", "rank", "turnover_rate", "net_inflow", "source"]
 ROTATION_FIELDS = ["date", "leader_1", "leader_2", "leader_3", "laggard_1", "laggard_2", "laggard_3", "industry_count", "source"]
 
@@ -67,10 +67,13 @@ def fetch_daily_kline(source: EastMoneySource, secid: str, begin: date, end: dat
         parts = raw.split(",")
         if len(parts) < 9:
             continue
+        amount = _float(parts[6])
         result.append({
             "date": parts[0], "open": _float(parts[1]), "close": _float(parts[2]),
             "high": _float(parts[3]), "low": _float(parts[4]), "volume": _float(parts[5]),
-            "amount": _float(parts[6]), "change_percent": _float(parts[8]), "source": source.name,
+            "amount": amount, "amount_source": source.name if amount is not None else None,
+            "amount_unit": "CNY" if amount is not None else None,
+            "change_percent": _float(parts[8]), "source": source.name,
         })
     return result
 
@@ -89,12 +92,15 @@ def fetch_sohu_daily(session: Any, symbol: str, begin: date, end: date) -> list[
     for parts in block.get("hq") or []:
         if len(parts) < 9:
             continue
+        amount_10k = _float(parts[8])
+        amount = amount_10k * 10_000 if amount_10k is not None else None
         rows.append({
             "date": parts[0], "open": _float(parts[1]), "close": _float(parts[2]),
             "change_percent": _float(str(parts[4]).rstrip("%")), "low": _float(parts[5]),
             "high": _float(parts[6]), "volume": _float(parts[7]),
             # Sohu reports amount in 10k CNY.
-            "amount": (_float(parts[8]) or 0) * 10_000, "source": "sohu",
+            "amount": amount, "amount_source": "sohu" if amount is not None else None,
+            "amount_unit": "CNY" if amount is not None else None, "source": "sohu",
         })
     return rows
 
@@ -119,6 +125,7 @@ def fetch_sina_daily(session: Any, symbol: str, begin: date, end: date, length: 
         rows.append({"date": day, "open": _float(item.get("open")), "close": close,
                      "high": _float(item.get("high")), "low": _float(item.get("low")),
                      "volume": _float(item.get("volume")), "amount": None,
+                     "amount_source": None, "amount_unit": None,
                      "change_percent": round(change, 4) if change is not None else None, "source": "sina"})
         previous = close
     return rows
@@ -139,9 +146,11 @@ def fetch_tencent_daily(session: Any, symbol: str, begin: date, end: date, lengt
             continue
         close = _float(parts[2])
         change = (close / previous - 1) * 100 if close is not None and previous else None
+        amount = _float(parts[6]) if len(parts) > 6 else None
         rows.append({"date": parts[0], "open": _float(parts[1]), "close": close,
                      "high": _float(parts[3]), "low": _float(parts[4]), "volume": _float(parts[5]),
-                     "amount": _float(parts[6]) if len(parts) > 6 else None,
+                     "amount": amount, "amount_source": "tencent" if amount is not None else None,
+                     "amount_unit": "CNY" if amount is not None else None,
                      "change_percent": round(change, 4) if change is not None else None, "source": "tencent"})
         previous = close
     return rows
@@ -170,6 +179,8 @@ def fetch_tencent_extended(session: Any, symbol: str, begin: date, end: date, le
         amount = _float(parts[8]) * 10_000 if len(parts) > 8 and _float(parts[8]) is not None else None
         rows.append({"date": parts[0], "open": _float(parts[1]), "close": close, "high": _float(parts[3]),
                      "low": _float(parts[4]), "volume": _float(parts[5]), "amount": amount,
+                     "amount_source": "tencent" if amount is not None else None,
+                     "amount_unit": "CNY" if amount is not None else None,
                      "change_percent": round(change, 4) if change is not None else None, "source": "tencent"})
         previous = close
     return rows
@@ -192,11 +203,14 @@ def fetch_csindex_daily(session: Any, symbol: str, begin: date, end: date) -> li
         # boundary (for example Sunday). Never persist that synthetic row.
         if not is_a_share_trading_day(parsed_day)[0]:
             continue
+        trading_value = _float(item.get("tradingValue"))
+        amount = trading_value * 100_000_000 if trading_value is not None else None
         result.append({"date": parsed_day.isoformat(), "open": _float(item.get("open")),
                        "close": _float(item.get("close")), "high": _float(item.get("high")),
                        "low": _float(item.get("low")), "volume": _float(item.get("tradingVol")),
                        # The official API reports tradingValue in CNY 100m.
-                       "amount": (_float(item.get("tradingValue")) or 0) * 100_000_000,
+                       "amount": amount, "amount_source": "csindex" if amount is not None else None,
+                       "amount_unit": "CNY" if amount is not None else None,
                        "change_percent": _float(item.get("changePct")), "source": "csindex"})
     return result
 
@@ -226,23 +240,43 @@ def _update_instrument_history(
             rows = fetch_csindex_daily(fallback_session, item.symbol, begin, end)
         except Exception:
             rows = []
-        if not rows:
+        expected_day = end.isoformat()
+
+        def extend_missing(existing_rows: list[dict[str, Any]], candidate: list[dict[str, Any]]) -> list[dict[str, Any]]:
+            # Preserve the higher-priority source on overlapping dates and only
+            # use the fallback to fill dates the primary source has not posted.
+            merged_by_day = {str(row.get("date")): row for row in candidate if row.get("date")}
+            merged_by_day.update({str(row.get("date")): row for row in existing_rows if row.get("date")})
+            return [merged_by_day[day] for day in sorted(merged_by_day)]
+
+        if not rows or str(rows[-1].get("date") or "") < expected_day:
             try:
-                rows = fetch_daily_kline(source, item.eastmoney, begin, end)
+                candidate = fetch_daily_kline(source, item.eastmoney, begin, end)
+                rows = extend_missing(rows, candidate)
             except Exception:
-                rows = []
-        if not rows and item.tencent:
+                pass
+        if (not rows or str(rows[-1].get("date") or "") < expected_day) and item.tencent:
             try:
                 length = min(650, max(10, (end - begin).days + 5))
-                rows = fetch_tencent_extended(fallback_session, item.tencent, begin, end, length)
+                candidate = fetch_tencent_extended(fallback_session, item.tencent, begin, end, length)
+                rows = extend_missing(rows, candidate)
             except Exception:
-                rows = []
-        if not rows and item.tencent:
-            rows = fetch_tencent_daily(fallback_session, item.tencent, begin, end)
-        if not rows and item.tencent:
-            rows = fetch_sina_daily(fallback_session, item.tencent, begin, end)
-        if not rows and item.kind != "history_index":
-            rows = fetch_sohu_daily(fallback_session, item.symbol, begin, end)
+                pass
+        if (not rows or str(rows[-1].get("date") or "") < expected_day) and item.tencent:
+            try:
+                rows = extend_missing(rows, fetch_tencent_daily(fallback_session, item.tencent, begin, end))
+            except Exception:
+                pass
+        if (not rows or str(rows[-1].get("date") or "") < expected_day) and item.tencent:
+            try:
+                rows = extend_missing(rows, fetch_sina_daily(fallback_session, item.tencent, begin, end))
+            except Exception:
+                pass
+        if (not rows or str(rows[-1].get("date") or "") < expected_day) and item.kind != "history_index":
+            try:
+                rows = extend_missing(rows, fetch_sohu_daily(fallback_session, item.symbol, begin, end))
+            except Exception:
+                pass
         for row in rows:
             row.update(symbol=item.symbol, name=item.name)
         return rows
@@ -261,6 +295,10 @@ def _update_instrument_history(
             except Exception as exc:
                 warnings.append(f"历史行情失败: {item.name}({item.symbol}): {exc}")
     merged = _merge([*existing, *new], ("date", "symbol"))
+    for row in merged:
+        amount = _float(row.get("amount"))
+        row["amount_source"] = row.get("amount_source") or (row.get("source") if amount is not None else None)
+        row["amount_unit"] = row.get("amount_unit") or ("CNY" if amount is not None else None)
     merged = [row for row in merged if is_a_share_trading_day(date.fromisoformat(str(row["date"])))[0]]
     by_symbol: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in merged:
@@ -580,10 +618,10 @@ def update_history(config_path: Path, output_dir: Path, snapshot: dict[str, Any]
     watch_rows = list(config.get("history_watchlist") or [])
     known = {str(row["symbol"]) for row in watch_rows}
     for row in config.get("watchlist") or []:
-        if row.get("kind") in {"index", "etf"} and str(row.get("symbol")) not in known:
+        if str(row.get("symbol")) not in known:
             watch_rows.append(row)
             known.add(str(row["symbol"]))
-    watch = [Instrument(name=row["name"], symbol=str(row["symbol"]), kind="history_index", eastmoney=row["eastmoney"], tencent=row.get("tencent", "")) for row in watch_rows]
+    watch = [Instrument(name=row["name"], symbol=str(row["symbol"]), kind=str(row.get("kind") or "history_index"), eastmoney=row["eastmoney"], tencent=row.get("tencent", "")) for row in watch_rows]
     source = EastMoneySource(float(settings.get("request_timeout_seconds", 12)))
     end = datetime.fromisoformat(snapshot["market_time"]).date()
     history_dir = output_dir / "history"
@@ -604,13 +642,11 @@ def validate_history(result: dict[str, Any], required_index_days: int = 250, req
             grouped[str(row.get("symbol"))].append(row)
         for symbol, rows in grouped.items():
             days = {row.get("date") for row in rows}
-            if len(days) < required_index_days:
-                errors.append(f"{label} {symbol} 仅 {len(days)} 个交易日，要求至少 {required_index_days}")
-            if any(not _valid_ohlc(row) for row in rows[-required_index_days:]):
+            required_days = required_index_days if label == "indices" else min(120, required_index_days)
+            if len(days) < required_days:
+                errors.append(f"{label} {symbol} 仅 {len(days)} 个交易日，要求至少 {required_days}")
+            if any(not _valid_ohlc(row) for row in rows[-required_days:]):
                 errors.append(f"{label} {symbol} 存在非法OHLC")
-            missing_amount = sum(1 for row in rows[-required_index_days:] if _float(row.get("amount")) is None)
-            if missing_amount:
-                errors.append(f"{label} {symbol} 最近{required_index_days}日有 {missing_amount} 日成交额缺失")
         minimum_instruments = 7 if label == "indices" else 3
         if len(grouped) < minimum_instruments:
             errors.append(f"{label} 仅 {len(grouped)} 个标的，要求至少 {minimum_instruments}")

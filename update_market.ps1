@@ -174,9 +174,14 @@ try {
     Write-Host "Decliners:         $($Breadth.down)"
     Write-Host ("Market turnover:   {0:N2} CNY 100m" -f ([double]$Breadth.turnover_cny / 100000000))
     Write-Host "Sources:           $($Snapshot.sources -join ' / ')"
-    foreach ($name in @("latest.json", "latest_intraday.json", "latest_rotation.json", "latest_rotation.md")) {
+    $ExpectedOutputs = @(
+        "latest.json", "latest_intraday.json", "latest_rotation.json", "latest_rotation.md",
+        "research_context\market_technical.json", "research_context\rotation_context.json",
+        "research_context\market_breadth_context.json", "research_context\watchlist_context.json"
+    )
+    foreach ($name in $ExpectedOutputs) {
         $status = if (Test-Path -LiteralPath (Join-Path $ProjectRoot "data\$name")) { "OK" } else { "MISSING" }
-        Write-Host ("{0,-30} {1}" -f $name, $status)
+        Write-Host ("{0,-50} {1}" -f $name, $status)
     }
     if ($PushStatus -like "FAILED*") {
         Write-Host ""

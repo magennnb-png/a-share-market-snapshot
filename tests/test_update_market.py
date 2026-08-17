@@ -61,6 +61,16 @@ def test_markdown_only_change_is_not_material(tmp_path: Path) -> None:
     assert not _materially_changed(left, right)
 
 
+def test_research_context_change_is_material(tmp_path: Path) -> None:
+    left = tmp_path / "left" / "research_context"
+    right = tmp_path / "right" / "research_context"
+    left.mkdir(parents=True)
+    right.mkdir(parents=True)
+    (left / "market_technical.json").write_text(json.dumps({"data_as_of": "2026-08-17", "value": 1}), encoding="utf-8")
+    (right / "market_technical.json").write_text(json.dumps({"data_as_of": "2026-08-17", "value": 2}), encoding="utf-8")
+    assert _materially_changed(left.parent, right.parent)
+
+
 def test_invalid_snapshot_never_replaces_existing_data(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     data = tmp_path / "data"
     data.mkdir()

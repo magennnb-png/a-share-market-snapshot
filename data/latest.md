@@ -1,7 +1,7 @@
 # A股实时行情快照
 
-- 行情时间：2026-08-17T15:57:25+08:00
-- 生成时间：2026-08-17T15:57:28+08:00
+- 行情时间：2026-08-17T16:14:55+08:00
+- 生成时间：2026-08-17T17:55:03+08:00
 - 数据来源：sina, tencent
 - 是否过期：否
 
@@ -65,10 +65,13 @@
 | etf | 创业板ETF易方达 | 159915 | 3.76 | 3.05% | 52.22 亿元 | tencent | 否 |
 | stock | 贵州茅台 | 600519 | 1293.09 | -3.64% | 101.15 亿元 | tencent | 否 |
 | stock | 平安银行 | 000001 | 11.10 | -0.09% | 10.32 亿元 | tencent | 否 |
+| etf | 芯片ETF国泰 | 512760 | 1.21 | 5.15% | 6.74 亿元 | tencent | 否 |
+| etf | 科创创新药ETF汇添富 | 589120 | 0.91 | 0.22% | 2.24 亿元 | tencent | 否 |
+| index | 中证传媒 | 399971 | 1255.80 | -0.97% | 403.54 亿元 | tencent | 否 |
 
 ## 错误和警告
 
-- 错误：eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))
+- 错误：eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))
 - 错误：tencent分时失败 北证50: RuntimeError: 接口返回空分时
 - 警告：上证指数: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
 - 警告：深证成指: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
@@ -79,6 +82,7 @@
 - 警告：北证50: 新浪分时首条为09:31，接口未提供09:30分钟点
 - 警告：北证50: 新浪分时仅返回239个连续竞价分钟点，未对缺失分钟进行插值
 - 警告：北证50: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
+- 警告：中证传媒: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
 - 警告：按ST 5%、主板10%、创业板/科创板20%、北交所30%的价格涨跌幅近似统计（容差0.2个百分点）
 
 > 本项目只记录公开行情，不包含券商账户、身份信息、持仓、Token 或密码。

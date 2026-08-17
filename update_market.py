@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from a_share_bridge.history import update_history, validate_history
 from a_share_bridge.main import collect
+from a_share_bridge.research_context import generate_research_context
 from a_share_bridge.rendering import write_outputs
 from a_share_bridge.validation import validate_snapshot
 
@@ -89,6 +90,14 @@ def _materially_changed(staged: Path, current: Path) -> bool:
         "history/market_breadth_daily.csv", "history/industries_daily.csv",
         "history/rotation_daily.csv",
     }
+    tracked.update(
+        {
+            "research_context/market_technical.json",
+            "research_context/rotation_context.json",
+            "research_context/market_breadth_context.json",
+            "research_context/watchlist_context.json",
+        }
+    )
     relative = {
         path.relative_to(staged).as_posix()
         for path in staged.rglob("*") if path.is_file()
@@ -133,7 +142,7 @@ def run(config_path: Path, data_dir: Path, validate_only: bool = False) -> dict[
             shutil.copytree(data_dir, staged)
         else:
             staged.mkdir(parents=True)
-        print("[1/4] 获取实时行情（东方财富 → 腾讯，宽度/行业 → 新浪回退）...", flush=True)
+        print("[1/5] 获取实时行情（东方财富 → 腾讯，宽度/行业 → 新浪回退）...", flush=True)
         snapshot, intraday, _ = collect(config_path, None)
         errors, warnings = validate_snapshot(snapshot, intraday, now)
         if errors:
@@ -142,7 +151,7 @@ def run(config_path: Path, data_dir: Path, validate_only: bool = False) -> dict[
         intraday["warnings"] = list(dict.fromkeys([*(intraday.get("warnings") or []), *warnings]))
         write_outputs(snapshot, intraday, staged)
 
-        print("[2/4] 增量更新指数、宽度、行业和轮动历史...", flush=True)
+        print("[2/5] 增量更新指数、宽度、行业和轮动历史...", flush=True)
         history = update_history(config_path, staged, snapshot, intraday)
         required_index = min(250, int(settings.get("history_index_days", 320)))
         # Breadth history is observed-only; unlike daily bars it cannot be
@@ -152,18 +161,29 @@ def run(config_path: Path, data_dir: Path, validate_only: bool = False) -> dict[
         history_errors = validate_history(history, required_index, required_breadth, required_industry)
         if history_errors:
             raise UpdateError("历史行情校验失败：\n- " + "\n- ".join(history_errors))
-        print("[3/4] 数据完整性校验通过。", flush=True)
+        print("[3/5] 生成供ChatGPT读取的research_context...", flush=True)
+        context_paths, context_errors = generate_research_context(
+            ROOT, staged, datetime.fromisoformat(snapshot["generated_at"]), snapshot, intraday
+        )
+        history.setdefault("warnings", []).extend(f"research_context: {error}" for error in context_errors)
+        if len(context_paths) != 4:
+            raise UpdateError("research_context生成不完整：\n- " + "\n- ".join(context_errors or ["未知错误"]))
+        print("[4/5] 数据完整性校验通过。", flush=True)
 
         changed = _materially_changed(staged, data_dir)
         if changed and not validate_only:
             _install(staged, data_dir)
-        print("[4/4] 数据文件已原子更新。" if changed and not validate_only else "[4/4] 行情数据没有变化，无需改写。", flush=True)
+        print("[5/5] 数据文件已原子更新。" if changed and not validate_only else "[5/5] 行情数据没有变化，无需改写。", flush=True)
         return {
             "ok": True, "changed": changed and not validate_only,
             "market_time": snapshot["market_time"], "generated_at": snapshot["generated_at"],
             "sources": snapshot.get("sources") or [], "indices": snapshot.get("indices") or [],
             "market_breadth": snapshot.get("market_breadth") or {},
-            "files": ["latest.json", "latest_intraday.json", "latest_rotation.json", "latest_rotation.md"],
+            "files": [
+                "latest.json", "latest_intraday.json", "latest_rotation.json", "latest_rotation.md",
+                "research_context/market_technical.json", "research_context/rotation_context.json",
+                "research_context/market_breadth_context.json", "research_context/watchlist_context.json",
+            ],
             "history_counts": {key: len(history[key]) for key in ("indices", "watchlist", "breadth", "industries", "rotation")},
             "warnings": history.get("warnings") or [],
         }

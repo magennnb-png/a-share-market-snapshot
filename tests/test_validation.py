@@ -1,6 +1,7 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+from a_share_bridge.analytics import calculate_market_breadth
 from a_share_bridge.validation import CORE_INDICES, validate_snapshot
 
 
@@ -45,3 +46,12 @@ def test_accepts_complete_current_payload() -> None:
     snapshot, intraday = valid_payload(now)
     errors, _ = validate_snapshot(snapshot, intraday, now)
     assert errors == []
+
+
+def test_market_breadth_includes_median_change() -> None:
+    breadth = calculate_market_breadth([
+        {"last": 10, "change_percent": -1, "amount": 100, "symbol": "600000", "name": "甲"},
+        {"last": 10, "change_percent": 2, "amount": 200, "symbol": "600001", "name": "乙"},
+        {"last": 10, "change_percent": 4, "amount": 300, "symbol": "600002", "name": "丙"},
+    ])
+    assert breadth["median_change_percent"] == 2.0

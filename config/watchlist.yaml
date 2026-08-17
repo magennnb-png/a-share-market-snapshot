@@ -12,6 +12,9 @@ watchlist:
   - {name: 创业板ETF, symbol: "159915", kind: etf, eastmoney: "0.159915", tencent: sz159915}
   - {name: 贵州茅台, symbol: "600519", kind: stock, eastmoney: "1.600519", tencent: sh600519}
   - {name: 平安银行, symbol: "000001", kind: stock, eastmoney: "0.000001", tencent: sz000001}
+  - {name: 芯片ETF国泰, symbol: "512760", kind: etf, eastmoney: "1.512760", tencent: sh512760}
+  - {name: 科创创新药ETF汇添富, symbol: "589120", kind: etf, eastmoney: "1.589120", tencent: sh589120}
+  - {name: 中证传媒, symbol: "399971", kind: index, eastmoney: "0.399971", tencent: sz399971}
 
 settings:
   request_timeout_seconds: 12

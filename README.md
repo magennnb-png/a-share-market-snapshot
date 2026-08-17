@@ -46,6 +46,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\update_market.ps1 -Ski
 - `data/latest.json`：核心指数、全市场宽度、全量行业、watchlist 当前快照。
 - `data/latest_intraday.json`：当日完整分时及 VWAP 等指标。
 - `data/latest_rotation.json` / `.md`：最新行业轮动摘要。
+- `data/research_context/market_technical.json`：7个核心指数的日K、周K与技术结构。
+- `data/research_context/rotation_context.json`：SQLite 5分钟轮动优先、CSV日频降级的统一轮动接口。
+- `data/research_context/market_breadth_context.json`：当前及近期实际观察到的市场宽度。
+- `data/research_context/watchlist_context.json`：观察池日K技术结构、当前行情与分时摘要。
 - `data/history/indices_daily.csv`：7 个核心指数最近 500 个交易日 OHLCVA，每次重取滚动窗口。
 - `data/history/watchlist_daily.csv`：芯片产业 H30007、中证传媒 399971、中证创新药产业 931152，以及 watchlist 中的指数/ETF；每次重取滚动窗口，可在 `config/watchlist.yaml` 增删。
 - `data/history/market_breadth_daily.csv`：每次实际运行观察到的涨跌/平盘、涨跌停、全市场成交额；同日覆盖、跨日追加。
@@ -54,6 +58,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\update_market.ps1 -Ski
 - `data/history/intraday/YYYY-MM-DD.json`：最近 10 个交易日分时，自动滚动删除更早文件。
 
 CSV 使用 UTF-8 BOM，便于 GitHub、ChatGPT 和 Windows Excel 读取。`market_time` 是行情本身时间；`generated_at` 是本次文件生成时间。
+
+四个 research context 也由同一个一键入口自动生成。它们优先读取本机 SQLite，数据不可用或落后时自动使用 GitHub CSV，用户无需手工选择。详细字段、成交额口径和同花顺免费数据实测见 [`docs/research-context.md`](docs/research-context.md)。
 
 ## 数据源与降级
 
