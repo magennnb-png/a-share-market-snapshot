@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-08-17T17:58:16+08:00",
+  "generated_at": "2026-08-18T08:16:57+08:00",
   "market_time": "2026-08-17T16:14:55+08:00",
   "data_as_of": "2026-08-17",
   "backend": "csv",
@@ -1882,7 +1882,7 @@
         "low": 4.725,
         "amount": 3985900000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -3766,7 +3766,7 @@
         "low": 3.623,
         "amount": 5222140000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -5650,7 +5650,7 @@
         "low": 1280.34,
         "amount": 10114850000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -5687,13 +5687,9 @@
       "weekly_history_count": null,
       "previous_close": 3927.18,
       "current_week_is_partial": null,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -7488,43 +7484,43 @@
         },
         {
           "date": "2026-08-17",
-          "open": 11.2,
-          "high": 11.22,
-          "low": 11.07,
-          "close": 11.1,
+          "open": 3930.1,
+          "high": 3983.51,
+          "low": 3924.47,
+          "close": 3982.65,
           "previous_close": 3927.18,
-          "change_percent": -0.09,
-          "volume": 929043.0,
-          "amount": 1031951500.0,
-          "amount_source": "tencent",
+          "change_percent": 1.41,
+          "volume": 48983402700.0,
+          "amount": 1112819000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
       "technical": {
-        "ma5": 3149.202,
-        "return_5d_pct": -99.7202,
-        "ma10": 3525.37,
-        "return_10d_pct": -99.7086,
-        "ma20": 3681.136,
-        "return_20d_pct": -99.7076,
-        "ma60": 3917.4568,
-        "return_60d_pct": -99.7301,
-        "high_20d": 3968.48,
-        "low_20d": 11.07,
-        "distance_to_20d_high_pct": -99.7203,
-        "distance_to_20d_low_pct": 0.271,
+        "ma5": 3943.512,
+        "return_5d_pct": 0.4049,
+        "ma10": 3922.525,
+        "return_10d_pct": 4.5408,
+        "ma20": 3879.7135,
+        "return_20d_pct": 4.9093,
+        "ma60": 3983.6493,
+        "return_60d_pct": -3.1669,
+        "high_20d": 3983.51,
+        "low_20d": 3743.36,
+        "distance_to_20d_high_pct": -0.0216,
+        "distance_to_20d_low_pct": 6.3924,
         "high_60d": 4175.35,
-        "low_60d": 11.07,
-        "distance_to_60d_high_pct": -99.7342,
-        "distance_to_60d_low_pct": 0.271,
+        "low_60d": 3741.11,
+        "distance_to_60d_high_pct": -4.6152,
+        "distance_to_60d_low_pct": 6.4564,
         "high_120d": 4258.86,
-        "low_120d": 11.07,
-        "distance_to_120d_high_pct": -99.7394,
-        "distance_to_120d_low_pct": 0.271,
-        "amplitude_1m_pct": 35748.9612,
-        "amplitude_3m_pct": 37617.7055
+        "low_120d": 3741.11,
+        "distance_to_120d_high_pct": -6.4855,
+        "distance_to_120d_low_pct": 6.4564,
+        "amplitude_1m_pct": 6.4154,
+        "amplitude_3m_pct": 11.6073
       },
       "current_quote": {
         "name": "平安银行",
@@ -7541,7 +7537,7 @@
         "low": 11.07,
         "amount": 1031950000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -9427,7 +9423,7 @@
         "low": 1.14,
         "amount": 674120000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -11311,7 +11307,7 @@
         "low": 0.881,
         "amount": 223980000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },
@@ -11350,13 +11346,9 @@
       "weekly_history_count": null,
       "previous_close": 1268.16,
       "current_week_is_partial": null,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -13156,12 +13148,12 @@
           "low": 1235.67,
           "close": 1255.8,
           "previous_close": 1268.16,
-          "change_percent": -0.9746,
-          "volume": 35248596.0,
-          "amount": 40353983100.0,
-          "amount_source": "tencent",
+          "change_percent": -0.97,
+          "volume": 3524859580.0,
+          "amount": 40354000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -13204,7 +13196,7 @@
         "low": 1235.67,
         "amount": 40353980000.0,
         "source": "tencent",
-        "is_stale": false,
+        "is_stale": true,
         "errors": [],
         "warnings": []
       },

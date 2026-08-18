@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-17T15:00:00+08:00",
-  "generated_at": "2026-08-17T17:55:03+08:00",
+  "generated_at": "2026-08-18T08:16:57+08:00",
   "sources": [
     "sina",
     "tencent"
   ],
-  "is_stale": false,
+  "is_stale": true,
   "errors": [
-    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))",
+    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
     "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
   ],
   "warnings": [
@@ -29,7 +29,7 @@
       "source": "eastmoney",
       "operation": "quotes",
       "ok": false,
-      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))"
+      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
     },
     {
       "source": "tencent",
@@ -51,25 +51,7 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh000688",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
       "operation": "intraday:sh000001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399006",
       "ok": true,
       "records": 242
     },
@@ -81,13 +63,25 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sz399001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh000688",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh000300",
       "ok": true,
       "records": 242
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh510300",
+      "operation": "intraday:sz399006",
       "ok": true,
       "records": 242
     },
@@ -99,7 +93,7 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sz000001",
+      "operation": "intraday:sh600519",
       "ok": true,
       "records": 242
     },
@@ -111,19 +105,19 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh510300",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh512760",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh600519",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz399971",
       "ok": true,
       "records": 242
     },
@@ -138,6 +132,12 @@
       "operation": "intraday:bj899050",
       "ok": true,
       "records": 239
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz399971",
+      "ok": true,
+      "records": 242
     }
   ],
   "instruments": [
@@ -2090,7 +2090,7 @@
       "name": "上证指数",
       "symbol": "000001",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3930.1,
         "last": 3982.65,
@@ -4057,7 +4057,7 @@
       "name": "深证成指",
       "symbol": "399001",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 14399.2,
         "last": 14704.27,
@@ -6024,7 +6024,7 @@
       "name": "创业板指",
       "symbol": "399006",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3632.78,
         "last": 3740.16,
@@ -7991,7 +7991,7 @@
       "name": "科创50",
       "symbol": "000688",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1721.55,
         "last": 1788.85,
@@ -9958,7 +9958,7 @@
       "name": "沪深300",
       "symbol": "000300",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 4672.28,
         "last": 4741.1,
@@ -11925,7 +11925,7 @@
       "name": "中证1000",
       "symbol": "000852",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 7797.18,
         "last": 7968.38,
@@ -14587,7 +14587,7 @@
       "name": "北证50",
       "symbol": "899050",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1082.451,
         "last": 1108.278,
@@ -16554,7 +16554,7 @@
       "name": "沪深300ETF",
       "symbol": "510300",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 4.73,
         "last": 4.801,
@@ -18519,7 +18519,7 @@
       "name": "创业板ETF",
       "symbol": "159915",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 3.65,
         "last": 3.756,
@@ -20484,7 +20484,7 @@
       "name": "贵州茅台",
       "symbol": "600519",
       "kind": "stock",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1295.0,
         "last": 1293.09,
@@ -22452,7 +22452,7 @@
       "name": "平安银行",
       "symbol": "000001",
       "kind": "stock",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 11.2,
         "last": 11.1,
@@ -24419,7 +24419,7 @@
       "name": "芯片ETF国泰",
       "symbol": "512760",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1.146,
         "last": 1.205,
@@ -26384,7 +26384,7 @@
       "name": "科创创新药ETF汇添富",
       "symbol": "589120",
       "kind": "etf",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 0.898,
         "last": 0.905,
@@ -28356,7 +28356,7 @@
       "name": "中证传媒",
       "symbol": "399971",
       "kind": "index",
-      "is_stale": false,
+      "is_stale": true,
       "metrics": {
         "open": 1266.84,
         "last": 1255.8,

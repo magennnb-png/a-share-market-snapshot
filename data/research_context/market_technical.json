@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-08-17T17:58:16+08:00",
+  "generated_at": "2026-08-18T08:16:57+08:00",
   "data_as_of": "2026-08-17",
   "backend": "csv",
   "sources": [
@@ -30,13 +30,9 @@
       "weekly_history_count": 52,
       "previous_close": 3927.18,
       "current_week_is_partial": true,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -1836,12 +1832,12 @@
           "low": 3924.47,
           "close": 3982.65,
           "previous_close": 3927.18,
-          "change_percent": 1.4125,
-          "volume": 489834027.0,
-          "amount": 1112818620600.0,
-          "amount_source": "tencent",
+          "change_percent": 1.41,
+          "volume": 48983402700.0,
+          "amount": 1112819000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -2746,11 +2742,11 @@
           "low": 3924.47,
           "close": 3982.65,
           "change_percent": 1.4125,
-          "volume": 489834027.0,
-          "amount": 1112818620600.0,
+          "volume": 48983402700.0,
+          "amount": 1112819000000.0,
           "amount_unit": "CNY",
           "sources": [
-            "tencent"
+            "csindex"
           ],
           "is_partial": true
         }
@@ -8236,13 +8232,9 @@
       "weekly_history_count": 52,
       "previous_close": 1717.68,
       "current_week_is_partial": true,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -10042,12 +10034,12 @@
           "low": 1718.61,
           "close": 1788.85,
           "previous_close": 1717.68,
-          "change_percent": 4.1434,
-          "volume": 10847565.0,
-          "amount": 127195598000.0,
-          "amount_source": "tencent",
+          "change_percent": 4.14,
+          "volume": 1084756500.0,
+          "amount": 127196000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -10952,11 +10944,11 @@
           "low": 1718.61,
           "close": 1788.85,
           "change_percent": 4.1434,
-          "volume": 10847565.0,
-          "amount": 127195598000.0,
+          "volume": 1084756500.0,
+          "amount": 127196000000.0,
           "amount_unit": "CNY",
           "sources": [
-            "tencent"
+            "csindex"
           ],
           "is_partial": true
         }
@@ -10974,13 +10966,9 @@
       "weekly_history_count": 52,
       "previous_close": 4665.88,
       "current_week_is_partial": true,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -12780,12 +12768,12 @@
           "low": 4662.72,
           "close": 4741.1,
           "previous_close": 4665.88,
-          "change_percent": 1.6121,
-          "volume": 190569286.0,
-          "amount": 657601746000.0,
-          "amount_source": "tencent",
+          "change_percent": 1.61,
+          "volume": 19056928600.0,
+          "amount": 657602000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -13690,11 +13678,11 @@
           "low": 4662.72,
           "close": 4741.1,
           "change_percent": 1.6121,
-          "volume": 190569286.0,
-          "amount": 657601746000.0,
+          "volume": 19056928600.0,
+          "amount": 657602000000.0,
           "amount_unit": "CNY",
           "sources": [
-            "tencent"
+            "csindex"
           ],
           "is_partial": true
         }
@@ -13712,13 +13700,9 @@
       "weekly_history_count": 52,
       "previous_close": 7769.82,
       "current_week_is_partial": true,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -15518,12 +15502,12 @@
           "low": 7750.43,
           "close": 7968.38,
           "previous_close": 7769.82,
-          "change_percent": 2.5555,
-          "volume": 248445471.0,
-          "amount": 523862481000.0,
-          "amount_source": "tencent",
+          "change_percent": 2.56,
+          "volume": 24844547100.0,
+          "amount": 523862000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -16428,11 +16412,11 @@
           "low": 7750.43,
           "close": 7968.38,
           "change_percent": 2.5555,
-          "volume": 248445471.0,
-          "amount": 523862481000.0,
+          "volume": 24844547100.0,
+          "amount": 523862000000.0,
           "amount_unit": "CNY",
           "sources": [
-            "tencent"
+            "csindex"
           ],
           "is_partial": true
         }
@@ -16450,13 +16434,9 @@
       "weekly_history_count": 52,
       "previous_close": 1087.52,
       "current_week_is_partial": true,
-      "source": [
-        "csindex",
-        "tencent"
-      ],
+      "source": "csindex",
       "sources": [
-        "csindex",
-        "tencent"
+        "csindex"
       ],
       "amount_coverage_ratio": 1.0,
       "quality": {
@@ -18256,12 +18236,12 @@
           "low": 1080.98,
           "close": 1108.28,
           "previous_close": 1087.52,
-          "change_percent": 1.9089,
-          "volume": 6648094.0,
-          "amount": 15204308000.0,
-          "amount_source": "tencent",
+          "change_percent": 1.91,
+          "volume": 664809390.0,
+          "amount": 15204000000.0,
+          "amount_source": "csindex",
           "amount_unit": "CNY",
-          "source": "tencent",
+          "source": "csindex",
           "adjustment": "none"
         }
       ],
@@ -19166,11 +19146,11 @@
           "low": 1080.98,
           "close": 1108.28,
           "change_percent": 1.9089,
-          "volume": 6648094.0,
-          "amount": 15204308000.0,
+          "volume": 664809390.0,
+          "amount": 15204000000.0,
           "amount_unit": "CNY",
           "sources": [
-            "tencent"
+            "csindex"
           ],
           "is_partial": true
         }

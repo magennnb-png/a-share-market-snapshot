@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-08-17T17:58:16+08:00",
-  "market_time": "2026-08-17T15:36:00+08:00",
-  "data_as_of": "2026-08-17",
+  "generated_at": "2026-08-18T08:16:57+08:00",
+  "market_time": "2026-08-18T15:36:00+08:00",
+  "data_as_of": "2026-08-18",
   "backend": "csv",
   "sources": [
     "sina"
@@ -10,7 +10,7 @@
   "quality": {
     "grade": "yellow",
     "current_available": true,
-    "historical_trading_days": 3
+    "historical_trading_days": 4
   },
   "known_limitations": [
     "市场宽度历史只保存程序实际观察到的快照，漏跑日期不使用当前股票池伪造回填。",
@@ -18,8 +18,8 @@
   ],
   "historical_coverage_limited": true,
   "current": {
-    "date": "2026-08-17",
-    "timestamp": "2026-08-17T15:36:00+08:00",
+    "date": "2026-08-18",
+    "timestamp": "2026-08-18T15:36:00+08:00",
     "advance": 4335,
     "decline": 1063,
     "flat": 142,
@@ -63,6 +63,20 @@
     {
       "date": "2026-08-17",
       "timestamp": "2026-08-17",
+      "advance": 4335,
+      "decline": 1063,
+      "flat": 142,
+      "approx_limit_up": 116,
+      "approx_limit_down": 4,
+      "total_amount": 2402131663148.0,
+      "market_median_return": 1.3465,
+      "listed_with_quotes": 5540,
+      "source": "sina",
+      "method": "realtime_snapshot"
+    },
+    {
+      "date": "2026-08-18",
+      "timestamp": "2026-08-18T15:36:00+08:00",
       "advance": 4335,
       "decline": 1063,
       "flat": 142,
