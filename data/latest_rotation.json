@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-18",
-  "generated_at": "2026-08-18T10:44:59+08:00",
+  "generated_at": "2026-08-18T13:41:26+08:00",
   "rotation": {
     "date": "2026-08-18",
     "leader_1": "农林牧渔",
-    "leader_2": "农药化肥",
-    "leader_3": "石油行业",
+    "leader_2": "食品行业",
+    "leader_3": "农药化肥",
     "laggard_1": "印刷包装",
-    "laggard_2": "医疗器械",
+    "laggard_2": "化纤行业",
     "laggard_3": "电子信息",
     "industry_count": 49,
     "source": "sina"
