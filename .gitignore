@@ -12,3 +12,7 @@ htmlcov/
 build/
 dist/
 .worktrees/
+data/history/market_history.db
+data/history/rotation.db
+data/history/*.db-wal
+data/history/*.db-shm

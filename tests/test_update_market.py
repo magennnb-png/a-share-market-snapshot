@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 import pytest
 
 import update_market
-from update_market import UpdateError, _materially_changed, _tree_digest
+from update_market import UpdateError, _install, _materially_changed, _tree_digest
 
 
 def test_digest_ignores_generated_at_only(tmp_path: Path) -> None:
@@ -69,6 +69,20 @@ def test_research_context_change_is_material(tmp_path: Path) -> None:
     (left / "market_technical.json").write_text(json.dumps({"data_as_of": "2026-08-17", "value": 1}), encoding="utf-8")
     (right / "market_technical.json").write_text(json.dumps({"data_as_of": "2026-08-17", "value": 2}), encoding="utf-8")
     assert _materially_changed(left.parent, right.parent)
+
+
+def test_install_preserves_local_sqlite_files(tmp_path: Path) -> None:
+    staged = tmp_path / "staged"
+    target = tmp_path / "target"
+    (staged / "research_context").mkdir(parents=True)
+    (target / "history").mkdir(parents=True)
+    (staged / "research_context" / "market_technical.json").write_text("{}", encoding="utf-8")
+    database = target / "history" / "market_history.db"
+    database.write_bytes(b"local sqlite")
+
+    _install(staged, target)
+
+    assert database.read_bytes() == b"local sqlite"
 
 
 def test_invalid_snapshot_never_replaces_existing_data(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

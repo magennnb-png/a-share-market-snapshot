@@ -64,6 +64,7 @@ class SeriesResult:
     rows: list[dict[str, Any]]
     backend: str
     fallback_used: bool = False
+    fallback_reason: str | None = None
 
 
 class HistoryProvider(Protocol):
@@ -76,14 +77,17 @@ class SQLiteHistoryProvider:
     backend = "sqlite"
 
     def __init__(self, data_dir: Path):
-        self.path = data_dir / "history" / "market_history.db"
+        self.path = data_dir.resolve() / "history" / "market_history.db"
+        self.last_error: str | None = None
 
     @property
     def available(self) -> bool:
         return self.path.exists()
 
     def load_series(self, item: dict[str, Any]) -> list[dict[str, Any]]:
+        self.last_error = None
         if not self.available:
+            self.last_error = "项目根目录 data/history/market_history.db 不存在。"
             return []
         symbol = str(item.get("tencent") or item.get("symbol") or "")
         uri = f"file:{self.path.resolve().as_posix()}?mode=ro"
@@ -92,6 +96,7 @@ class SQLiteHistoryProvider:
             connection.row_factory = sqlite3.Row
             columns = {str(row[1]) for row in connection.execute("PRAGMA table_info(market_daily)")}
             if not columns:
+                self.last_error = "market_history.db 缺少 market_daily 表。"
                 return []
             amount_source = "amount_source" if "amount_source" in columns else "NULL AS amount_source"
             amount_unit = "amount_unit" if "amount_unit" in columns else "NULL AS amount_unit"
@@ -103,7 +108,8 @@ class SQLiteHistoryProvider:
                 """,
                 (symbol,),
             ).fetchall()
-        except sqlite3.Error:
+        except sqlite3.Error as exc:
+            self.last_error = f"market_history.db 只读查询失败：{exc}"
             return []
         finally:
             if "connection" in locals():
@@ -194,8 +200,8 @@ class CSVHistoryProvider:
 class UnifiedHistoryProvider:
     """Prefer a current, usable local SQLite series; otherwise use tracked CSV."""
 
-    def __init__(self, data_dir: Path):
-        self.sqlite = SQLiteHistoryProvider(data_dir)
+    def __init__(self, data_dir: Path, sqlite_data_dir: Path | None = None):
+        self.sqlite = SQLiteHistoryProvider(sqlite_data_dir or data_dir)
         self.csv = CSVHistoryProvider(data_dir)
 
     def load_series(self, item: dict[str, Any]) -> SeriesResult:
@@ -205,7 +211,15 @@ class UnifiedHistoryProvider:
         csv_latest = str(csv_rows[-1].get("date")) if csv_rows else ""
         if len(sqlite_rows) >= 20 and sqlite_latest >= csv_latest:
             return SeriesResult(sqlite_rows, "sqlite", False)
-        return SeriesResult(csv_rows, "csv", bool(sqlite_rows))
+        if self.sqlite.last_error:
+            reason = self.sqlite.last_error
+        elif sqlite_rows and len(sqlite_rows) < 20:
+            reason = f"SQLite仅有{len(sqlite_rows)}个交易日，少于20日最低要求。"
+        elif sqlite_rows and sqlite_latest < csv_latest:
+            reason = f"SQLite最新日期{sqlite_latest}落后于CSV最新日期{csv_latest}。"
+        else:
+            reason = "SQLite中没有该标的可用日K。"
+        return SeriesResult(csv_rows, "csv", self.sqlite.available, reason)
 
 
 def _window_return(rows: list[dict[str, Any]], sessions: int) -> float | None:
@@ -360,6 +374,7 @@ def _instrument_context(
         "kind": item.get("kind"),
         "backend": result.backend,
         "backend_fallback_used": result.fallback_used,
+        "backend_fallback_reason": result.fallback_reason,
         "data_as_of": rows[-1].get("date") if rows else None,
         "history_start": rows[0].get("date") if rows else None,
         "daily_history_count": len(rows),
@@ -382,11 +397,12 @@ def build_market_technical(
     root: Path, data_dir: Path, generated_at: datetime, provider: UnifiedHistoryProvider | None = None
 ) -> dict[str, Any]:
     config = yaml.safe_load((root / "config" / "watchlist.yaml").read_text(encoding="utf-8")) or {}
-    history = provider or UnifiedHistoryProvider(data_dir)
+    history = provider or UnifiedHistoryProvider(data_dir, root.resolve() / "data")
     indices = [_instrument_context(history, item, generated_at, True) for item in config.get("indices") or []]
     dates = [item.get("data_as_of") for item in indices if item.get("data_as_of")]
     grades = [str((item.get("quality") or {}).get("grade")) for item in indices]
     backends = sorted({str(item.get("backend")) for item in indices if item.get("backend")})
+    fallback_reasons = sorted({str(item.get("backend_fallback_reason")) for item in indices if item.get("backend_fallback_reason")})
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": generated_at.isoformat(timespec="seconds"),
@@ -397,6 +413,7 @@ def build_market_technical(
             "grade": "red" if "red" in grades else "yellow" if "yellow" in grades else "green",
             "instrument_count": len(indices),
             "sqlite_available": history.sqlite.available,
+            "sqlite_fallback_reasons": fallback_reasons,
         },
         "known_limitations": [
             "周K由日K按ISO周聚合；current_week_is_partial标记未结束交易周。",
@@ -505,9 +522,9 @@ def _rotation_state(row: dict[str, Any]) -> str:
     return "暂无明确信号"
 
 
-def _load_rotation_sqlite(path: Path, limit_days: int = 20) -> list[dict[str, Any]]:
+def _load_rotation_sqlite(path: Path, limit_days: int = 20) -> tuple[list[dict[str, Any]], str | None]:
     if not path.exists():
-        return []
+        return [], "项目根目录 data/history/rotation.db 不存在。"
     uri = f"file:{path.resolve().as_posix()}?mode=ro"
     try:
         connection = sqlite3.connect(uri, uri=True, timeout=20)
@@ -523,8 +540,8 @@ def _load_rotation_sqlite(path: Path, limit_days: int = 20) -> list[dict[str, An
             """,
             (limit_days,),
         ).fetchall()
-    except sqlite3.Error:
-        return []
+    except sqlite3.Error as exc:
+        return [], f"rotation.db 只读查询失败：{exc}"
     finally:
         if "connection" in locals():
             connection.close()
@@ -540,7 +557,9 @@ def _load_rotation_sqlite(path: Path, limit_days: int = 20) -> list[dict[str, An
             result.append(payload)
         except (TypeError, json.JSONDecodeError):
             continue
-    return result
+    if not result:
+        return [], "rotation.db 中没有可用轮动快照。"
+    return result, None
 
 
 def _enrich_rotation(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -632,10 +651,19 @@ def _compact_rotation_history(sectors: list[dict[str, Any]]) -> list[dict[str, A
     return [{field: item.get(field) for field in fields} for item in sectors]
 
 
-def _build_sqlite_rotation(data_dir: Path, generated_at: datetime) -> dict[str, Any] | None:
-    rows = _load_rotation_sqlite(data_dir / "history" / "rotation.db")
+def _build_sqlite_rotation(
+    sqlite_data_dir: Path, csv_data_dir: Path, generated_at: datetime
+) -> tuple[dict[str, Any] | None, str | None]:
+    rows, load_error = _load_rotation_sqlite(sqlite_data_dir.resolve() / "history" / "rotation.db")
     if not rows:
-        return None
+        return None, load_error
+    sqlite_latest = max(str(row.get("market_date") or "") for row in rows)
+    csv_latest = max(
+        (str(row.get("date") or "") for row in _read_csv(csv_data_dir / "history" / "industries_daily.csv")),
+        default="",
+    )
+    if csv_latest and sqlite_latest < csv_latest:
+        return None, f"rotation.db 最新日期{sqlite_latest}落后于CSV最新日期{csv_latest}。"
     latest = rows[-1]
     taxonomy = str(latest.get("taxonomy") or "unknown_fallback")
     source = str(latest.get("snapshot_source") or latest.get("source") or "unknown")
@@ -660,7 +688,7 @@ def _build_sqlite_rotation(data_dir: Path, generated_at: datetime) -> dict[str, 
         "backend": "sqlite", "sources": [source], "taxonomy": taxonomy, "comparable": True,
         "quality": {"grade": "green" if len(dates) >= 10 else "yellow", "sector_count": len(current), "same_taxonomy_days": len(dates), "snapshot_count": len({row.get('bucket_time') for row in comparable_rows})},
         "known_limitations": limitations, "sectors": current, "recent_daily_history": compact_history,
-    }
+    }, None
 
 
 def _compound_relative(industry: list[dict[str, Any]], benchmark: dict[str, float], days: int, source: str) -> float | None:
@@ -728,13 +756,34 @@ def _build_csv_rotation(data_dir: Path, generated_at: datetime) -> dict[str, Any
 
 
 def build_rotation_context(root: Path, data_dir: Path, generated_at: datetime) -> dict[str, Any]:
-    return _build_sqlite_rotation(data_dir, generated_at) or _build_csv_rotation(data_dir, generated_at)
+    sqlite_path = root.resolve() / "data" / "history" / "rotation.db"
+    sqlite_context, fallback_reason = _build_sqlite_rotation(root.resolve() / "data", data_dir, generated_at)
+    if sqlite_context:
+        return sqlite_context
+    context = _build_csv_rotation(data_dir, generated_at)
+    context["quality"]["sqlite_available"] = sqlite_path.exists()
+    context["quality"]["sqlite_fallback_reason"] = fallback_reason
+    if fallback_reason:
+        context["known_limitations"].append(f"SQLite未采用：{fallback_reason}")
+    return context
 
 
-def _breadth_row(raw: dict[str, Any], current: bool = False) -> dict[str, Any]:
+def _parse_market_time(value: Any) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(str(value))
+    except (TypeError, ValueError):
+        return None
+    return parsed.replace(tzinfo=SHANGHAI) if parsed.tzinfo is None else parsed.astimezone(SHANGHAI)
+
+
+def _breadth_row(
+    raw: dict[str, Any], current: bool = False, market_time: str | None = None, is_stale: bool | None = None
+) -> dict[str, Any]:
+    effective_time = market_time if current else None
     return {
-        "date": raw.get("date") or str(raw.get("market_time") or "")[:10] or None,
-        "timestamp": raw.get("market_time") if current else raw.get("date"),
+        "date": str(effective_time or raw.get("date") or raw.get("market_time") or "")[:10] or None,
+        "timestamp": effective_time if current else raw.get("date"),
+        "is_stale": is_stale if current else None,
         "advance": int(float(raw.get("up") or 0)), "decline": int(float(raw.get("down") or 0)),
         "flat": int(float(raw.get("flat") or 0)), "approx_limit_up": int(float(raw.get("limit_up") or 0)),
         "approx_limit_down": int(float(raw.get("limit_down") or 0)),
@@ -748,17 +797,37 @@ def _breadth_row(raw: dict[str, Any], current: bool = False) -> dict[str, Any]:
 def build_market_breadth_context(data_dir: Path, generated_at: datetime, market: dict[str, Any] | None = None) -> dict[str, Any]:
     snapshot = market or _read_json(data_dir / "latest.json")
     raw_current = snapshot.get("market_breadth") or {}
-    current = _breadth_row(raw_current, True) if raw_current else None
-    rows = [_breadth_row(row) for row in _read_csv(data_dir / "history" / "market_breadth_daily.csv")][-10:]
-    if current and (not rows or rows[-1].get("date") != current.get("date")):
-        rows.append(current)
+    top_market_time = _parse_market_time(snapshot.get("market_time"))
+    nested_market_time = _parse_market_time(raw_current.get("market_time"))
+    effective = top_market_time or nested_market_time
+    if effective and effective > generated_at.astimezone(SHANGHAI):
+        effective = None
+    effective_market_time = effective.isoformat(timespec="seconds") if effective else None
+    explicit_stale = snapshot.get("is_stale")
+    is_stale = bool(explicit_stale) if explicit_stale is not None else bool(effective and effective.date() < generated_at.astimezone(SHANGHAI).date())
+    current = _breadth_row(raw_current, True, effective_market_time, is_stale) if raw_current and effective else None
+    data_as_of = current.get("date") if current else None
+    rows_by_date = {
+        str(row.get("date")): _breadth_row(row)
+        for row in _read_csv(data_dir / "history" / "market_breadth_daily.csv")
+        if row.get("date") and (not data_as_of or str(row.get("date")) <= str(data_as_of))
+    }
+    if current and data_as_of:
+        rows_by_date[str(data_as_of)] = current
+    rows = [rows_by_date[day] for day in sorted(rows_by_date)][-10:]
     sources = sorted({str(row.get("source")) for row in rows if row.get("source")})
     dates = sorted({str(row.get("date")) for row in rows if row.get("date")})
+    time_mismatch = bool(top_market_time and nested_market_time and top_market_time != nested_market_time)
     return {
         "schema_version": SCHEMA_VERSION, "generated_at": generated_at.isoformat(timespec="seconds"),
-        "market_time": current.get("timestamp") if current else None, "data_as_of": dates[-1] if dates else None,
+        "market_time": effective_market_time, "source_market_time": effective_market_time,
+        "data_as_of": data_as_of or (dates[-1] if dates else None), "is_stale": is_stale,
         "backend": "csv", "sources": sources,
-        "quality": {"grade": "yellow" if current else "red", "current_available": current is not None, "historical_trading_days": len(dates)},
+        "quality": {
+            "grade": "yellow" if current else "red", "current_available": current is not None,
+            "historical_trading_days": len(dates),
+            "time_alignment_warning": "宽度子对象时间与行情时间不一致，已采用latest.json顶层market_time。" if time_mismatch else None,
+        },
         "known_limitations": [
             "市场宽度历史只保存程序实际观察到的快照，漏跑日期不使用当前股票池伪造回填。",
             "涨跌停家数按ST、主板、创业板/科创板和北交所阈值近似统计。",
@@ -777,7 +846,7 @@ def build_watchlist_context(
     minute = intraday or _read_json(data_dir / "latest_intraday.json")
     quotes = {(str(row.get("kind")), str(row.get("symbol"))): row for row in snapshot.get("watchlist") or []}
     intraday_items = {(str(row.get("kind")), str(row.get("symbol"))): row for row in minute.get("instruments") or []}
-    history = provider or UnifiedHistoryProvider(data_dir)
+    history = provider or UnifiedHistoryProvider(data_dir, root.resolve() / "data")
     instruments = []
     for item in items:
         key = (str(item.get("kind")), str(item.get("symbol")))
@@ -810,8 +879,9 @@ def generate_research_context(
     market: dict[str, Any] | None = None, intraday: dict[str, Any] | None = None,
 ) -> tuple[list[Path], list[str]]:
     generated_at = generated_at or datetime.now(SHANGHAI)
-    data_dir = data_dir or root / "data"
-    provider = UnifiedHistoryProvider(data_dir)
+    root = root.resolve()
+    data_dir = (data_dir or root / "data").resolve()
+    provider = UnifiedHistoryProvider(data_dir, root / "data")
     builders = {
         "market_technical.json": lambda: build_market_technical(root, data_dir, generated_at, provider),
         "rotation_context.json": lambda: build_rotation_context(root, data_dir, generated_at),

@@ -24,6 +24,7 @@ from a_share_bridge.rendering import write_outputs
 from a_share_bridge.validation import validate_snapshot
 
 SHANGHAI = ZoneInfo("Asia/Shanghai")
+LOCAL_DATABASE_SUFFIXES = (".db", ".db-wal", ".db-shm")
 
 
 class UpdateError(RuntimeError):
@@ -128,6 +129,8 @@ def _install(staged: Path, target: Path) -> None:
         temporary.replace(destination)
     staged_files = {path.relative_to(staged) for path in staged.rglob("*") if path.is_file()}
     for old in sorted((path for path in target.rglob("*") if path.is_file()), reverse=True):
+        if old.name.endswith(LOCAL_DATABASE_SUFFIXES):
+            continue
         if old.relative_to(target) not in staged_files:
             old.unlink()
 
@@ -139,7 +142,7 @@ def run(config_path: Path, data_dir: Path, validate_only: bool = False) -> dict[
     with tempfile.TemporaryDirectory(prefix="a-share-update-") as temporary:
         staged = Path(temporary) / "data"
         if data_dir.exists():
-            shutil.copytree(data_dir, staged)
+            shutil.copytree(data_dir, staged, ignore=shutil.ignore_patterns("*.db", "*.db-wal", "*.db-shm"))
         else:
             staged.mkdir(parents=True)
         print("[1/5] 获取实时行情（东方财富 → 腾讯，宽度/行业 → 新浪回退）...", flush=True)
