@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-19T15:00:00+08:00",
-  "generated_at": "2026-08-19T16:19:17+08:00",
+  "generated_at": "2026-08-19T21:53:59+08:00",
   "sources": [
     "sina",
     "tencent"
   ],
   "is_stale": false,
   "errors": [
-    "eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))",
+    "eastmoney全市场行情失败: ConnectionError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=6000&po=1&np=1&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf6%2Cf124 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))",
     "tencent分时失败 北证50: RuntimeError: 接口返回空分时"
   ],
   "warnings": [
@@ -28,12 +28,6 @@
     {
       "source": "eastmoney",
       "operation": "quotes",
-      "ok": false,
-      "error": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))"
-    },
-    {
-      "source": "tencent",
-      "operation": "quotes",
       "ok": true,
       "records": 14
     },
@@ -51,6 +45,12 @@
     },
     {
       "source": "tencent",
+      "operation": "intraday:sh000852",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh000001",
       "ok": true,
       "records": 242
@@ -58,18 +58,6 @@
     {
       "source": "tencent",
       "operation": "intraday:sz399001",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh000852",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sh000688",
       "ok": true,
       "records": 242
     },
@@ -87,19 +75,7 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:bj899050",
-      "ok": false,
-      "error": "接口返回空分时"
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz159915",
-      "ok": true,
-      "records": 242
-    },
-    {
-      "source": "tencent",
-      "operation": "intraday:sz000001",
+      "operation": "intraday:sh000688",
       "ok": true,
       "records": 242
     },
@@ -111,13 +87,31 @@
     },
     {
       "source": "tencent",
-      "operation": "intraday:sh512760",
+      "operation": "intraday:sz159915",
       "ok": true,
       "records": 242
     },
     {
       "source": "tencent",
+      "operation": "intraday:bj899050",
+      "ok": false,
+      "error": "接口返回空分时"
+    },
+    {
+      "source": "tencent",
       "operation": "intraday:sh600519",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 242
+    },
+    {
+      "source": "tencent",
+      "operation": "intraday:sh512760",
       "ok": true,
       "records": 242
     },

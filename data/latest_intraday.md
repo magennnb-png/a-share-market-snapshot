@@ -1,7 +1,7 @@
 # A股完整 1 分钟分时
 
 - 行情时间：2026-08-19T15:00:00+08:00
-- 生成时间：2026-08-19T16:19:17+08:00
+- 生成时间：2026-08-19T21:53:59+08:00
 - 数据来源：sina, tencent
 - 是否过期：否
 
@@ -3509,7 +3509,7 @@
 
 ## 错误和警告
 
-- 错误：eastmoney实时行情失败: SSLError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/ulist.np/get?fltt=2&secids=1.000001%2C0.399001%2C0.399006%2C1.000688%2C1.000300%2C1.000852%2C0.899050%2C1.510300%2C0.159915%2C1.600519%2C0.000001%2C1.512760%2C1.589120%2C0.399971&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf15%2Cf16%2Cf17%2Cf18%2Cf124 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))
+- 错误：eastmoney全市场行情失败: ConnectionError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=6000&po=1&np=1&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf6%2Cf124 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
 - 错误：tencent分时失败 北证50: RuntimeError: 接口返回空分时
 - 警告：上证指数: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
 - 警告：深证成指: 指数VWAP为按指数分钟成交量加权的指数点位，不是ETF价格、IOPV或基金净值
