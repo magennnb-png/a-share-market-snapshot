@@ -1,18 +1,19 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-08-19T21:53:59+08:00",
-  "market_time": "2026-08-19T16:12:02+08:00",
-  "source_market_time": "2026-08-19T16:12:02+08:00",
-  "data_as_of": "2026-08-19",
+  "generated_at": "2026-08-24T10:39:27+08:00",
+  "market_time": null,
+  "source_market_time": null,
+  "data_as_of": "2026-08-24",
   "is_stale": false,
   "backend": "csv",
   "sources": [
+    "eastmoney",
     "sina"
   ],
   "quality": {
-    "grade": "yellow",
-    "current_available": true,
-    "historical_trading_days": 5,
+    "grade": "red",
+    "current_available": false,
+    "historical_trading_days": 6,
     "time_alignment_warning": "宽度子对象时间与行情时间不一致，已采用latest.json顶层market_time。"
   },
   "known_limitations": [
@@ -20,21 +21,7 @@
     "涨跌停家数按ST、主板、创业板/科创板和北交所阈值近似统计。"
   ],
   "historical_coverage_limited": true,
-  "current": {
-    "date": "2026-08-19",
-    "timestamp": "2026-08-19T16:12:02+08:00",
-    "is_stale": false,
-    "advance": 448,
-    "decline": 5069,
-    "flat": 24,
-    "approx_limit_up": 44,
-    "approx_limit_down": 177,
-    "total_amount": 2529325917959.0,
-    "market_median_return": -3.922,
-    "listed_with_quotes": 5541,
-    "source": "sina",
-    "method": "realtime_snapshot"
-  },
+  "current": null,
   "recent_history": [
     {
       "date": "2026-08-12",
@@ -98,8 +85,8 @@
     },
     {
       "date": "2026-08-19",
-      "timestamp": "2026-08-19T16:12:02+08:00",
-      "is_stale": false,
+      "timestamp": "2026-08-19",
+      "is_stale": null,
       "advance": 448,
       "decline": 5069,
       "flat": 24,
@@ -109,6 +96,21 @@
       "market_median_return": -3.922,
       "listed_with_quotes": 5541,
       "source": "sina",
+      "method": "realtime_snapshot"
+    },
+    {
+      "date": "2026-08-24",
+      "timestamp": "2026-08-24",
+      "is_stale": null,
+      "advance": 1214,
+      "decline": 3886,
+      "flat": 107,
+      "approx_limit_up": 49,
+      "approx_limit_down": 20,
+      "total_amount": 1077305579703.78,
+      "market_median_return": -1.36,
+      "listed_with_quotes": 5207,
+      "source": "eastmoney",
       "method": "realtime_snapshot"
     }
   ]
