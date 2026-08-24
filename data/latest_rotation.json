@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "market_time": "2026-08-24",
-  "generated_at": "2026-08-24T10:43:05+08:00",
+  "generated_at": "2026-08-24T10:55:50+08:00",
   "rotation": {
     "date": "2026-08-24",
-    "leader_1": "白银",
-    "leader_2": "种子",
-    "leader_3": "钼",
-    "laggard_1": "航空运输",
-    "laggard_2": "基建市政工程",
-    "laggard_3": "纯碱",
+    "leader_1": "种子",
+    "leader_2": "白银",
+    "leader_3": "其他养殖",
+    "laggard_1": "氮肥",
+    "laggard_2": "纯碱",
+    "laggard_3": "风力发电",
     "industry_count": 100,
     "source": "eastmoney"
   },

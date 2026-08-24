@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "market_time": "2026-08-24T10:44:00+08:00",
-  "generated_at": "2026-08-24T10:43:05+08:00",
+  "market_time": "2026-08-24T10:56:00+08:00",
+  "generated_at": "2026-08-24T10:55:50+08:00",
   "sources": [
     "eastmoney"
   ],
@@ -41,92 +41,92 @@
       "source": "eastmoney",
       "operation": "intraday:sz399006",
       "ok": true,
-      "records": 75
+      "records": 87
     },
     {
       "source": "eastmoney",
       "operation": "intraday:sh000688",
       "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:sh000001",
-      "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:bj899050",
-      "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:sh510300",
-      "ok": true,
-      "records": 75
+      "records": 87
     },
     {
       "source": "eastmoney",
       "operation": "intraday:sz399001",
       "ok": true,
-      "records": 75
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sh000001",
+      "ok": true,
+      "records": 87
     },
     {
       "source": "eastmoney",
       "operation": "intraday:sh000300",
       "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:sh600519",
-      "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:sz159915",
-      "ok": true,
-      "records": 75
-    },
-    {
-      "source": "eastmoney",
-      "operation": "intraday:sz000001",
-      "ok": true,
-      "records": 75
+      "records": 87
     },
     {
       "source": "eastmoney",
       "operation": "intraday:sh000852",
       "ok": true,
-      "records": 75
+      "records": 87
     },
     {
       "source": "eastmoney",
-      "operation": "intraday:sz399971",
+      "operation": "intraday:bj899050",
       "ok": true,
-      "records": 75
+      "records": 87
     },
     {
       "source": "eastmoney",
-      "operation": "intraday:sh589120",
+      "operation": "intraday:sh510300",
       "ok": true,
-      "records": 75
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sz159915",
+      "ok": true,
+      "records": 87
     },
     {
       "source": "eastmoney",
       "operation": "intraday:sh512760",
       "ok": true,
-      "records": 75
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sh600519",
+      "ok": true,
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sz000001",
+      "ok": true,
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sh589120",
+      "ok": true,
+      "records": 87
+    },
+    {
+      "source": "eastmoney",
+      "operation": "intraday:sz399971",
+      "ok": true,
+      "records": 87
     }
   ],
   "instruments": [
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -797,11 +797,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 3883.31,
-          "high": 3883.3,
+          "high": 3880.37,
           "low": 3883.49,
-          "volume": 3883.07,
-          "amount": 883921.0,
-          "average_price": 1515949264.0
+          "volume": 3880.21,
+          "amount": 2452387.0,
+          "average_price": 4646582528.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 3880.67,
+          "high": 3880.33,
+          "low": 3881.21,
+          "volume": 3879.95,
+          "amount": 1797570.0,
+          "average_price": 4441206016.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 3880.54,
+          "high": 3880.36,
+          "low": 3880.73,
+          "volume": 3879.83,
+          "amount": 1763111.0,
+          "average_price": 4026100864.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 3880.17,
+          "high": 3879.57,
+          "low": 3880.52,
+          "volume": 3879.32,
+          "amount": 1766815.0,
+          "average_price": 3362480912.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 3880.02,
+          "high": 3877.11,
+          "low": 3880.02,
+          "volume": 3877.11,
+          "amount": 1739450.0,
+          "average_price": 3433694528.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 3877.11,
+          "high": 3877.79,
+          "low": 3878.08,
+          "volume": 3877.11,
+          "amount": 1787558.0,
+          "average_price": 3821563408.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 3877.7,
+          "high": 3878.86,
+          "low": 3878.97,
+          "volume": 3877.51,
+          "amount": 1559610.0,
+          "average_price": 3026719792.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 3878.14,
+          "high": 3877.01,
+          "low": 3878.17,
+          "volume": 3876.77,
+          "amount": 1349202.0,
+          "average_price": 2773943792.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 3876.94,
+          "high": 3877.69,
+          "low": 3879.08,
+          "volume": 3876.94,
+          "amount": 1630358.0,
+          "average_price": 3239441024.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 3877.6,
+          "high": 3877.65,
+          "low": 3878.27,
+          "volume": 3877.16,
+          "amount": 1236620.0,
+          "average_price": 2539391824.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 3877.43,
+          "high": 3877.12,
+          "low": 3877.8,
+          "volume": 3876.99,
+          "amount": 1109811.0,
+          "average_price": 2677568560.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 3877.12,
+          "high": 3876.18,
+          "low": 3877.12,
+          "volume": 3875.43,
+          "amount": 1394486.0,
+          "average_price": 3216022592.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 3875.64,
+          "high": 3875.4,
+          "low": 3875.76,
+          "volume": 3874.36,
+          "amount": 1417495.0,
+          "average_price": 3494526880.0
         }
       ],
       "errors": [],
@@ -814,25 +922,25 @@
       "is_stale": false,
       "metrics": {
         "open": 3902.7,
-        "last": 3883.31,
+        "last": 3875.64,
         "high": 3907.81,
-        "low": 3883.31,
-        "vwap": 3893.8813,
-        "max_drawdown_percent": 0.6269,
+        "low": 3875.64,
+        "vwap": 3891.7336,
+        "max_drawdown_percent": 0.8232,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 0.6269,
+        "pullback_from_high_percent": 0.8232,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -0.4968,
+        "open_to_last_percent": -0.6934,
         "gap_at_open_percent": -0.064,
         "high_time": "2026-08-24 09:36",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -1503,11 +1611,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 13799.47,
-          "high": 13794.55,
+          "high": 13780.67,
           "low": 13799.47,
-          "volume": 13794.55,
-          "amount": 876180.0,
-          "average_price": 1579981248.0
+          "volume": 13780.67,
+          "amount": 3035205.0,
+          "average_price": 5264015872.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 13780.05,
+          "high": 13782.44,
+          "low": 13790.34,
+          "volume": 13778.97,
+          "amount": 2367138.0,
+          "average_price": 4846113536.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 13782.3,
+          "high": 13783.21,
+          "low": 13784.63,
+          "volume": 13781.12,
+          "amount": 2215864.0,
+          "average_price": 4212512496.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 13784.02,
+          "high": 13779.65,
+          "low": 13791.68,
+          "volume": 13779.65,
+          "amount": 1898916.0,
+          "average_price": 3635538432.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 13780.69,
+          "high": 13765.56,
+          "low": 13781.31,
+          "volume": 13765.56,
+          "amount": 1873009.0,
+          "average_price": 3612365664.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 13764.87,
+          "high": 13776.87,
+          "low": 13779.15,
+          "volume": 13764.87,
+          "amount": 1903950.0,
+          "average_price": 3900780848.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 13776.6,
+          "high": 13775.97,
+          "low": 13782.02,
+          "volume": 13775.97,
+          "amount": 1701437.0,
+          "average_price": 3203396800.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 13776.24,
+          "high": 13764.2,
+          "low": 13776.24,
+          "volume": 13763.98,
+          "amount": 1618884.0,
+          "average_price": 2948849888.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 13772.35,
+          "high": 13765.16,
+          "low": 13775.68,
+          "volume": 13763.67,
+          "amount": 1765039.0,
+          "average_price": 3414494688.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 13764.0,
+          "high": 13771.16,
+          "low": 13773.11,
+          "volume": 13764.0,
+          "amount": 1352365.0,
+          "average_price": 2650609440.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 13770.94,
+          "high": 13768.58,
+          "low": 13773.2,
+          "volume": 13768.58,
+          "amount": 1253174.0,
+          "average_price": 2513344496.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 13768.91,
+          "high": 13762.4,
+          "low": 13769.05,
+          "volume": 13762.4,
+          "amount": 1582197.0,
+          "average_price": 3407761440.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 13762.43,
+          "high": 13761.35,
+          "low": 13762.62,
+          "volume": 13757.62,
+          "amount": 1760561.0,
+          "average_price": 3773236400.0
         }
       ],
       "errors": [],
@@ -1520,25 +1736,25 @@
       "is_stale": false,
       "metrics": {
         "open": 14118.02,
-        "last": 13799.47,
+        "last": 13762.43,
         "high": 14118.15,
-        "low": 13799.47,
-        "vwap": 13914.5227,
-        "max_drawdown_percent": 2.2572,
+        "low": 13762.43,
+        "vwap": 13895.2513,
+        "max_drawdown_percent": 2.5196,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 2.2572,
+        "pullback_from_high_percent": 2.5196,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -2.2563,
+        "open_to_last_percent": -2.5187,
         "gap_at_open_percent": 0.1692,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -2209,11 +2425,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 3435.77,
-          "high": 3434.52,
+          "high": 3429.75,
           "low": 3435.77,
-          "volume": 3434.52,
-          "amount": 210296.0,
-          "average_price": 600831600.0
+          "volume": 3429.75,
+          "amount": 917725.0,
+          "average_price": 2402724496.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 3429.32,
+          "high": 3432.12,
+          "low": 3434.51,
+          "volume": 3429.0,
+          "amount": 714091.0,
+          "average_price": 2328927376.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 3432.35,
+          "high": 3433.46,
+          "low": 3433.79,
+          "volume": 3431.85,
+          "amount": 612139.0,
+          "average_price": 1868402944.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 3433.8,
+          "high": 3432.96,
+          "low": 3436.94,
+          "volume": 3432.96,
+          "amount": 545392.0,
+          "average_price": 1608653472.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 3433.36,
+          "high": 3428.49,
+          "low": 3433.7,
+          "volume": 3428.33,
+          "amount": 535187.0,
+          "average_price": 1611304224.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 3428.07,
+          "high": 3433.12,
+          "low": 3434.34,
+          "volume": 3428.07,
+          "amount": 548470.0,
+          "average_price": 1728219520.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 3433.47,
+          "high": 3433.05,
+          "low": 3435.85,
+          "volume": 3433.05,
+          "amount": 465942.0,
+          "average_price": 1430839968.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 3433.45,
+          "high": 3428.29,
+          "low": 3433.45,
+          "volume": 3428.06,
+          "amount": 472893.0,
+          "average_price": 1278641024.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 3431.84,
+          "high": 3428.92,
+          "low": 3432.43,
+          "volume": 3428.13,
+          "amount": 583856.0,
+          "average_price": 1628505136.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 3428.56,
+          "high": 3431.68,
+          "low": 3432.54,
+          "volume": 3428.56,
+          "amount": 439714.0,
+          "average_price": 1207963264.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 3431.44,
+          "high": 3430.48,
+          "low": 3432.75,
+          "volume": 3430.48,
+          "amount": 418953.0,
+          "average_price": 1147847232.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 3430.55,
+          "high": 3428.52,
+          "low": 3431.39,
+          "volume": 3428.52,
+          "amount": 545450.0,
+          "average_price": 1612737472.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 3428.37,
+          "high": 3429.0,
+          "low": 3429.5,
+          "volume": 3427.64,
+          "amount": 536887.0,
+          "average_price": 1719321008.0
         }
       ],
       "errors": [],
@@ -2226,25 +2550,25 @@
       "is_stale": false,
       "metrics": {
         "open": 3550.25,
-        "last": 3435.77,
+        "last": 3428.37,
         "high": 3551.51,
-        "low": 3435.77,
-        "vwap": 3472.8178,
-        "max_drawdown_percent": 3.2589,
-        "intraday_position": 0.0,
-        "pullback_from_high_percent": 3.2589,
-        "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -3.2246,
+        "low": 3428.07,
+        "vwap": 3467.1359,
+        "max_drawdown_percent": 3.4757,
+        "intraday_position": 0.0024,
+        "pullback_from_high_percent": 3.4673,
+        "recovery_from_low_percent": 0.0088,
+        "open_to_last_percent": -3.433,
         "gap_at_open_percent": 0.1317,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:49",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -2915,11 +3239,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 1610.85,
-          "high": 1610.05,
+          "high": 1606.92,
           "low": 1610.85,
-          "volume": 1609.99,
-          "amount": 15793.0,
-          "average_price": 165318114.0
+          "volume": 1606.92,
+          "amount": 46931.0,
+          "average_price": 504815088.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 1607.26,
+          "high": 1605.95,
+          "low": 1608.21,
+          "volume": 1605.95,
+          "amount": 42373.0,
+          "average_price": 570407104.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 1606.1,
+          "high": 1608.7,
+          "low": 1608.73,
+          "volume": 1605.99,
+          "amount": 38953.0,
+          "average_price": 419288240.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 1608.85,
+          "high": 1608.0,
+          "low": 1610.6,
+          "volume": 1608.0,
+          "amount": 33154.0,
+          "average_price": 338977056.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 1608.07,
+          "high": 1604.22,
+          "low": 1608.07,
+          "volume": 1604.22,
+          "amount": 34728.0,
+          "average_price": 340805392.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 1604.08,
+          "high": 1605.86,
+          "low": 1605.98,
+          "volume": 1603.76,
+          "amount": 37420.0,
+          "average_price": 520266384.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 1606.2,
+          "high": 1607.24,
+          "low": 1607.95,
+          "volume": 1606.09,
+          "amount": 39387.0,
+          "average_price": 276828896.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 1606.96,
+          "high": 1604.43,
+          "low": 1606.96,
+          "volume": 1604.43,
+          "amount": 29813.0,
+          "average_price": 274609520.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 1604.45,
+          "high": 1604.54,
+          "low": 1606.96,
+          "volume": 1604.45,
+          "amount": 34120.0,
+          "average_price": 333405168.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 1604.46,
+          "high": 1605.14,
+          "low": 1606.14,
+          "volume": 1604.32,
+          "amount": 29066.0,
+          "average_price": 271455632.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 1604.99,
+          "high": 1603.78,
+          "low": 1605.08,
+          "volume": 1603.78,
+          "amount": 33658.0,
+          "average_price": 229453444.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 1603.66,
+          "high": 1601.36,
+          "low": 1603.9,
+          "volume": 1601.33,
+          "amount": 38102.0,
+          "average_price": 403105200.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 1601.21,
+          "high": 1600.9,
+          "low": 1601.65,
+          "volume": 1600.42,
+          "amount": 50273.0,
+          "average_price": 547519120.0
         }
       ],
       "errors": [],
@@ -2932,25 +3364,25 @@
       "is_stale": false,
       "metrics": {
         "open": 1651.88,
-        "last": 1610.85,
+        "last": 1601.21,
         "high": 1651.96,
-        "low": 1610.85,
-        "vwap": 1625.5622,
-        "max_drawdown_percent": 2.4886,
+        "low": 1601.21,
+        "vwap": 1622.8269,
+        "max_drawdown_percent": 3.0721,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 2.4886,
+        "pullback_from_high_percent": 3.0721,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -2.4838,
+        "open_to_last_percent": -3.0674,
         "gap_at_open_percent": -0.1016,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -3621,11 +4053,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 4569.6,
-          "high": 4568.6,
+          "high": 4565.87,
           "low": 4569.66,
-          "volume": 4568.6,
-          "amount": 590920.0,
-          "average_price": 1409034912.0
+          "volume": 4565.87,
+          "amount": 1083925.0,
+          "average_price": 2984359488.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 4566.04,
+          "high": 4566.57,
+          "low": 4568.07,
+          "volume": 4565.36,
+          "amount": 839406.0,
+          "average_price": 3021550160.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 4566.49,
+          "high": 4565.9,
+          "low": 4567.03,
+          "volume": 4565.37,
+          "amount": 1018551.0,
+          "average_price": 2739676976.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 4565.75,
+          "high": 4565.53,
+          "low": 4567.2,
+          "volume": 4565.32,
+          "amount": 761548.0,
+          "average_price": 2148996640.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 4565.18,
+          "high": 4561.72,
+          "low": 4565.41,
+          "volume": 4561.72,
+          "amount": 887808.0,
+          "average_price": 2101868848.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 4561.43,
+          "high": 4563.22,
+          "low": 4563.92,
+          "volume": 4561.43,
+          "amount": 991116.0,
+          "average_price": 2524302976.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 4563.09,
+          "high": 4563.97,
+          "low": 4564.75,
+          "volume": 4563.09,
+          "amount": 828371.0,
+          "average_price": 2086605616.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 4563.38,
+          "high": 4561.29,
+          "low": 4563.48,
+          "volume": 4561.15,
+          "amount": 633543.0,
+          "average_price": 1794395232.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 4561.52,
+          "high": 4563.06,
+          "low": 4564.76,
+          "volume": 4561.52,
+          "amount": 712318.0,
+          "average_price": 1937474112.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 4562.93,
+          "high": 4563.78,
+          "low": 4564.57,
+          "volume": 4562.53,
+          "amount": 560462.0,
+          "average_price": 1599976704.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 4563.8,
+          "high": 4563.16,
+          "low": 4564.49,
+          "volume": 4563.16,
+          "amount": 480866.0,
+          "average_price": 1519474384.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 4562.96,
+          "high": 4562.07,
+          "low": 4563.39,
+          "volume": 4561.93,
+          "amount": 590374.0,
+          "average_price": 1867188496.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 4561.61,
+          "high": 4561.21,
+          "low": 4561.86,
+          "volume": 4560.29,
+          "amount": 670409.0,
+          "average_price": 2178968208.0
         }
       ],
       "errors": [],
@@ -3638,25 +4178,25 @@
       "is_stale": false,
       "metrics": {
         "open": 4620.95,
-        "last": 4569.6,
+        "last": 4561.61,
         "high": 4621.39,
-        "low": 4569.6,
-        "vwap": 4590.4878,
-        "max_drawdown_percent": 1.1207,
-        "intraday_position": 0.0,
-        "pullback_from_high_percent": 1.1207,
-        "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -1.1112,
+        "low": 4561.43,
+        "vwap": 4586.8084,
+        "max_drawdown_percent": 1.2974,
+        "intraday_position": 0.003,
+        "pullback_from_high_percent": 1.2936,
+        "recovery_from_low_percent": 0.0039,
+        "open_to_last_percent": -1.2842,
         "gap_at_open_percent": 0.0444,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:49",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -4327,11 +4867,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 7478.12,
-          "high": 7474.17,
+          "high": 7465.53,
           "low": 7478.12,
-          "volume": 7474.17,
-          "amount": 413762.0,
-          "average_price": 724080432.0
+          "volume": 7465.53,
+          "amount": 1097275.0,
+          "average_price": 2033423504.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 7465.37,
+          "high": 7462.95,
+          "low": 7467.94,
+          "volume": 7462.95,
+          "amount": 877173.0,
+          "average_price": 1966386400.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 7463.19,
+          "high": 7467.55,
+          "low": 7467.55,
+          "volume": 7462.46,
+          "amount": 804704.0,
+          "average_price": 1679391136.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 7467.2,
+          "high": 7465.18,
+          "low": 7470.99,
+          "volume": 7465.18,
+          "amount": 804711.0,
+          "average_price": 1535739232.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 7464.84,
+          "high": 7458.33,
+          "low": 7465.6,
+          "volume": 7458.33,
+          "amount": 821455.0,
+          "average_price": 1582679600.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 7458.75,
+          "high": 7464.62,
+          "low": 7465.47,
+          "volume": 7458.02,
+          "amount": 820126.0,
+          "average_price": 1752223312.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 7464.49,
+          "high": 7465.01,
+          "low": 7466.55,
+          "volume": 7464.24,
+          "amount": 728599.0,
+          "average_price": 1387744032.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 7464.74,
+          "high": 7458.64,
+          "low": 7464.74,
+          "volume": 7458.04,
+          "amount": 720510.0,
+          "average_price": 1265051568.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 7458.48,
+          "high": 7455.17,
+          "low": 7463.09,
+          "volume": 7455.16,
+          "amount": 829750.0,
+          "average_price": 1522960976.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 7454.98,
+          "high": 7458.13,
+          "low": 7459.36,
+          "volume": 7454.51,
+          "amount": 571449.0,
+          "average_price": 1180701392.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 7458.7,
+          "high": 7455.43,
+          "low": 7458.7,
+          "volume": 7455.43,
+          "amount": 535842.0,
+          "average_price": 1103341232.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 7455.09,
+          "high": 7451.82,
+          "low": 7455.09,
+          "volume": 7451.82,
+          "amount": 669323.0,
+          "average_price": 1488450896.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 7451.31,
+          "high": 7451.53,
+          "low": 7452.2,
+          "volume": 7448.02,
+          "amount": 707983.0,
+          "average_price": 1560814704.0
         }
       ],
       "errors": [],
@@ -4344,25 +4992,25 @@
       "is_stale": false,
       "metrics": {
         "open": 7614.89,
-        "last": 7478.12,
+        "last": 7451.31,
         "high": 7624.61,
-        "low": 7478.12,
-        "vwap": 7531.5292,
-        "max_drawdown_percent": 1.9213,
+        "low": 7451.31,
+        "vwap": 7521.8219,
+        "max_drawdown_percent": 2.2729,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 1.9213,
+        "pullback_from_high_percent": 2.2729,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -1.7961,
+        "open_to_last_percent": -2.1482,
         "gap_at_open_percent": 0.1722,
         "high_time": "2026-08-24 09:36",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -5033,11 +5681,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 1058.98,
-          "high": 1059.24,
-          "low": 1059.24,
-          "volume": 1058.98,
-          "amount": 6360.0,
-          "average_price": 11744219.0
+          "high": 1058.95,
+          "low": 1059.28,
+          "volume": 1058.95,
+          "amount": 23054.0,
+          "average_price": 42135684.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 1058.95,
+          "high": 1058.36,
+          "low": 1058.95,
+          "volume": 1058.03,
+          "amount": 26049.0,
+          "average_price": 52140895.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 1058.31,
+          "high": 1059.17,
+          "low": 1059.17,
+          "volume": 1058.27,
+          "amount": 25579.0,
+          "average_price": 52727739.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 1059.1,
+          "high": 1059.07,
+          "low": 1059.51,
+          "volume": 1058.93,
+          "amount": 23903.0,
+          "average_price": 52192637.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 1059.04,
+          "high": 1058.53,
+          "low": 1059.04,
+          "volume": 1058.45,
+          "amount": 19636.0,
+          "average_price": 43718675.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 1058.65,
+          "high": 1059.01,
+          "low": 1059.01,
+          "volume": 1058.29,
+          "amount": 24189.0,
+          "average_price": 48391152.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 1059.01,
+          "high": 1059.12,
+          "low": 1059.72,
+          "volume": 1058.76,
+          "amount": 19269.0,
+          "average_price": 43469264.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 1059.12,
+          "high": 1059.17,
+          "low": 1059.46,
+          "volume": 1058.88,
+          "amount": 19456.0,
+          "average_price": 40231958.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 1059.17,
+          "high": 1058.99,
+          "low": 1059.51,
+          "volume": 1058.78,
+          "amount": 17129.0,
+          "average_price": 34023997.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 1058.99,
+          "high": 1059.43,
+          "low": 1059.67,
+          "volume": 1058.99,
+          "amount": 16639.0,
+          "average_price": 40652356.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 1059.49,
+          "high": 1059.83,
+          "low": 1059.83,
+          "volume": 1059.05,
+          "amount": 18316.0,
+          "average_price": 60329690.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 1059.8,
+          "high": 1060.7,
+          "low": 1060.7,
+          "volume": 1059.46,
+          "amount": 16700.0,
+          "average_price": 42732624.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 1060.56,
+          "high": 1060.01,
+          "low": 1060.56,
+          "volume": 1059.96,
+          "amount": 16987.0,
+          "average_price": 41129512.0
         }
       ],
       "errors": [],
@@ -5050,25 +5806,25 @@
       "is_stale": false,
       "metrics": {
         "open": 1075.45,
-        "last": 1058.98,
+        "last": 1060.56,
         "high": 1083.41,
-        "low": 1058.98,
-        "vwap": 1070.2299,
-        "max_drawdown_percent": 2.2549,
-        "intraday_position": 0.0,
-        "pullback_from_high_percent": 2.2549,
-        "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -1.5315,
+        "low": 1058.31,
+        "vwap": 1068.7192,
+        "max_drawdown_percent": 2.3168,
+        "intraday_position": 0.0896,
+        "pullback_from_high_percent": 2.1091,
+        "recovery_from_low_percent": 0.2126,
+        "open_to_last_percent": -1.3845,
         "gap_at_open_percent": 0.0065,
         "high_time": "2026-08-24 09:36",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:46",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -5739,11 +6495,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 4.636,
-          "high": 4.635,
+          "high": 4.632,
           "low": 4.636,
-          "volume": 4.634,
-          "amount": 9872.0,
-          "average_price": 4575696.0
+          "volume": 4.631,
+          "amount": 68866.0,
+          "average_price": 31907435.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 4.632,
+          "high": 4.632,
+          "low": 4.633,
+          "volume": 4.632,
+          "amount": 40916.0,
+          "average_price": 18953063.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 4.632,
+          "high": 4.632,
+          "low": 4.633,
+          "volume": 4.632,
+          "amount": 23990.0,
+          "average_price": 11112138.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 4.632,
+          "high": 4.632,
+          "low": 4.633,
+          "volume": 4.632,
+          "amount": 34875.0,
+          "average_price": 16152944.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 4.632,
+          "high": 4.628,
+          "low": 4.632,
+          "volume": 4.628,
+          "amount": 143753.0,
+          "average_price": 66557321.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 4.628,
+          "high": 4.629,
+          "low": 4.629,
+          "volume": 4.627,
+          "amount": 20614.0,
+          "average_price": 9539856.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 4.629,
+          "high": 4.629,
+          "low": 4.631,
+          "volume": 4.628,
+          "amount": 25990.0,
+          "average_price": 12031515.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 4.628,
+          "high": 4.628,
+          "low": 4.63,
+          "volume": 4.628,
+          "amount": 54213.0,
+          "average_price": 25091897.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 4.63,
+          "high": 4.629,
+          "low": 4.63,
+          "volume": 4.628,
+          "amount": 37550.0,
+          "average_price": 17378641.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 4.629,
+          "high": 4.63,
+          "low": 4.631,
+          "volume": 4.629,
+          "amount": 35685.0,
+          "average_price": 16521930.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 4.63,
+          "high": 4.629,
+          "low": 4.631,
+          "volume": 4.628,
+          "amount": 27719.0,
+          "average_price": 12832380.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 4.629,
+          "high": 4.628,
+          "low": 4.63,
+          "volume": 4.628,
+          "amount": 53738.0,
+          "average_price": 24869477.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 4.627,
+          "high": 4.627,
+          "low": 4.628,
+          "volume": 4.626,
+          "amount": 31947.0,
+          "average_price": 14779698.0
         }
       ],
       "errors": [],
@@ -5754,25 +6618,25 @@
       "is_stale": false,
       "metrics": {
         "open": 4.678,
-        "last": 4.636,
+        "last": 4.627,
         "high": 4.689,
-        "low": 4.636,
-        "vwap": 4.6535,
-        "max_drawdown_percent": 1.1303,
+        "low": 4.627,
+        "vwap": 4.6502,
+        "max_drawdown_percent": 1.3222,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 1.1303,
+        "pullback_from_high_percent": 1.3222,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -0.8978,
+        "open_to_last_percent": -1.0902,
         "gap_at_open_percent": -0.0427,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -6443,11 +7307,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 3.454,
+          "high": 3.45,
+          "low": 3.454,
+          "volume": 3.448,
+          "amount": 125680.0,
+          "average_price": 43371435.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 3.449,
           "high": 3.452,
+          "low": 3.453,
+          "volume": 3.448,
+          "amount": 91509.0,
+          "average_price": 31579791.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 3.452,
+          "high": 3.454,
           "low": 3.454,
           "volume": 3.452,
-          "amount": 29968.0,
-          "average_price": 10348379.0
+          "amount": 50817.0,
+          "average_price": 17544072.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 3.452,
+          "high": 3.453,
+          "low": 3.458,
+          "volume": 3.452,
+          "amount": 69559.0,
+          "average_price": 24033885.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 3.453,
+          "high": 3.449,
+          "low": 3.453,
+          "volume": 3.449,
+          "amount": 91958.0,
+          "average_price": 31729918.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 3.448,
+          "high": 3.454,
+          "low": 3.454,
+          "volume": 3.447,
+          "amount": 74243.0,
+          "average_price": 25618201.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 3.453,
+          "high": 3.451,
+          "low": 3.455,
+          "volume": 3.451,
+          "amount": 88758.0,
+          "average_price": 30650282.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 3.453,
+          "high": 3.448,
+          "low": 3.453,
+          "volume": 3.448,
+          "amount": 112396.0,
+          "average_price": 38771206.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 3.451,
+          "high": 3.448,
+          "low": 3.451,
+          "volume": 3.445,
+          "amount": 144216.0,
+          "average_price": 49723288.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 3.447,
+          "high": 3.449,
+          "low": 3.452,
+          "volume": 3.447,
+          "amount": 102841.0,
+          "average_price": 35471755.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 3.449,
+          "high": 3.449,
+          "low": 3.451,
+          "volume": 3.449,
+          "amount": 30720.0,
+          "average_price": 10599156.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 3.45,
+          "high": 3.447,
+          "low": 3.451,
+          "volume": 3.447,
+          "amount": 60596.0,
+          "average_price": 20898087.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 3.447,
+          "high": 3.449,
+          "low": 3.449,
+          "volume": 3.447,
+          "amount": 47412.0,
+          "average_price": 16346974.0
         }
       ],
       "errors": [],
@@ -6458,25 +7430,25 @@
       "is_stale": false,
       "metrics": {
         "open": 3.557,
-        "last": 3.454,
+        "last": 3.447,
         "high": 3.566,
-        "low": 3.454,
-        "vwap": 3.4905,
-        "max_drawdown_percent": 3.1408,
+        "low": 3.447,
+        "vwap": 3.485,
+        "max_drawdown_percent": 3.3371,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 3.1408,
+        "pullback_from_high_percent": 3.3371,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -2.8957,
+        "open_to_last_percent": -3.0925,
         "gap_at_open_percent": -0.0843,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:44",
+        "low_time": "2026-08-24 10:53",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -7147,11 +8119,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 1307.0,
-          "high": 1306.54,
-          "low": 1307.0,
+          "high": 1307.0,
+          "low": 1307.49,
           "volume": 1306.44,
-          "amount": 60.0,
-          "average_price": 7839181.0
+          "amount": 94.0,
+          "average_price": 12282496.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 1306.99,
+          "high": 1306.79,
+          "low": 1306.99,
+          "volume": 1306.71,
+          "amount": 97.0,
+          "average_price": 12676683.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 1306.74,
+          "high": 1305.4,
+          "low": 1306.74,
+          "volume": 1305.05,
+          "amount": 133.0,
+          "average_price": 17368408.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 1305.07,
+          "high": 1305.48,
+          "low": 1306.0,
+          "volume": 1305.07,
+          "amount": 99.0,
+          "average_price": 12925449.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 1305.63,
+          "high": 1305.9,
+          "low": 1305.9,
+          "volume": 1305.4,
+          "amount": 170.0,
+          "average_price": 22197484.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 1305.76,
+          "high": 1304.19,
+          "low": 1305.82,
+          "volume": 1304.18,
+          "amount": 104.0,
+          "average_price": 13573976.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 1304.18,
+          "high": 1304.78,
+          "low": 1304.78,
+          "volume": 1303.11,
+          "amount": 195.0,
+          "average_price": 25421083.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 1304.79,
+          "high": 1305.81,
+          "low": 1305.81,
+          "volume": 1304.23,
+          "amount": 174.0,
+          "average_price": 22702766.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 1305.88,
+          "high": 1306.62,
+          "low": 1306.62,
+          "volume": 1305.37,
+          "amount": 131.0,
+          "average_price": 17107999.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 1306.08,
+          "high": 1305.93,
+          "low": 1306.08,
+          "volume": 1305.74,
+          "amount": 58.0,
+          "average_price": 7574564.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 1305.74,
+          "high": 1305.66,
+          "low": 1305.76,
+          "volume": 1305.65,
+          "amount": 65.0,
+          "average_price": 8487198.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 1305.8,
+          "high": 1306.79,
+          "low": 1306.79,
+          "volume": 1305.8,
+          "amount": 157.0,
+          "average_price": 20507679.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 1306.83,
+          "high": 1306.84,
+          "low": 1307.48,
+          "volume": 1306.83,
+          "amount": 185.0,
+          "average_price": 24180739.0
         }
       ],
       "errors": [],
@@ -7162,15 +8242,15 @@
       "is_stale": false,
       "metrics": {
         "open": 1271.01,
-        "last": 1307.0,
+        "last": 1306.83,
         "high": 1308.0,
         "low": 1271.01,
-        "vwap": 1295.0512,
+        "vwap": 1296.5434,
         "max_drawdown_percent": 0.4882,
-        "intraday_position": 0.973,
-        "pullback_from_high_percent": 0.0765,
-        "recovery_from_low_percent": 2.8316,
-        "open_to_last_percent": 2.8316,
+        "intraday_position": 0.9684,
+        "pullback_from_high_percent": 0.0894,
+        "recovery_from_low_percent": 2.8182,
+        "open_to_last_percent": 2.8182,
         "gap_at_open_percent": -0.143,
         "high_time": "2026-08-24 10:42",
         "low_time": "2026-08-24 09:30",
@@ -7180,7 +8260,7 @@
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -7854,8 +8934,116 @@
           "high": 11.57,
           "low": 11.58,
           "volume": 11.57,
-          "amount": 612.0,
-          "average_price": 708358.0
+          "amount": 1786.0,
+          "average_price": 2067333.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 11.58,
+          "high": 11.58,
+          "low": 11.58,
+          "volume": 11.57,
+          "amount": 2683.0,
+          "average_price": 3105902.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 11.57,
+          "high": 11.57,
+          "low": 11.58,
+          "volume": 11.57,
+          "amount": 8929.0,
+          "average_price": 10333004.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 11.57,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 4192.0,
+          "average_price": 4849487.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 11.56,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 1942.0,
+          "average_price": 2245731.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 11.57,
+          "high": 11.57,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 5698.0,
+          "average_price": 6587423.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 11.56,
+          "high": 11.57,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 8673.0,
+          "average_price": 10032094.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 11.57,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 1767.0,
+          "average_price": 2043863.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 11.56,
+          "high": 11.57,
+          "low": 11.58,
+          "volume": 11.56,
+          "amount": 5374.0,
+          "average_price": 6217068.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 11.57,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 2984.0,
+          "average_price": 3450285.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 11.57,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 2597.0,
+          "average_price": 3002630.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 11.56,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 1161.0,
+          "average_price": 1342654.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 11.57,
+          "high": 11.56,
+          "low": 11.57,
+          "volume": 11.56,
+          "amount": 1693.0,
+          "average_price": 1957578.0
         }
       ],
       "errors": [],
@@ -7866,15 +9054,15 @@
       "is_stale": false,
       "metrics": {
         "open": 11.38,
-        "last": 11.58,
+        "last": 11.57,
         "high": 11.58,
         "low": 11.38,
-        "vwap": 11.5163,
+        "vwap": 11.5234,
         "max_drawdown_percent": 0.2611,
-        "intraday_position": 1.0,
-        "pullback_from_high_percent": 0.0,
-        "recovery_from_low_percent": 1.7575,
-        "open_to_last_percent": 1.7575,
+        "intraday_position": 0.95,
+        "pullback_from_high_percent": 0.0864,
+        "recovery_from_low_percent": 1.6696,
+        "open_to_last_percent": 1.6696,
         "gap_at_open_percent": -0.2629,
         "high_time": "2026-08-24 10:43",
         "low_time": "2026-08-24 09:30",
@@ -7884,7 +9072,7 @@
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -8555,11 +9743,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 1.072,
+          "high": 1.069,
+          "low": 1.072,
+          "volume": 1.068,
+          "amount": 46744.0,
+          "average_price": 5000788.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 1.068,
+          "high": 1.069,
+          "low": 1.07,
+          "volume": 1.068,
+          "amount": 34162.0,
+          "average_price": 3651537.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 1.068,
           "high": 1.071,
+          "low": 1.071,
+          "volume": 1.068,
+          "amount": 17011.0,
+          "average_price": 1818458.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 1.071,
+          "high": 1.07,
           "low": 1.072,
           "volume": 1.07,
-          "amount": 11300.0,
-          "average_price": 1210057.0
+          "amount": 11379.0,
+          "average_price": 1218728.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 1.07,
+          "high": 1.067,
+          "low": 1.071,
+          "volume": 1.067,
+          "amount": 34807.0,
+          "average_price": 3718147.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 1.068,
+          "high": 1.07,
+          "low": 1.07,
+          "volume": 1.067,
+          "amount": 10069.0,
+          "average_price": 1075395.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 1.07,
+          "high": 1.07,
+          "low": 1.071,
+          "volume": 1.069,
+          "amount": 9787.0,
+          "average_price": 1047085.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 1.069,
+          "high": 1.068,
+          "low": 1.07,
+          "volume": 1.068,
+          "amount": 9083.0,
+          "average_price": 970578.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 1.069,
+          "high": 1.068,
+          "low": 1.07,
+          "volume": 1.067,
+          "amount": 29288.0,
+          "average_price": 3128305.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 1.068,
+          "high": 1.068,
+          "low": 1.069,
+          "volume": 1.068,
+          "amount": 17725.0,
+          "average_price": 1893127.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 1.068,
+          "high": 1.067,
+          "low": 1.068,
+          "volume": 1.066,
+          "amount": 16691.0,
+          "average_price": 1781136.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 1.067,
+          "high": 1.065,
+          "low": 1.067,
+          "volume": 1.065,
+          "amount": 25231.0,
+          "average_price": 2688428.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 1.065,
+          "high": 1.065,
+          "low": 1.065,
+          "volume": 1.063,
+          "amount": 19222.0,
+          "average_price": 2045468.0
         }
       ],
       "errors": [],
@@ -8570,25 +9866,25 @@
       "is_stale": false,
       "metrics": {
         "open": 1.104,
-        "last": 1.072,
+        "last": 1.065,
         "high": 1.105,
-        "low": 1.072,
-        "vwap": 1.0827,
-        "max_drawdown_percent": 2.9864,
+        "low": 1.065,
+        "vwap": 1.0807,
+        "max_drawdown_percent": 3.6199,
         "intraday_position": 0.0,
-        "pullback_from_high_percent": 2.9864,
+        "pullback_from_high_percent": 3.6199,
         "recovery_from_low_percent": 0.0,
-        "open_to_last_percent": -2.8986,
+        "open_to_last_percent": -3.5326,
         "gap_at_open_percent": 0.0,
         "high_time": "2026-08-24 09:31",
-        "low_time": "2026-08-24 10:41",
+        "low_time": "2026-08-24 10:56",
         "patterns": []
       }
     },
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -9259,11 +10555,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 0.839,
-          "high": 0.839,
+          "high": 0.838,
           "low": 0.839,
           "volume": 0.838,
-          "amount": 439.0,
-          "average_price": 36815.0
+          "amount": 3310.0,
+          "average_price": 277434.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 0.837,
+          "high": 0.835,
+          "low": 0.838,
+          "volume": 0.835,
+          "amount": 11159.0,
+          "average_price": 933306.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 0.836,
+          "high": 0.836,
+          "low": 0.837,
+          "volume": 0.835,
+          "amount": 4285.0,
+          "average_price": 358224.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 0.837,
+          "high": 0.836,
+          "low": 0.837,
+          "volume": 0.836,
+          "amount": 8670.0,
+          "average_price": 725105.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 0.836,
+          "high": 0.836,
+          "low": 0.837,
+          "volume": 0.835,
+          "amount": 12453.0,
+          "average_price": 1040626.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 0.836,
+          "high": 0.835,
+          "low": 0.836,
+          "volume": 0.835,
+          "amount": 3453.0,
+          "average_price": 288450.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 0.836,
+          "high": 0.835,
+          "low": 0.836,
+          "volume": 0.835,
+          "amount": 3619.0,
+          "average_price": 302375.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 0.836,
+          "high": 0.835,
+          "low": 0.836,
+          "volume": 0.834,
+          "amount": 13533.0,
+          "average_price": 1130044.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 0.834,
+          "high": 0.834,
+          "low": 0.835,
+          "volume": 0.833,
+          "amount": 8202.0,
+          "average_price": 683950.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 0.834,
+          "high": 0.834,
+          "low": 0.835,
+          "volume": 0.833,
+          "amount": 4926.0,
+          "average_price": 410791.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 0.835,
+          "high": 0.835,
+          "low": 0.835,
+          "volume": 0.834,
+          "amount": 8628.0,
+          "average_price": 720375.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 0.835,
+          "high": 0.836,
+          "low": 0.837,
+          "volume": 0.835,
+          "amount": 4090.0,
+          "average_price": 341905.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 0.836,
+          "high": 0.835,
+          "low": 0.836,
+          "volume": 0.835,
+          "amount": 3355.0,
+          "average_price": 280428.0
         }
       ],
       "errors": [],
@@ -9274,18 +10678,18 @@
       "is_stale": false,
       "metrics": {
         "open": 0.875,
-        "last": 0.839,
+        "last": 0.836,
         "high": 0.883,
-        "low": 0.836,
-        "vwap": 0.8518,
-        "max_drawdown_percent": 5.3228,
-        "intraday_position": 0.0638,
-        "pullback_from_high_percent": 4.983,
-        "recovery_from_low_percent": 0.3589,
-        "open_to_last_percent": -4.1143,
+        "low": 0.834,
+        "vwap": 0.8496,
+        "max_drawdown_percent": 5.5493,
+        "intraday_position": 0.0408,
+        "pullback_from_high_percent": 5.3228,
+        "recovery_from_low_percent": 0.2398,
+        "open_to_last_percent": -4.4571,
         "gap_at_open_percent": -0.681,
         "high_time": "2026-08-24 09:33",
-        "low_time": "2026-08-24 10:41",
+        "low_time": "2026-08-24 10:52",
         "patterns": [
           "冲高回落"
         ]
@@ -9294,7 +10698,7 @@
     {
       "source": "eastmoney",
       "market_date": "2026-08-24",
-      "market_time": "2026-08-24T10:44:00+08:00",
+      "market_time": "2026-08-24T10:56:00+08:00",
       "points": [
         {
           "time": "2026-08-24 09:30",
@@ -9965,11 +11369,119 @@
         {
           "time": "2026-08-24 10:44",
           "price": 1166.78,
-          "high": 1166.4,
+          "high": 1165.44,
           "low": 1166.78,
-          "volume": 1166.36,
-          "amount": 34542.0,
-          "average_price": 40599642.0
+          "volume": 1165.2,
+          "amount": 128189.0,
+          "average_price": 141844148.0
+        },
+        {
+          "time": "2026-08-24 10:45",
+          "price": 1165.47,
+          "high": 1165.27,
+          "low": 1165.61,
+          "volume": 1165.13,
+          "amount": 84330.0,
+          "average_price": 96419323.0
+        },
+        {
+          "time": "2026-08-24 10:46",
+          "price": 1165.43,
+          "high": 1164.93,
+          "low": 1165.43,
+          "volume": 1164.88,
+          "amount": 79092.0,
+          "average_price": 94378889.0
+        },
+        {
+          "time": "2026-08-24 10:47",
+          "price": 1164.91,
+          "high": 1164.35,
+          "low": 1165.17,
+          "volume": 1164.33,
+          "amount": 68162.0,
+          "average_price": 85936209.0
+        },
+        {
+          "time": "2026-08-24 10:48",
+          "price": 1164.33,
+          "high": 1163.29,
+          "low": 1164.41,
+          "volume": 1163.29,
+          "amount": 102197.0,
+          "average_price": 109627847.0
+        },
+        {
+          "time": "2026-08-24 10:49",
+          "price": 1163.31,
+          "high": 1163.2,
+          "low": 1163.6,
+          "volume": 1163.05,
+          "amount": 77722.0,
+          "average_price": 92055644.0
+        },
+        {
+          "time": "2026-08-24 10:50",
+          "price": 1162.82,
+          "high": 1163.17,
+          "low": 1163.37,
+          "volume": 1162.82,
+          "amount": 56834.0,
+          "average_price": 70174872.0
+        },
+        {
+          "time": "2026-08-24 10:51",
+          "price": 1163.06,
+          "high": 1162.71,
+          "low": 1163.18,
+          "volume": 1162.7,
+          "amount": 59731.0,
+          "average_price": 78802456.0
+        },
+        {
+          "time": "2026-08-24 10:52",
+          "price": 1163.15,
+          "high": 1162.82,
+          "low": 1163.29,
+          "volume": 1162.66,
+          "amount": 63947.0,
+          "average_price": 76776140.0
+        },
+        {
+          "time": "2026-08-24 10:53",
+          "price": 1162.72,
+          "high": 1163.57,
+          "low": 1163.66,
+          "volume": 1162.72,
+          "amount": 51955.0,
+          "average_price": 62888764.0
+        },
+        {
+          "time": "2026-08-24 10:54",
+          "price": 1163.48,
+          "high": 1163.59,
+          "low": 1164.0,
+          "volume": 1163.19,
+          "amount": 39299.0,
+          "average_price": 49226692.0
+        },
+        {
+          "time": "2026-08-24 10:55",
+          "price": 1163.75,
+          "high": 1163.49,
+          "low": 1163.78,
+          "volume": 1163.32,
+          "amount": 71609.0,
+          "average_price": 80636170.0
+        },
+        {
+          "time": "2026-08-24 10:56",
+          "price": 1163.28,
+          "high": 1163.33,
+          "low": 1163.4,
+          "volume": 1162.86,
+          "amount": 63555.0,
+          "average_price": 76917856.0
         }
       ],
       "errors": [],
@@ -9982,18 +11494,18 @@
       "is_stale": false,
       "metrics": {
         "open": 1194.59,
-        "last": 1166.78,
+        "last": 1163.28,
         "high": 1194.59,
-        "low": 1166.52,
-        "vwap": 1176.9418,
-        "max_drawdown_percent": 2.3498,
-        "intraday_position": 0.0093,
-        "pullback_from_high_percent": 2.328,
-        "recovery_from_low_percent": 0.0223,
-        "open_to_last_percent": -2.328,
+        "low": 1162.72,
+        "vwap": 1175.1473,
+        "max_drawdown_percent": 2.6679,
+        "intraday_position": 0.0176,
+        "pullback_from_high_percent": 2.621,
+        "recovery_from_low_percent": 0.0482,
+        "open_to_last_percent": -2.621,
         "gap_at_open_percent": 0.2341,
         "high_time": "2026-08-24 09:30",
-        "low_time": "2026-08-24 10:43",
+        "low_time": "2026-08-24 10:53",
         "patterns": []
       }
     }
