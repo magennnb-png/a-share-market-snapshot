@@ -1,5 +1,4 @@
 ﻿date,leader_1,leader_2,leader_3,laggard_1,laggard_2,laggard_3,industry_count,source
-2025-08-26,农药化肥,摩托车,化纤行业,其它行业,金融行业,船舶制造,48,sina_membership+tencent_equal_weight
 2025-08-27,其它行业,电力行业,电子器件,纺织行业,医疗器械,纺织机械,48,sina_membership+tencent_equal_weight
 2025-08-28,玻璃行业,开发区,电子器件,纺织机械,农林牧渔,酿酒行业,48,sina_membership+tencent_equal_weight
 2025-08-29,有色金属,酿酒行业,飞机制造,印刷包装,开发区,陶瓷行业,48,sina_membership+tencent_equal_weight
@@ -239,3 +238,4 @@
 2026-08-19,煤炭行业,金融行业,公路桥梁,电子器件,玻璃行业,电器行业,49,sina_membership+tencent_equal_weight
 2026-08-20,医疗器械,酒店旅游,生物制药,飞机制造,煤炭行业,有色金属,49,sina_membership+tencent_equal_weight
 2026-08-21,有色金属,电子器件,家具行业,生物制药,农林牧渔,医疗器械,49,sina_membership+tencent_equal_weight
+2026-08-24,白银,种子,钼,航空运输,基建市政工程,纯碱,100,eastmoney
