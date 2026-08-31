@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "market_time": "2026-08-24",
-  "generated_at": "2026-08-24T10:55:50+08:00",
+  "market_time": "2026-08-28",
+  "generated_at": "2026-08-31T16:12:45+08:00",
   "rotation": {
-    "date": "2026-08-24",
-    "leader_1": "种子",
-    "leader_2": "白银",
-    "leader_3": "其他养殖",
-    "laggard_1": "氮肥",
-    "laggard_2": "纯碱",
-    "laggard_3": "风力发电",
-    "industry_count": 100,
-    "source": "eastmoney"
+    "date": "2026-08-28",
+    "leader_1": "农药化肥",
+    "leader_2": "农林牧渔",
+    "leader_3": "石油行业",
+    "laggard_1": "次新股",
+    "laggard_2": "医疗器械",
+    "laggard_3": "发电设备",
+    "industry_count": 49,
+    "source": "sina_membership+tencent_equal_weight"
   },
   "history_file": "data/history/rotation_daily.csv"
 }
