@@ -1,9 +1,9 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-02T15:03:44+08:00",
+  "generated_at": "2026-09-07T14:56:13+08:00",
   "market_time": null,
   "source_market_time": null,
-  "data_as_of": "2026-09-02",
+  "data_as_of": "2026-09-07",
   "is_stale": false,
   "backend": "csv",
   "sources": [
@@ -13,7 +13,7 @@
   "quality": {
     "grade": "red",
     "current_available": false,
-    "historical_trading_days": 8,
+    "historical_trading_days": 9,
     "time_alignment_warning": "宽度子对象时间与行情时间不一致，已采用latest.json顶层market_time。"
   },
   "known_limitations": [
@@ -140,6 +140,21 @@
       "total_amount": 1790878522398.95,
       "market_median_return": -1.06,
       "listed_with_quotes": 5209,
+      "source": "eastmoney",
+      "method": "realtime_snapshot"
+    },
+    {
+      "date": "2026-09-07",
+      "timestamp": "2026-09-07",
+      "is_stale": null,
+      "advance": 2999,
+      "decline": 2020,
+      "flat": 188,
+      "approx_limit_up": 102,
+      "approx_limit_down": 7,
+      "total_amount": 1914569594015.59,
+      "market_median_return": 0.37,
+      "listed_with_quotes": 5207,
       "source": "eastmoney",
       "method": "realtime_snapshot"
     }

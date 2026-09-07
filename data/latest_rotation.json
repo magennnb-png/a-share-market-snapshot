@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "market_time": "2026-09-02",
-  "generated_at": "2026-09-02T15:03:44+08:00",
+  "market_time": "2026-09-04",
+  "generated_at": "2026-09-07T14:56:13+08:00",
   "rotation": {
-    "date": "2026-09-02",
-    "leader_1": "地面兵装Ⅲ",
-    "leader_2": "地面兵装Ⅱ",
-    "leader_3": "化妆品制造及其他",
-    "laggard_1": "装修建材",
-    "laggard_2": "其他建材Ⅲ",
-    "laggard_3": "燃料电池",
-    "industry_count": 98,
-    "source": "eastmoney"
+    "date": "2026-09-04",
+    "leader_1": "农林牧渔",
+    "leader_2": "船舶制造",
+    "leader_3": "酿酒行业",
+    "laggard_1": "有色金属",
+    "laggard_2": "电子器件",
+    "laggard_3": "次新股",
+    "industry_count": 49,
+    "source": "sina_membership+tencent_equal_weight"
   },
   "history_file": "data/history/rotation_daily.csv"
 }
