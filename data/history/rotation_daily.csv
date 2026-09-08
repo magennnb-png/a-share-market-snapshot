@@ -1,5 +1,4 @@
 ﻿date,leader_1,leader_2,leader_3,laggard_1,laggard_2,laggard_3,industry_count,source
-2025-09-09,房地产,摩托车,造纸行业,纺织机械,医疗器械,电子器件,48,sina_membership+tencent_equal_weight
 2025-09-10,石油行业,酒店旅游,传媒娱乐,农药化肥,煤炭行业,水泥行业,48,sina_membership+tencent_equal_weight
 2025-09-11,电子器件,电器行业,电子信息,石油行业,酒店旅游,家具行业,48,sina_membership+tencent_equal_weight
 2025-09-12,有色金属,钢铁行业,房地产,金融行业,酿酒行业,酒店旅游,48,sina_membership+tencent_equal_weight
@@ -239,3 +238,4 @@
 2026-09-02,次新股,飞机制造,船舶制造,农林牧渔,煤炭行业,传媒娱乐,49,sina_membership+tencent_equal_weight
 2026-09-03,陶瓷行业,纺织机械,有色金属,次新股,造纸行业,印刷包装,49,sina_membership+tencent_equal_weight
 2026-09-04,农林牧渔,船舶制造,酿酒行业,有色金属,电子器件,次新股,49,sina_membership+tencent_equal_weight
+2026-09-08,教育运营及其他,粮食种植,学历教育,乳品,房地产,饮料乳品,100,eastmoney
