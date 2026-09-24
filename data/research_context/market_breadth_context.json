@@ -1,18 +1,18 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-08T10:28:09+08:00",
-  "market_time": null,
-  "source_market_time": null,
-  "data_as_of": "2026-09-08",
-  "is_stale": false,
+  "generated_at": "2026-09-24T08:48:41+08:00",
+  "market_time": "2026-09-23T16:14:50+08:00",
+  "source_market_time": "2026-09-23T16:14:50+08:00",
+  "data_as_of": "2026-09-23",
+  "is_stale": true,
   "backend": "csv",
   "sources": [
     "eastmoney",
     "sina"
   ],
   "quality": {
-    "grade": "red",
-    "current_available": false,
+    "grade": "yellow",
+    "current_available": true,
     "historical_trading_days": 10,
     "time_alignment_warning": "宽度子对象时间与行情时间不一致，已采用latest.json顶层market_time。"
   },
@@ -21,23 +21,22 @@
     "涨跌停家数按ST、主板、创业板/科创板和北交所阈值近似统计。"
   ],
   "historical_coverage_limited": true,
-  "current": null,
+  "current": {
+    "date": "2026-09-23",
+    "timestamp": "2026-09-23T16:14:50+08:00",
+    "is_stale": true,
+    "advance": 1891,
+    "decline": 3563,
+    "flat": 107,
+    "approx_limit_up": 57,
+    "approx_limit_down": 25,
+    "total_amount": 1782969942853.0,
+    "market_median_return": -0.609,
+    "listed_with_quotes": 5561,
+    "source": "sina",
+    "method": "realtime_snapshot"
+  },
   "recent_history": [
-    {
-      "date": "2026-08-12",
-      "timestamp": "2026-08-12",
-      "is_stale": null,
-      "advance": 4128,
-      "decline": 1279,
-      "flat": 134,
-      "approx_limit_up": 103,
-      "approx_limit_down": 1,
-      "total_amount": 2166584740664.0,
-      "market_median_return": null,
-      "listed_with_quotes": 5541,
-      "source": "sina",
-      "method": "realtime_snapshot"
-    },
     {
       "date": "2026-08-13",
       "timestamp": "2026-08-13",
@@ -171,6 +170,21 @@
       "market_median_return": 0.32,
       "listed_with_quotes": 5207,
       "source": "eastmoney",
+      "method": "realtime_snapshot"
+    },
+    {
+      "date": "2026-09-23",
+      "timestamp": "2026-09-23T16:14:50+08:00",
+      "is_stale": true,
+      "advance": 1891,
+      "decline": 3563,
+      "flat": 107,
+      "approx_limit_up": 57,
+      "approx_limit_down": 25,
+      "total_amount": 1782969942853.0,
+      "market_median_return": -0.609,
+      "listed_with_quotes": 5561,
+      "source": "sina",
       "method": "realtime_snapshot"
     }
   ]
